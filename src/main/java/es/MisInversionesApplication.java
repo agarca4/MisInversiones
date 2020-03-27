@@ -147,7 +147,7 @@ public class MisInversionesApplication {
 		FondoInversionMixtoDAO fondoInversionMixtoDAO = context.getBean(FondoInversionMixtoDAO.class);
 
 		// voy a crear otro producto mas
-		Object[] valorArgumentos4 = { "AsiaFund", "Srhroder", Sector.SALUD, 128759 };
+		Object[] valorArgumentos4 = { "NN (L) Smart Connectivity - P Cap EUR", "NN Investment Partners BV", Sector.TECNOLOGIA, 192961};
 		ProductoFinanciero producto4 = ProductoFinancieroFactory
 				.crearProductoFinanciero(FondoInversionRentaVariable.class, argumentos, valorArgumentos4);
 
