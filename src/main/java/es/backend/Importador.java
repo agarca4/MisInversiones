@@ -6,24 +6,44 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+@Entity
 public class Importador {
 
-	private static Collection<InformacionMercado> InformeMercado = new ArrayList<>();
+    @Id
+    private Integer idImportador = 0001;
+    
+    @OneToMany(mappedBy="importador")
+	private Collection<InformacionMercado> InformeMercado = new ArrayList<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
 	// evitar que se cree ningun Importador fuera
 	// del GestorCartera que es quien
 	// gobierna la logica del negocio
 	Importador() {
-
 	}
 
-	static Collection<InformacionMercado> getInformeMercado() {
+	void setInformeMercado(Collection<InformacionMercado> informeMercado) {
+		InformeMercado = informeMercado;
+	}
+
+	Integer getIdImportador() {
+		return idImportador;
+	}
+
+	void setIdImportador(Integer idImportador) {
+		this.idImportador = idImportador;
+	}
+
+	public Collection<InformacionMercado> getInformeMercado() {
 		return InformeMercado;
 	}
 
 	public void importar() throws ParseException, IOException {
+
 		// limpio la colección porque me interesan unicamente los ultimos datos de
 		// mercado
 		getInformeMercado().clear();
@@ -35,17 +55,19 @@ public class Importador {
 			String linea;
 			buffer.readLine();
 			while ((linea = buffer.readLine()) != null) {
-				InformacionMercado InformacionMercadoProductoConcreto = new InformacionMercado();
+				InformacionMercado informacionMercadoProductoConcreto = new InformacionMercado();
 				String[] columnas = linea.split(",");
-				InformacionMercadoProductoConcreto.setNombreProductoFinancieroImportado(columnas[0]);
-				InformacionMercadoProductoConcreto.setValorActualDeMercado(Double.parseDouble(columnas[1]));
-				getInformeMercado().add(InformacionMercadoProductoConcreto);
+				informacionMercadoProductoConcreto.setNombreProductoFinancieroImportado(columnas[0]);
+				informacionMercadoProductoConcreto.setValorActualDeMercado(Double.parseDouble(columnas[1]));
+				getInformeMercado().add(informacionMercadoProductoConcreto);
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+
 		System.out.println(getInformeMercado());
+
 	}
 
 }

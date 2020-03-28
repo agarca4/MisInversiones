@@ -14,6 +14,8 @@ import org.springframework.context.annotation.PropertySource;
 import es.backend.Comparador;
 import es.backend.GestorCartera;
 import es.backend.GestorCarteraImpl;
+import es.backend.Importador;
+import es.backend.InformacionMercado;
 import es.backend.productosfinancieros.FondoInversionMixto;
 import es.backend.productosfinancieros.FondoInversionRentaFija;
 import es.backend.productosfinancieros.FondoInversionRentaVariable;
@@ -23,6 +25,7 @@ import es.backend.productosfinancieros.Sector;
 import es.backend.repositorios.FondoInversionMixtoDAO;
 import es.backend.repositorios.FondoInversionRentaFijaDAO;
 import es.backend.repositorios.FondoInversionRentaVariableDAO;
+import es.backend.repositorios.ImportadorDAO;
 import es.backend.repositorios.UsuarioDAO;
 import es.backend.usuarios.Usuario;
 
@@ -117,18 +120,6 @@ public class MisInversionesApplication {
 
 		/*
 		 * Aqui voy a probar mi BBDD h2 guardando los 2 usuarios Lo hago usando
-		 * anotaciones y con configuracion de ORM por XML Ojo al tener en el
-		 * jpa-config.xml:
-		 * 
-		 * <property name="mappingResources"> <list> <value>jpa/Usuario.orm.xml</value>
-		 * </list> </property>
-		 * 
-		 * va a buscar en ese xml las clases para persisitir, y ya se la pela persistir
-		 * lo que pusimos en el properties y que tb está configurado en ese xml. Va a
-		 * hacer caso prioritaramiente al Usuario.orm.xml, por eso ejecutando ahora,
-		 * solo me crea la tabla USUARIOS_CON_ORM_XML y no crea la tabla Usuario. Si me
-		 * cargo el mappingResources del xml, ya si tiene en cuenta lo otro y me crea la
-		 * tabla Usuario.
 		 */
 		UsuarioDAO usuarioDAO = context.getBean(UsuarioDAO.class);
 		usuarioDAO.save(usuario1);
@@ -136,18 +127,21 @@ public class MisInversionesApplication {
 		List<Usuario> usuarios = usuarioDAO.findAll();
 		usuarios.stream().map(Usuario::toString).forEach(log::info);
 
-		// Aqui voy a guardar en la BBDD los productos financieros, ojo la
-		// variable debe ser de la clase, no de la interfaz, por eso el casteo
-		// uso configuracion de ORM con XML con herencia
-		// El sector del fondo viene de un Enum y no se como persistirlo
-		// Los campos estaticos, en este caso es el riesgo, tampoco se persiste
+		/*
+		 * Aqui voy a guardar en la BBDD los productos financieros, lo hago con con
+		 * configuracion del ORM con XML la variable debe ser de la clase, no de la
+		 * interfaz, por eso el casteo uso configuracion de ORM con XML con herencia El
+		 * sector del fondo viene de un Enum y no se como persistirlo Los campos
+		 * estaticos, en este caso es el riesgo, tampoco se persiste
+		 */
 		FondoInversionRentaVariableDAO fondoInversionRentaVariableDAO = context
 				.getBean(FondoInversionRentaVariableDAO.class);
 		FondoInversionRentaFijaDAO fondoInversionRentaFijaDAO = context.getBean(FondoInversionRentaFijaDAO.class);
 		FondoInversionMixtoDAO fondoInversionMixtoDAO = context.getBean(FondoInversionMixtoDAO.class);
 
 		// voy a crear otro producto mas
-		Object[] valorArgumentos4 = { "NN (L) Smart Connectivity - P Cap EUR", "NN Investment Partners BV", Sector.TECNOLOGIA, 192961};
+		Object[] valorArgumentos4 = { "NN (L) Smart Connectivity - P Cap EUR", "NN Investment Partners BV",
+				Sector.TECNOLOGIA, 192961 };
 		ProductoFinanciero producto4 = ProductoFinancieroFactory
 				.crearProductoFinanciero(FondoInversionRentaVariable.class, argumentos, valorArgumentos4);
 
@@ -155,6 +149,13 @@ public class MisInversionesApplication {
 		fondoInversionRentaVariableDAO.save((FondoInversionRentaVariable) producto4);
 		fondoInversionRentaFijaDAO.save((FondoInversionRentaFija) producto2);
 		fondoInversionMixtoDAO.save((FondoInversionMixto) producto3);
+
+		// Aquí voy a guardar en la BBDD la info importada vía csv, usando anotaciones,
+		// NO por xml
+		//https://www.oscarblancarteblog.com/2018/12/20/relaciones-onetomany/
+		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
+	
+		infoMercadoImportada.save(((GestorCarteraImpl) miGestorCartera).getImportador());
 
 		context.close();
 	}

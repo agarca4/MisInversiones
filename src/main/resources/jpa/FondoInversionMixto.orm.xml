@@ -11,7 +11,7 @@
        <basic name="isin" optional="false">
         <column length="20"/>
       </basic>
-      <basic name="sector" optional="false"/>
+      <basic name="valorActualDeMercado" optional="false"/>
               <basic name="TIPO" optional="false"/>
       
     </attributes>

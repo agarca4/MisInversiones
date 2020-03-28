@@ -21,7 +21,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		return cartera;
 	}
 
-	private Importador getImportador() {
+	public Importador getImportador() {
 		return importador;
 	}
 
@@ -134,7 +134,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 			ProductoFinanciero key = it.next();
 			valorInicial = getCartera().getProductoInversion().get(key);
 			nombre = ((ProductoFinancieroImpl) key).getNombre();
-			for (InformacionMercado producto : Importador.getInformeMercado()) {
+			for (InformacionMercado producto : getImportador().getInformeMercado()) {
 				String nombreProductoImportado = producto.getNombreProductoFinancieroImportado();
 				if (nombre.contains(nombreProductoImportado)) {
 					valorActual = producto.getValorActualDeMercado();
@@ -149,4 +149,6 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		return rentabilidadCartera;
 
 	}
+
+
 }

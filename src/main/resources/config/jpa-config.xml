@@ -16,7 +16,6 @@
 		<property name="packagesToScan" value="${es.backend.entities-package}" />		
 		<property name="mappingResources">
 			<list>
-				<value>jpa/Usuario.orm.xml</value>
 				<value>jpa/FondoInversionMixto.orm.xml</value>
 				<value>jpa/FondoInversionRentaFija.orm.xml</value>
 				<value>jpa/FondoInversionRentaVariable.orm.xml</value>
