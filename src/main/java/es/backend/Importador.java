@@ -6,6 +6,8 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -13,10 +15,10 @@ import javax.persistence.OneToMany;
 @Entity
 public class Importador {
 
-    @Id
-    private Integer idImportador = 0001;
-    
-    @OneToMany(mappedBy="importador")
+	@Id
+	private Integer idImportador = 0001;
+
+	@ElementCollection
 	private Collection<InformacionMercado> InformeMercado = new ArrayList<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
@@ -24,18 +26,6 @@ public class Importador {
 	// del GestorCartera que es quien
 	// gobierna la logica del negocio
 	Importador() {
-	}
-
-	void setInformeMercado(Collection<InformacionMercado> informeMercado) {
-		InformeMercado = informeMercado;
-	}
-
-	Integer getIdImportador() {
-		return idImportador;
-	}
-
-	void setIdImportador(Integer idImportador) {
-		this.idImportador = idImportador;
 	}
 
 	public Collection<InformacionMercado> getInformeMercado() {

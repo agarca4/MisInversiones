@@ -4,6 +4,11 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.EntityManager;
+
+import org.checkerframework.checker.units.qual.m;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -124,8 +129,7 @@ public class MisInversionesApplication {
 		UsuarioDAO usuarioDAO = context.getBean(UsuarioDAO.class);
 		usuarioDAO.save(usuario1);
 		usuarioDAO.save(usuario2);
-		List<Usuario> usuarios = usuarioDAO.findAll();
-		usuarios.stream().map(Usuario::toString).forEach(log::info);
+	
 
 		/*
 		 * Aqui voy a guardar en la BBDD los productos financieros, lo hago con con
@@ -152,9 +156,7 @@ public class MisInversionesApplication {
 
 		// Aquí voy a guardar en la BBDD la info importada vía csv, usando anotaciones,
 		// NO por xml
-		//https://www.oscarblancarteblog.com/2018/12/20/relaciones-onetomany/
 		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
-	
 		infoMercadoImportada.save(((GestorCarteraImpl) miGestorCartera).getImportador());
 
 		context.close();

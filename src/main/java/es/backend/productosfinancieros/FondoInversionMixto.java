@@ -1,11 +1,16 @@
 package es.backend.productosfinancieros;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 public class FondoInversionMixto extends ProductoFinancieroImpl {
 
 	public static final String RIESGO = "Medio";
 	// este atributo lo uso para al persistir los datos en la BBDD que me guarde la
 	// clase del fondo que guardo
 	public final String TIPO = FondoInversionMixto.class.getSimpleName();
+	
+	@Enumerated(EnumType.STRING)
 	private Sector sector;
 	private int isin;
 

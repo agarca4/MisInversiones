@@ -1,5 +1,8 @@
 package es.backend.productosfinancieros;
 
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
 public class FondoInversionRentaFija extends ProductoFinancieroImpl {
 
 	public static final String RIESGO = "Bajo";
@@ -7,6 +10,7 @@ public class FondoInversionRentaFija extends ProductoFinancieroImpl {
 	// clase del fondo que guardo
 	public final String TIPO = FondoInversionRentaFija.class.getSimpleName();
 
+	@Enumerated(EnumType.STRING)
 	private Sector sector;
 	private int isin;
 
