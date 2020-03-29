@@ -1,17 +1,12 @@
 package es.backend.usuarios;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.Embeddable;
 
-@Entity
+@Embeddable
 public class Usuario {
 
-	
 	private String nombre;
-	@Id
 	private Integer id;
-	
-	
 
 	public Usuario() {
 	}

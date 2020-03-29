@@ -5,18 +5,24 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
-import es.backend.productosfinancieros.ProductoFinanciero;
+import javax.persistence.ElementCollection;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import es.backend.productosfinancieros.ProductoFinancieroImpl;
 import es.backend.usuarios.Usuario;
 
+@Entity
 public class CarteraInversion {
 
+	@Id
 	private String nombreCartera;
 	private Instant fechaCreacionCartera;
 	private double capitalTotal;
+	@ElementCollection
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
-	private Map<ProductoFinanciero, Double> productoInversion = new HashMap<>();
+	@ElementCollection
+	private Map<ProductoFinancieroImpl, Double> productoInversion = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
 	// evitar que se cree ninguna Cartera fuera
@@ -35,7 +41,7 @@ public class CarteraInversion {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	Map<ProductoFinanciero, Double> getProductoInversion() {
+	Map<ProductoFinancieroImpl, Double> getProductoInversion() {
 		return productoInversion;
 	}
 

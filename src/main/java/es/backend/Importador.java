@@ -6,17 +6,18 @@ import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Collection;
-
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 @Entity
 public class Importador {
 
 	@Id
-	private Integer idImportador = 0001;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long importacionNumero;
 
 	@ElementCollection
 	private Collection<InformacionMercado> InformeMercado = new ArrayList<>();

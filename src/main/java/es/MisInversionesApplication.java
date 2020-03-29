@@ -4,11 +4,6 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.persistence.Entity;
-import javax.persistence.EntityManager;
-
-import org.checkerframework.checker.units.qual.m;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -19,19 +14,14 @@ import org.springframework.context.annotation.PropertySource;
 import es.backend.Comparador;
 import es.backend.GestorCartera;
 import es.backend.GestorCarteraImpl;
-import es.backend.Importador;
-import es.backend.InformacionMercado;
 import es.backend.productosfinancieros.FondoInversionMixto;
 import es.backend.productosfinancieros.FondoInversionRentaFija;
 import es.backend.productosfinancieros.FondoInversionRentaVariable;
-import es.backend.productosfinancieros.ProductoFinanciero;
 import es.backend.productosfinancieros.ProductoFinancieroFactory;
+import es.backend.productosfinancieros.ProductoFinancieroImpl;
 import es.backend.productosfinancieros.Sector;
-import es.backend.repositorios.FondoInversionMixtoDAO;
-import es.backend.repositorios.FondoInversionRentaFijaDAO;
-import es.backend.repositorios.FondoInversionRentaVariableDAO;
+import es.backend.repositorios.CarteraInversionDAO;
 import es.backend.repositorios.ImportadorDAO;
-import es.backend.repositorios.UsuarioDAO;
 import es.backend.usuarios.Usuario;
 
 @SpringBootApplication
@@ -54,11 +44,11 @@ public class MisInversionesApplication {
 		Object[] valorArgumentos3 = { "Edeficandi", "Axa", Sector.CONSUMO_DEFENSIVO, 742069 };
 
 		// Llamo al factory y creo los productos
-		ProductoFinanciero producto1 = ProductoFinancieroFactory
+		ProductoFinancieroImpl producto1 = ProductoFinancieroFactory
 				.crearProductoFinanciero(FondoInversionRentaVariable.class, argumentos, valorArgumentos1);
-		ProductoFinanciero producto2 = ProductoFinancieroFactory.crearProductoFinanciero(FondoInversionRentaFija.class,
+		ProductoFinancieroImpl producto2 = ProductoFinancieroFactory.crearProductoFinanciero(FondoInversionRentaFija.class,
 				argumentos, valorArgumentos2);
-		ProductoFinanciero producto3 = ProductoFinancieroFactory.crearProductoFinanciero(FondoInversionMixto.class,
+		ProductoFinancieroImpl producto3 = ProductoFinancieroFactory.crearProductoFinanciero(FondoInversionMixto.class,
 				argumentos, valorArgumentos3);
 
 		// Me creo un par de usuarios
@@ -68,7 +58,7 @@ public class MisInversionesApplication {
 		// creo el gestor de cartera que implica una cartera y un importador, además de
 		// setearle la fecha actual
 		// todas las operaciones se harán siempre a traves del GESTORCARTERA
-		GestorCartera<ProductoFinanciero> miGestorCartera = new GestorCarteraImpl();
+		GestorCartera<ProductoFinancieroImpl> miGestorCartera = new GestorCarteraImpl();
 
 		// le doy nombre a mi cartera
 		miGestorCartera.asignarNombre("CarteraAgresiva");
@@ -126,10 +116,9 @@ public class MisInversionesApplication {
 		/*
 		 * Aqui voy a probar mi BBDD h2 guardando los 2 usuarios Lo hago usando
 		 */
-		UsuarioDAO usuarioDAO = context.getBean(UsuarioDAO.class);
-		usuarioDAO.save(usuario1);
-		usuarioDAO.save(usuario2);
-	
+//		UsuarioDAO usuarioDAO = context.getBean(UsuarioDAO.class);
+//		usuarioDAO.save(usuario1);
+//		usuarioDAO.save(usuario2);
 
 		/*
 		 * Aqui voy a guardar en la BBDD los productos financieros, lo hago con con
@@ -138,26 +127,29 @@ public class MisInversionesApplication {
 		 * sector del fondo viene de un Enum y no se como persistirlo Los campos
 		 * estaticos, en este caso es el riesgo, tampoco se persiste
 		 */
-		FondoInversionRentaVariableDAO fondoInversionRentaVariableDAO = context
-				.getBean(FondoInversionRentaVariableDAO.class);
-		FondoInversionRentaFijaDAO fondoInversionRentaFijaDAO = context.getBean(FondoInversionRentaFijaDAO.class);
-		FondoInversionMixtoDAO fondoInversionMixtoDAO = context.getBean(FondoInversionMixtoDAO.class);
+//		FondoInversionRentaVariableDAO fondoInversionRentaVariableDAO = context
+//				.getBean(FondoInversionRentaVariableDAO.class);
+//		FondoInversionRentaFijaDAO fondoInversionRentaFijaDAO = context.getBean(FondoInversionRentaFijaDAO.class);
+//		FondoInversionMixtoDAO fondoInversionMixtoDAO = context.getBean(FondoInversionMixtoDAO.class);
 
 		// voy a crear otro producto mas
-		Object[] valorArgumentos4 = { "NN (L) Smart Connectivity - P Cap EUR", "NN Investment Partners BV",
-				Sector.TECNOLOGIA, 192961 };
-		ProductoFinanciero producto4 = ProductoFinancieroFactory
-				.crearProductoFinanciero(FondoInversionRentaVariable.class, argumentos, valorArgumentos4);
-
-		fondoInversionRentaVariableDAO.save((FondoInversionRentaVariable) producto1);
-		fondoInversionRentaVariableDAO.save((FondoInversionRentaVariable) producto4);
-		fondoInversionRentaFijaDAO.save((FondoInversionRentaFija) producto2);
-		fondoInversionMixtoDAO.save((FondoInversionMixto) producto3);
+//		Object[] valorArgumentos4 = { "NN (L) Smart Connectivity - P Cap EUR", "NN Investment Partners BV",
+//				Sector.TECNOLOGIA, 192961 };
+//		ProductoFinanciero producto4 = ProductoFinancieroFactory
+//				.crearProductoFinanciero(FondoInversionRentaVariable.class, argumentos, valorArgumentos4);
+//
+//		fondoInversionRentaVariableDAO.save((FondoInversionRentaVariable) producto1);
+//		fondoInversionRentaVariableDAO.save((FondoInversionRentaVariable) producto4);
+//		fondoInversionRentaFijaDAO.save((FondoInversionRentaFija) producto2);
+//		fondoInversionMixtoDAO.save((FondoInversionMixto) producto3);
 
 		// Aquí voy a guardar en la BBDD la info importada vía csv, usando anotaciones,
 		// NO por xml
 		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
 		infoMercadoImportada.save(((GestorCarteraImpl) miGestorCartera).getImportador());
+		
+		CarteraInversionDAO CarteraAPersistir = context.getBean(CarteraInversionDAO.class);
+		CarteraAPersistir.save(((GestorCarteraImpl) miGestorCartera).getCartera());
 
 		context.close();
 	}

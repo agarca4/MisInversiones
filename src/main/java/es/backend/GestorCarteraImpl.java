@@ -10,14 +10,14 @@ import es.backend.productosfinancieros.ProductoFinancieroImpl;
 import es.backend.usuarios.Usuario;
 
 //Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
-public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
+public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> {
 
 	private CarteraInversion cartera;
 	private Importador importador;
 
 	// uso private para los get de cartera e importador, xq quiero que todo se haga
 	// a traves del gestor
-	private CarteraInversion getCartera() {
+	public CarteraInversion getCartera() {
 		return cartera;
 	}
 
@@ -39,7 +39,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 	}
 
 	@Override
-	public void compraProductoFinanciero(ProductoFinanciero producto, double capitalInvertido) {
+	public void compraProductoFinanciero(ProductoFinancieroImpl producto, double capitalInvertido) {
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
 
 		if (!(getCartera().getProductoInversion().containsKey(producto))) {
@@ -54,7 +54,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 	}
 
 	@Override
-	public void vendeProductoFinanciero(ProductoFinanciero producto, double capitalDesinvertido) {
+	public void vendeProductoFinanciero(ProductoFinancieroImpl producto, double capitalDesinvertido) {
 
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() - capitalDesinvertido);
 
@@ -109,7 +109,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 	public String listarProductos() {
 
 		String claveValor = "";
-		Iterator<ProductoFinanciero> it = getCartera().getProductoInversion().keySet().iterator();
+		Iterator<ProductoFinancieroImpl> it = getCartera().getProductoInversion().keySet().iterator();
 
 		while (it.hasNext()) {
 			ProductoFinanciero key = it.next();
@@ -128,12 +128,12 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		double rentabilidadParcial = 0.0;
 		double rentabilidadCartera = 0.0;
 		String nombre = "";
-		Iterator<ProductoFinanciero> it = getCartera().getProductoInversion().keySet().iterator();
+		Iterator<ProductoFinancieroImpl> it = getCartera().getProductoInversion().keySet().iterator();
 
 		while (it.hasNext()) {
 			ProductoFinanciero key = it.next();
 			valorInicial = getCartera().getProductoInversion().get(key);
-			nombre = ((ProductoFinancieroImpl) key).getNombre();
+			nombre = ((ProductoFinancieroImpl) key).getNombreProducto();
 			for (InformacionMercado producto : getImportador().getInformeMercado()) {
 				String nombreProductoImportado = producto.getNombreProductoFinancieroImportado();
 				if (nombre.contains(nombreProductoImportado)) {
@@ -144,6 +144,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 
 			}
 			rentabilidadCartera += rentabilidadParcial;
+			getCartera().setRentabilidadActual(rentabilidadCartera);
 		}
 		System.out.println("Actualmente la rentabilidad financiera de su cartera es del " + rentabilidadCartera + "%");
 		return rentabilidadCartera;

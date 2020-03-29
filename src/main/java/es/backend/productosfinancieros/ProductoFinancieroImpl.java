@@ -1,22 +1,35 @@
 package es.backend.productosfinancieros;
 
-public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
+import javax.persistence.Embeddable;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+
+@Embeddable
+public class ProductoFinancieroImpl implements ProductoFinanciero {
 
 	private String nombre;
 	private String comercializadora;
+	@Enumerated(EnumType.STRING)
+	private Sector sector;
+	private int isin;
 
 	public ProductoFinancieroImpl() {
-		super();
 	}
 
-//	public ProductoFinancieroImpl(String nombre, String comercializadora) {
-//		super();
-//		this.nombre = nombre;
-//		this.comercializadora = comercializadora;
-//	}
+	public ProductoFinancieroImpl(String nombre, String comercializadora, Sector sector, int isin) {
+		super();
+		this.nombre = nombre;
+		this.comercializadora = comercializadora;
+		this.isin = isin;
+		this.sector = sector;
+	}
 
-	public String getNombre() {
-		return nombre;
+	void setIsin(int isin) {
+		this.isin = isin;
+	}
+
+	void setSector(Sector sector) {
+		this.sector = sector;
 	}
 
 	void setNombre(String nombre) {
@@ -32,8 +45,31 @@ public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 	}
 
 	@Override
+	public String getNombreProducto() {
+		return nombre;
+	}
+
+	@Override
+	public String mostrarInfoCompleta() {
+		return toString();
+	}
+
+	@Override
+	public Sector getSector() {
+		return sector;
+
+	}
+
+	@Override
+	public int getIsin() {
+		return isin;
+	}
+
+	@Override
 	public String toString() {
-		return "Producto Financiero con nombre " + getNombre() + ", de la comercializadora " + getComercializadora();
+		return "Producto Financiero con nombre " + getNombreProducto() + ", de la comercializadora "
+				+ getComercializadora() + ", centrado en el sector: " + getSector() + ", con ISIN " + getIsin();
+
 	}
 
 }
