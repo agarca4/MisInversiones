@@ -2,9 +2,10 @@ package es.backend.usuarios;
 
 import javax.persistence.Embeddable;
 
+
 @Embeddable
 public class Usuario {
-
+	
 	private String nombre;
 	private Integer id;
 

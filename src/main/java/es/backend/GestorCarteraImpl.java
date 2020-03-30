@@ -4,7 +4,8 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.time.Instant;
 import java.util.Iterator;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import es.backend.productosfinancieros.ProductoFinanciero;
 import es.backend.productosfinancieros.ProductoFinancieroImpl;
 import es.backend.usuarios.Usuario;
@@ -12,6 +13,7 @@ import es.backend.usuarios.Usuario;
 //Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
 public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> {
 
+	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
 	private CarteraInversion cartera;
 	private Importador importador;
 
@@ -77,8 +79,9 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 		if (!(getCartera().getUsuarios().contains(usuario))) {
 			getCartera().getUsuarios().add(usuario);
 		} else {
-			System.out.println("El usuario que pretende dar de alta ya está asociado a la cartera"
-					+ getCartera().getNombreCartera());
+			log.info(String.valueOf("El usuario que pretende dar de alta ya está asociado a la cartera"
+					+ getCartera().getNombreCartera()));
+
 		}
 	}
 
@@ -100,7 +103,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 		for (Usuario usuarios : getCartera().getUsuarios()) {
 			usuariosCartera += usuarios.toString() + "\n";
 		}
-		System.out.println(usuariosCartera);
+		log.info(String.valueOf(usuariosCartera));
 		return usuariosCartera;
 
 	}
@@ -116,7 +119,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 			claveValor += "Clave: " + key + " -> Valor: " + getCartera().getProductoInversion().get(key) + "\n";
 
 		}
-		System.out.println(claveValor);
+		log.info(String.valueOf(claveValor));
 		return claveValor;
 
 	}
@@ -146,7 +149,8 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 			rentabilidadCartera += rentabilidadParcial;
 			getCartera().setRentabilidadActual(rentabilidadCartera);
 		}
-		System.out.println("Actualmente la rentabilidad financiera de su cartera es del " + rentabilidadCartera + "%");
+		log.info(String
+				.valueOf("Actualmente la rentabilidad financiera de su cartera es del " + rentabilidadCartera + "%"));
 		return rentabilidadCartera;
 
 	}

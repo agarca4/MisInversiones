@@ -12,32 +12,47 @@ public class ProductoFinancieroImpl implements ProductoFinanciero {
 	@Enumerated(EnumType.STRING)
 	private Sector sector;
 	private int isin;
+	@Enumerated(EnumType.STRING)
+	private Tipo tipo;
+	private String riesgo;
 
-	public ProductoFinancieroImpl() {
+	ProductoFinancieroImpl() {
 	}
 
-	public ProductoFinancieroImpl(String nombre, String comercializadora, Sector sector, int isin) {
+	public ProductoFinancieroImpl(String nombre, String comercializadora, Sector sector, int isin, Tipo tipo) {
 		super();
 		this.nombre = nombre;
 		this.comercializadora = comercializadora;
 		this.isin = isin;
 		this.sector = sector;
+		this.tipo = tipo;
+		setRiesgo();
 	}
 
-	void setIsin(int isin) {
-		this.isin = isin;
+	void setRiesgo() {
+		switch (this.tipo) {
+		case RENTA_FIJA:
+			this.riesgo = "BAJO";
+			break;
+		case RENTA_VARIABLE:
+			this.riesgo = "ALTO";
+			break;
+		case MIXTO:
+			this.riesgo = "MEDIO";
+			break;
+		default:
+			this.riesgo = "DESCONOCIDO";
+			break;
+		}
+
 	}
 
-	void setSector(Sector sector) {
-		this.sector = sector;
+	Tipo getTipo() {
+		return tipo;
 	}
 
-	void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	void setComercializadora(String comercializadora) {
-		this.comercializadora = comercializadora;
+	String getRiesgo() {
+		return riesgo;
 	}
 
 	public String getComercializadora() {
@@ -68,7 +83,8 @@ public class ProductoFinancieroImpl implements ProductoFinanciero {
 	@Override
 	public String toString() {
 		return "Producto Financiero con nombre " + getNombreProducto() + ", de la comercializadora "
-				+ getComercializadora() + ", centrado en el sector: " + getSector() + ", con ISIN " + getIsin();
+				+ getComercializadora() + ", centrado en el sector: " + getSector() + ", con ISIN " + getIsin()
+				+ " ,de tipo " + getTipo() + " y riesgo " + getRiesgo();
 
 	}
 

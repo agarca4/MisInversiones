@@ -2,8 +2,6 @@ package es;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.util.ArrayList;
-import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
@@ -11,15 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
-import es.backend.Comparador;
 import es.backend.GestorCartera;
 import es.backend.GestorCarteraImpl;
-import es.backend.productosfinancieros.FondoInversionMixto;
-import es.backend.productosfinancieros.FondoInversionRentaFija;
-import es.backend.productosfinancieros.FondoInversionRentaVariable;
-import es.backend.productosfinancieros.ProductoFinancieroFactory;
 import es.backend.productosfinancieros.ProductoFinancieroImpl;
 import es.backend.productosfinancieros.Sector;
+import es.backend.productosfinancieros.Tipo;
 import es.backend.repositorios.CarteraInversionDAO;
 import es.backend.repositorios.ImportadorDAO;
 import es.backend.usuarios.Usuario;
@@ -34,22 +28,13 @@ public class MisInversionesApplication {
 	public static void main(String[] args) throws ParseException, IOException {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
-		// Este es el constructor que deseo utilizar para crear los Productos
-		// financieros, solo he declarado uno, pero podría haber declarado más
-		Class<?> argumentos[] = new Class[] { String.class, String.class, Sector.class, int.class };
 
-		// Asigno los valores a los parámetros anteriores para los productos que crearé
-		Object[] valorArgumentos1 = { "SP500", "Amundi", Sector.CONSUMO_CICLICO, 555555 };
-		Object[] valorArgumentos2 = { "Mid Tem", "Pictet", Sector.INDUSTRIA, 478120 };
-		Object[] valorArgumentos3 = { "Edeficandi", "Axa", Sector.CONSUMO_DEFENSIVO, 742069 };
 
-		// Llamo al factory y creo los productos
-		ProductoFinancieroImpl producto1 = ProductoFinancieroFactory
-				.crearProductoFinanciero(FondoInversionRentaVariable.class, argumentos, valorArgumentos1);
-		ProductoFinancieroImpl producto2 = ProductoFinancieroFactory.crearProductoFinanciero(FondoInversionRentaFija.class,
-				argumentos, valorArgumentos2);
-		ProductoFinancieroImpl producto3 = ProductoFinancieroFactory.crearProductoFinanciero(FondoInversionMixto.class,
-				argumentos, valorArgumentos3);
+		//creo los productos
+		ProductoFinancieroImpl producto1 = new ProductoFinancieroImpl("SP500", "Amundi", Sector.CONSUMO_CICLICO, 555555 , Tipo.RENTA_VARIABLE);
+		ProductoFinancieroImpl producto2 = new ProductoFinancieroImpl("Mid Tem", "Pictetd", Sector.INDUSTRIA, 478120 , Tipo.RENTA_FIJA);
+		ProductoFinancieroImpl producto3 = new ProductoFinancieroImpl("Edeficandi", "Axa", Sector.CONSUMO_DEFENSIVO, 742069 , Tipo.MIXTO);
+
 
 		// Me creo un par de usuarios
 		Usuario usuario1 = new Usuario("Juan");
@@ -91,20 +76,6 @@ public class MisInversionesApplication {
 		// y un csv que he creado yo mismo
 		miGestorCartera.importarDatos();
 
-		// Aquí voy a probar el comparador que no aporta nada a este negocio, mas que
-		// probar que se sabe hacer
-		// Como tengo limitado, a posta, el acceso a getUsuarios() de la cartera, voy a
-		// meter los usuarios que tengo y otro que creo nuevo y se llama igual Juan
-		// en una nueva lista para que el comparador los ordene
-		// El Comparador no está en el UML, porque no aporta nada al negocio
-		List<Usuario> miListaAordenar = new ArrayList<>();
-		Usuario usuario3 = new Usuario("Juan");
-		miListaAordenar.add(usuario1);
-		miListaAordenar.add(usuario2);
-		miListaAordenar.add(usuario3);
-		Comparador.ordenarUsuarios(miListaAordenar);
-		System.out.println(miListaAordenar);
-		System.out.println("\n");
 
 		// con la info del mercado importada y la info de la inversion hecha que está
 		// en el Map, calculo la rentabilidad de la cartera
