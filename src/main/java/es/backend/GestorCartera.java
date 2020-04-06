@@ -28,5 +28,7 @@ public interface GestorCartera<T> {
 	public String listarProductos();
 
 	public double caculaRentabilidad();
+	
+	public void consultarCartera()throws ParseException, IOException;
 
 }

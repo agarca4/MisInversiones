@@ -24,17 +24,23 @@ import es.backend.usuarios.Usuario;
 public class MisInversionesApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
+	private static GestorCartera<ProductoFinancieroImpl> miGestorCartera = new GestorCarteraImpl();
+
+	protected static GestorCartera<ProductoFinancieroImpl> getMiGestorCartera() {
+		return miGestorCartera;
+	}
 
 	public static void main(String[] args) throws ParseException, IOException {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
-
-		//creo los productos
-		ProductoFinancieroImpl producto1 = new ProductoFinancieroImpl("SP500", "Amundi", Sector.CONSUMO_CICLICO, 555555 , Tipo.RENTA_VARIABLE);
-		ProductoFinancieroImpl producto2 = new ProductoFinancieroImpl("Mid Tem", "Pictetd", Sector.INDUSTRIA, 478120 , Tipo.RENTA_FIJA);
-		ProductoFinancieroImpl producto3 = new ProductoFinancieroImpl("Edeficandi", "Axa", Sector.CONSUMO_DEFENSIVO, 742069 , Tipo.MIXTO);
-
+		// creo los productos
+		ProductoFinancieroImpl producto1 = new ProductoFinancieroImpl("SP500", "Amundi", Sector.CONSUMO_CICLICO, 555555,
+				Tipo.RENTA_VARIABLE);
+		ProductoFinancieroImpl producto2 = new ProductoFinancieroImpl("Mid Tem", "Pictetd", Sector.INDUSTRIA, 478120,
+				Tipo.RENTA_FIJA);
+		ProductoFinancieroImpl producto3 = new ProductoFinancieroImpl("Edeficandi", "Axa", Sector.CONSUMO_DEFENSIVO,
+				742069, Tipo.MIXTO);
 
 		// Me creo un par de usuarios
 		Usuario usuario1 = new Usuario("Juan");
@@ -43,46 +49,49 @@ public class MisInversionesApplication {
 		// creo el gestor de cartera que implica una cartera y un importador, además de
 		// setearle la fecha actual
 		// todas las operaciones se harán siempre a traves del GESTORCARTERA
-		GestorCartera<ProductoFinancieroImpl> miGestorCartera = new GestorCarteraImpl();
+		// GestorCartera<ProductoFinancieroImpl> miGestorCartera = new
+		// GestorCarteraImpl();
 
 		// le doy nombre a mi cartera
-		miGestorCartera.asignarNombre("CarteraAgresiva");
+		getMiGestorCartera().asignarNombre("CarteraAgresiva");
 
 		// asocio los dos usuarios con esta cartera, los listo, elimino 1 y los vuelvo a
 		// listar
-		miGestorCartera.altaUsuario(usuario1);
-		miGestorCartera.altaUsuario(usuario2);
-		miGestorCartera.listarUsuarios();
-		miGestorCartera.bajaUsuario(usuario1);
-		miGestorCartera.listarUsuarios();
+		getMiGestorCartera().altaUsuario(usuario1);
+		getMiGestorCartera().altaUsuario(usuario2);
+//		miGestorCartera.listarUsuarios();
+//		miGestorCartera.bajaUsuario(usuario1);
+//		miGestorCartera.listarUsuarios();
 
 		// compro para mi cartera los productos que habia creado con el factory,
 		// asociandole el importe que invierto
 		// los listo
-		miGestorCartera.compraProductoFinanciero(producto1, 1000);
-		miGestorCartera.compraProductoFinanciero(producto2, 2000);
-		miGestorCartera.compraProductoFinanciero(producto3, 3000);
-		miGestorCartera.listarProductos();
+		getMiGestorCartera().compraProductoFinanciero(producto1, 1000);
+		getMiGestorCartera().compraProductoFinanciero(producto2, 2000);
+		getMiGestorCartera().compraProductoFinanciero(producto3, 3000);
+		// miGestorCartera.listarProductos();
 
 		// vendo el total de un producto, y parte del otro
-		miGestorCartera.vendeProductoFinanciero(producto1, 1000);
-		miGestorCartera.vendeProductoFinanciero(producto2, 1000);
-		// los listo para ver que funcionan bien los metodos
-		miGestorCartera.listarProductos();
+//		miGestorCartera.vendeProductoFinanciero(producto1, 1000);
+//		miGestorCartera.vendeProductoFinanciero(producto2, 1000);
+//		// los listo para ver que funcionan bien los metodos
+//		miGestorCartera.listarProductos();
 		// compruebo el capital total
-		log.warn(String.valueOf(miGestorCartera.getCapitalTotal()));
+		// log.warn(String.valueOf(miGestorCartera.getCapitalTotal()));
 
 		// Importo los datos de los valores actuales del mercado a traves del Importador
 		// y un csv que he creado yo mismo
-		miGestorCartera.importarDatos();
-
+		// miGestorCartera.importarDatos();
 
 		// con la info del mercado importada y la info de la inversion hecha que está
 		// en el Map, calculo la rentabilidad de la cartera
 		// Funciona correctamente, con los datos que hay da un 100% de rentabilidad que
 		// es lo que tiene que dar, puesto que el valor de mercado es justo el doble de
 		// lo que invertí
-		miGestorCartera.caculaRentabilidad();
+		// miGestorCartera.caculaRentabilidad();
+
+		// Aquí voy a probar el nuevo metodo consultarCartera();
+		getMiGestorCartera().consultarCartera();
 
 		/*
 		 * Aqui voy a probar mi BBDD h2 guardando los 2 usuarios Lo hago usando
@@ -118,7 +127,7 @@ public class MisInversionesApplication {
 		// NO por xml
 		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
 		infoMercadoImportada.save(((GestorCarteraImpl) miGestorCartera).getImportador());
-		
+
 		CarteraInversionDAO CarteraAPersistir = context.getBean(CarteraInversionDAO.class);
 		CarteraAPersistir.save(((GestorCarteraImpl) miGestorCartera).getCartera());
 

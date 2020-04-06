@@ -155,4 +155,13 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 
 	}
 
+	//Este metodo se corresponde con el Caso de Uso CONSULTAR CARTERA
+	@Override
+	public void consultarCartera() throws ParseException, IOException {
+		importarDatos();
+		caculaRentabilidad();
+		listarProductos();
+		getCapitalTotal();
+	}
+
 }

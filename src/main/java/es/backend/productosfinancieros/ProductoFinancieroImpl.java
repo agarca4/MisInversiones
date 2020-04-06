@@ -55,7 +55,7 @@ public class ProductoFinancieroImpl implements ProductoFinanciero {
 		return riesgo;
 	}
 
-	public String getComercializadora() {
+	String getComercializadora() {
 		return comercializadora;
 	}
 
