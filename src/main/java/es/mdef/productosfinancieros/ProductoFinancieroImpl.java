@@ -1,4 +1,4 @@
-package es.backend.productosfinancieros;
+package es.mdef.productosfinancieros;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
@@ -7,10 +7,12 @@ import javax.persistence.Enumerated;
 @Embeddable
 public class ProductoFinancieroImpl implements ProductoFinanciero {
 
-	private String nombre;
+	private String nombreProducto;
 	private String comercializadora;
 	@Enumerated(EnumType.STRING)
 	private Sector sector;
+	// Este es un numero que identifica al fondo de inversion de forma unica en el
+	// mercado de los productos financieros
 	private int isin;
 	@Enumerated(EnumType.STRING)
 	private Tipo tipo;
@@ -19,9 +21,9 @@ public class ProductoFinancieroImpl implements ProductoFinanciero {
 	ProductoFinancieroImpl() {
 	}
 
-	public ProductoFinancieroImpl(String nombre, String comercializadora, Sector sector, int isin, Tipo tipo) {
+	public ProductoFinancieroImpl(String nombreProducto, String comercializadora, Sector sector, int isin, Tipo tipo) {
 		super();
-		this.nombre = nombre;
+		this.nombreProducto = nombreProducto;
 		this.comercializadora = comercializadora;
 		this.isin = isin;
 		this.sector = sector;
@@ -61,12 +63,12 @@ public class ProductoFinancieroImpl implements ProductoFinanciero {
 
 	@Override
 	public String getNombreProducto() {
-		return nombre;
+		return nombreProducto;
 	}
 
 	@Override
-	public String mostrarInfoCompleta() {
-		return toString();
+	public int getIsin() {
+		return isin;
 	}
 
 	@Override
@@ -76,16 +78,10 @@ public class ProductoFinancieroImpl implements ProductoFinanciero {
 	}
 
 	@Override
-	public int getIsin() {
-		return isin;
-	}
-
-	@Override
 	public String toString() {
 		return "Producto Financiero con nombre " + getNombreProducto() + ", de la comercializadora "
 				+ getComercializadora() + ", centrado en el sector: " + getSector() + ", con ISIN " + getIsin()
 				+ " ,de tipo " + getTipo() + " y riesgo " + getRiesgo();
-
 	}
 
 }

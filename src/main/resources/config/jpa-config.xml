@@ -13,7 +13,7 @@
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
 		<!-- Decimos donde buscar entidades -->
-		<property name="packagesToScan" value="${es.backend.entities-package}" />		
+		<property name="packagesToScan" value="${es.mdef.entities-package}" />		
 		<property name="jpaVendorAdapter">
 			<!-- Implementacion de JPA que vamos a usar -->
 			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />

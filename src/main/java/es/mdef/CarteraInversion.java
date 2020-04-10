@@ -1,4 +1,4 @@
-package es.backend;
+package es.mdef;
 
 import java.time.Instant;
 import java.util.ArrayList;
@@ -8,8 +8,9 @@ import java.util.Map;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import es.backend.productosfinancieros.ProductoFinancieroImpl;
-import es.backend.usuarios.Usuario;
+
+import es.mdef.productosfinancieros.ProductoFinancieroImpl;
+import es.mdef.usuarios.Usuario;
 
 @Entity
 public class CarteraInversion {
@@ -22,27 +23,23 @@ public class CarteraInversion {
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
 	@ElementCollection
-	private Map<ProductoFinancieroImpl, Double> productoInversion = new HashMap<>();
+	private Map<ProductoFinancieroImpl, Double> productosInversion = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
 	// evitar que se cree ninguna Cartera fuera
 	// del GestorCartera que es quien
 	// gobierna la logica del negocio
 	CarteraInversion() {
+		setFechaCreacionCartera(Instant.now());
 
-	}
-
-	// Este get no lo uso todavia, pero lo usaré
-	Instant getFechaCreacionCartera() {
-		return fechaCreacionCartera;
 	}
 
 	void setFechaCreacionCartera(Instant fechaCreacionCartera) {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	Map<ProductoFinancieroImpl, Double> getProductoInversion() {
-		return productoInversion;
+	Map<ProductoFinancieroImpl, Double> getProductosInversion() {
+		return productosInversion;
 	}
 
 	double getCapitalTotal() {
@@ -69,6 +66,11 @@ public class CarteraInversion {
 		return rentabilidadActual;
 	}
 
+	/*
+	 * Esto no significa que vaya a setear el valor de la rentabilidad a pelo sino
+	 * que en el metodo para calcularla que está en el gestor cartera, llamará a
+	 * este metodo para asignarsela
+	 */
 	void setRentabilidadActual(double rentabilidadActual) {
 		this.rentabilidadActual = rentabilidadActual;
 	}

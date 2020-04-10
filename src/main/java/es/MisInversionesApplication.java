@@ -9,14 +9,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
-import es.backend.GestorCartera;
-import es.backend.GestorCarteraImpl;
-import es.backend.productosfinancieros.ProductoFinancieroImpl;
-import es.backend.productosfinancieros.Sector;
-import es.backend.productosfinancieros.Tipo;
-import es.backend.repositorios.CarteraInversionDAO;
-import es.backend.repositorios.ImportadorDAO;
-import es.backend.usuarios.Usuario;
+
+import es.mdef.GestorCartera;
+import es.mdef.GestorCarteraImpl;
+import es.mdef.productosfinancieros.ProductoFinancieroImpl;
+import es.mdef.productosfinancieros.Sector;
+import es.mdef.productosfinancieros.Tipo;
+import es.mdef.repositorios.CarteraInversionDAO;
+import es.mdef.repositorios.ImportadorDAO;
+import es.mdef.usuarios.Usuario;
 
 @SpringBootApplication
 @PropertySource({ "logging.properties" })
@@ -24,7 +25,7 @@ import es.backend.usuarios.Usuario;
 public class MisInversionesApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
-	private static GestorCartera<ProductoFinancieroImpl> miGestorCartera = new GestorCarteraImpl();
+	private static GestorCartera<ProductoFinancieroImpl> miGestorCartera = new GestorCarteraImpl("Cartera defensiva");
 
 	protected static GestorCartera<ProductoFinancieroImpl> getMiGestorCartera() {
 		return miGestorCartera;
@@ -37,26 +38,15 @@ public class MisInversionesApplication {
 		// creo los productos
 		ProductoFinancieroImpl producto1 = new ProductoFinancieroImpl("SP500", "Amundi", Sector.CONSUMO_CICLICO, 555555,
 				Tipo.RENTA_VARIABLE);
-		ProductoFinancieroImpl producto2 = new ProductoFinancieroImpl("Mid Tem", "Pictetd", Sector.INDUSTRIA, 478120,
+		ProductoFinancieroImpl producto2 = new ProductoFinancieroImpl("Edeficandi", "Pictetd", Sector.INDUSTRIA, 478120,
 				Tipo.RENTA_FIJA);
-		ProductoFinancieroImpl producto3 = new ProductoFinancieroImpl("Edeficandi", "Axa", Sector.CONSUMO_DEFENSIVO,
+		ProductoFinancieroImpl producto3 = new ProductoFinancieroImpl("Mid Tem", "Axa", Sector.CONSUMO_DEFENSIVO,
 				742069, Tipo.MIXTO);
 
 		// Me creo un par de usuarios
 		Usuario usuario1 = new Usuario("Juan");
 		Usuario usuario2 = new Usuario("Victoria");
 
-		// creo el gestor de cartera que implica una cartera y un importador, además de
-		// setearle la fecha actual
-		// todas las operaciones se harán siempre a traves del GESTORCARTERA
-		// GestorCartera<ProductoFinancieroImpl> miGestorCartera = new
-		// GestorCarteraImpl();
-
-		// le doy nombre a mi cartera
-		getMiGestorCartera().asignarNombre("CarteraAgresiva");
-
-		// asocio los dos usuarios con esta cartera, los listo, elimino 1 y los vuelvo a
-		// listar
 		getMiGestorCartera().altaUsuario(usuario1);
 		getMiGestorCartera().altaUsuario(usuario2);
 //		miGestorCartera.listarUsuarios();
@@ -67,13 +57,15 @@ public class MisInversionesApplication {
 		// asociandole el importe que invierto
 		// los listo
 		getMiGestorCartera().compraProductoFinanciero(producto1, 1000);
-		getMiGestorCartera().compraProductoFinanciero(producto2, 2000);
-		getMiGestorCartera().compraProductoFinanciero(producto3, 3000);
-		// miGestorCartera.listarProductos();
+		getMiGestorCartera().compraProductoFinanciero(producto2, 10000);
+		getMiGestorCartera().compraProductoFinanciero(producto3, 2000);
+		// System.err.println(miGestorCartera.listarProductos());
+		// System.err.println(miGestorCartera.listarUsuarios());
 
-		// vendo el total de un producto, y parte del otro
-//		miGestorCartera.vendeProductoFinanciero(producto1, 1000);
-//		miGestorCartera.vendeProductoFinanciero(producto2, 1000);
+		// Compruebo que funciona correctamente el metodo, me salta el log.error cuando
+		// trato de vender un producto q ya no tengo
+		getMiGestorCartera().vendeProductoFinanciero(producto2, 2000);
+		getMiGestorCartera().vendeProductoFinanciero(producto2, 1000);
 //		// los listo para ver que funcionan bien los metodos
 //		miGestorCartera.listarProductos();
 		// compruebo el capital total
@@ -91,7 +83,7 @@ public class MisInversionesApplication {
 		// miGestorCartera.caculaRentabilidad();
 
 		// Aquí voy a probar el nuevo metodo consultarCartera();
-		getMiGestorCartera().consultarCartera();
+		getMiGestorCartera().consultarCartera("infoMercado.csv");
 
 		/*
 		 * Aqui voy a probar mi BBDD h2 guardando los 2 usuarios Lo hago usando

@@ -1,4 +1,4 @@
-package es.backend.productosfinancieros;
+package es.mdef.productosfinancieros;
 
 public enum Tipo {
 	

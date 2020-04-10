@@ -1,4 +1,6 @@
-package es.backend.usuarios;
+package es.mdef.usuarios;
+
+import java.util.UUID;
 
 import javax.persistence.Embeddable;
 
@@ -7,7 +9,7 @@ import javax.persistence.Embeddable;
 public class Usuario {
 	
 	private String nombre;
-	private Integer id;
+	private UUID id;
 
 	public Usuario() {
 	}
@@ -15,14 +17,14 @@ public class Usuario {
 	public Usuario(String nombre) {
 		super();
 		this.nombre = nombre;
-		this.id = GeneradorId.getInstancia().asignadorId();
+		this.id = GeneradorId.getInstancia().generaId();
 	}
 
 	public String getNombre() {
 		return nombre;
 	}
 
-	public Integer getId() {
+	public UUID getId() {
 		return id;
 	}
 

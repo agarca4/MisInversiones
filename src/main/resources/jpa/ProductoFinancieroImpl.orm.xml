@@ -5,7 +5,7 @@
                                      http://java.sun.com/xml/ns/persistence/orm_1_0.xsd"
                  version="1.0">
 
-  <mapped-superclass class="es.backend.productosfinancieros.ProductoFinancieroImpl"
+  <mapped-superclass class="es.mdef.productosfinancieros.ProductoFinancieroImpl"
                      access="FIELD">
     <attributes>
       <id name="nombre" />
