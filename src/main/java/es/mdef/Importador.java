@@ -23,6 +23,7 @@ public class Importador {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "NUMERO_DE_IMPORTACION")
 	private long importacionNumero;
 
 	@ElementCollection

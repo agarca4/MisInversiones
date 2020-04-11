@@ -5,11 +5,13 @@ import java.util.Iterator;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import es.mdef.productosfinancieros.ProductoFinancieroImpl;
+
+import es.mdef.productosfinancieros.ProductoFinanciero;
+import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
 //Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
-public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> {
+public class GestorCarteraImpl implements GestorCartera<FondoInversion> {
 
 	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
 	private CarteraInversion cartera;
@@ -34,7 +36,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 	}
 
 	@Override
-	public void compraProductoFinanciero(ProductoFinancieroImpl producto, double capitalInvertido) {
+	public void compraProductoFinanciero(FondoInversion producto, double capitalInvertido) {
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
 
 		if (!(getCartera().getProductosInversion().containsKey(producto))) {
@@ -49,7 +51,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 	}
 
 	@Override
-	public void vendeProductoFinanciero(ProductoFinancieroImpl producto, double capitalDesinvertido) {
+	public void vendeProductoFinanciero(FondoInversion producto, double capitalDesinvertido) {
 
 		if (getCartera().getProductosInversion().containsKey(producto)) {
 
@@ -100,7 +102,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 	}
 
 	@Override
-	public Map<ProductoFinancieroImpl, Double> listarProductos() {
+	public Map<FondoInversion, Double> listarProductos() {
 
 		return getCartera().getProductosInversion();
 
@@ -112,10 +114,10 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl> 
 		double valorInicial = 0.0;
 		double rentabilidadParcial = 0.0;
 		double rentabilidadCartera = 0.0;
-		Iterator<ProductoFinancieroImpl> it = getCartera().getProductosInversion().keySet().iterator();
+		Iterator<FondoInversion> it = getCartera().getProductosInversion().keySet().iterator();
 
 		while (it.hasNext()) {
-			ProductoFinancieroImpl key = it.next();
+			ProductoFinanciero key = it.next();
 			valorInicial = getCartera().getProductosInversion().get(key);
 			for (String nombreProductoImportado : getImportador().getInformeMercado().keySet()) {
 				if (key.getNombreProducto().contains(nombreProductoImportado)) {

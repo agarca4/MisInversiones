@@ -12,9 +12,10 @@ import org.springframework.context.annotation.PropertySource;
 
 import es.mdef.GestorCartera;
 import es.mdef.GestorCarteraImpl;
-import es.mdef.productosfinancieros.ProductoFinancieroImpl;
-import es.mdef.productosfinancieros.Sector;
-import es.mdef.productosfinancieros.Tipo;
+import es.mdef.productosfinancieros.ProductoFinanciero;
+import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
+import es.mdef.productosfinancieros.fondosinversion.SectorFondo;
+import es.mdef.productosfinancieros.fondosinversion.TipoFondo;
 import es.mdef.repositorios.CarteraInversionDAO;
 import es.mdef.repositorios.ImportadorDAO;
 import es.mdef.usuarios.Usuario;
@@ -25,9 +26,9 @@ import es.mdef.usuarios.Usuario;
 public class MisInversionesApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
-	private static GestorCartera<ProductoFinancieroImpl> miGestorCartera = new GestorCarteraImpl("Cartera defensiva");
+	private static GestorCartera<FondoInversion> miGestorCartera = new GestorCarteraImpl("Cartera defensiva");
 
-	protected static GestorCartera<ProductoFinancieroImpl> getMiGestorCartera() {
+	protected static GestorCartera<FondoInversion> getMiGestorCartera() {
 		return miGestorCartera;
 	}
 
@@ -36,12 +37,13 @@ public class MisInversionesApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
 		// creo los productos
-		ProductoFinancieroImpl producto1 = new ProductoFinancieroImpl("SP500", "Amundi", Sector.CONSUMO_CICLICO, 555555,
-				Tipo.RENTA_VARIABLE);
-		ProductoFinancieroImpl producto2 = new ProductoFinancieroImpl("Edeficandi", "Pictetd", Sector.INDUSTRIA, 478120,
-				Tipo.RENTA_FIJA);
-		ProductoFinancieroImpl producto3 = new ProductoFinancieroImpl("Mid Tem", "Axa", Sector.CONSUMO_DEFENSIVO,
-				742069, Tipo.MIXTO);
+		FondoInversion fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
+				TipoFondo.RENTA_VARIABLE);
+		FondoInversion fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
+				TipoFondo.RENTA_FIJA);
+		FondoInversion fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
+				TipoFondo.MIXTO);
+		
 
 		// Me creo un par de usuarios
 		Usuario usuario1 = new Usuario("Juan");
@@ -56,16 +58,19 @@ public class MisInversionesApplication {
 		// compro para mi cartera los productos que habia creado con el factory,
 		// asociandole el importe que invierto
 		// los listo
-		getMiGestorCartera().compraProductoFinanciero(producto1, 1000);
-		getMiGestorCartera().compraProductoFinanciero(producto2, 10000);
-		getMiGestorCartera().compraProductoFinanciero(producto3, 2000);
+		getMiGestorCartera().compraProductoFinanciero(fondo1, 500);
+		getMiGestorCartera().compraProductoFinanciero(fondo2, 7500);
+		getMiGestorCartera().compraProductoFinanciero(fondo3, 900);
 		// System.err.println(miGestorCartera.listarProductos());
 		// System.err.println(miGestorCartera.listarUsuarios());
 
 		// Compruebo que funciona correctamente el metodo, me salta el log.error cuando
 		// trato de vender un producto q ya no tengo
-		getMiGestorCartera().vendeProductoFinanciero(producto2, 2000);
-		getMiGestorCartera().vendeProductoFinanciero(producto2, 1000);
+		getMiGestorCartera().vendeProductoFinanciero(fondo2, 2000);
+		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000);
+		getMiGestorCartera().vendeProductoFinanciero(fondo3, 900);
+		getMiGestorCartera().compraProductoFinanciero(fondo2, 4000);
+		getMiGestorCartera().vendeProductoFinanciero(fondo3, 500);
 //		// los listo para ver que funcionan bien los metodos
 //		miGestorCartera.listarProductos();
 		// compruebo el capital total
