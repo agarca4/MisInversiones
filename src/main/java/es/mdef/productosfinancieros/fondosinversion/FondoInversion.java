@@ -1,6 +1,7 @@
 package es.mdef.productosfinancieros.fondosinversion;
 
 import javax.persistence.Entity;
+import javax.persistence.DiscriminatorColumn;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
@@ -9,16 +10,21 @@ import es.mdef.CarteraInversion;
 import es.mdef.productosfinancieros.ProductoFinancieroImpl;
 
 @Entity
-public class FondoInversion extends ProductoFinancieroImpl {
-
+@DiscriminatorColumn(name="FONDO_INVERSION")
+public class FondoInversion extends ProductoFinancieroImpl {	
+	
 	@Enumerated(EnumType.STRING)
 	private SectorFondo sector;
+	
 	@Enumerated(EnumType.STRING)
 	private TipoFondo tipo;
+	
 	private String riesgo;
 	
 	@ManyToOne
 	private CarteraInversion cartera;
+	
+	
 
 	FondoInversion() {
 	}

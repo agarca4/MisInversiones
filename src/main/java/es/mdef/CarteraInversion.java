@@ -10,6 +10,7 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.MapKeyClass;
 import javax.persistence.OneToMany;
 
 import es.mdef.productosfinancieros.ProductoFinanciero;
@@ -23,10 +24,14 @@ public class CarteraInversion {
 	private String nombreCartera;
 	private Instant fechaCreacionCartera;
 	private double capitalTotal;
+	
 	@ElementCollection
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
-	@OneToMany(targetEntity = FondoInversion.class, mappedBy = "cartera")
+	
+	 
+	@ElementCollection
+	@MapKeyClass(FondoInversion.class)
 	@CollectionTable(name = "PRODUCTOS_EN_CARTERA")
     @Column(name = "PRECIO_ADQUISICION")
 	private Map<ProductoFinanciero, Double> productosFinancieros = new HashMap<>();
