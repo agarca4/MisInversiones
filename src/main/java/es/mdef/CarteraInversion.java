@@ -11,8 +11,6 @@ import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.MapKeyClass;
-import javax.persistence.OneToMany;
-
 import es.mdef.productosfinancieros.ProductoFinanciero;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
@@ -24,16 +22,15 @@ public class CarteraInversion {
 	private String nombreCartera;
 	private Instant fechaCreacionCartera;
 	private double capitalTotal;
-	
+
 	@ElementCollection
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
-	
-	 
+
 	@ElementCollection
 	@MapKeyClass(FondoInversion.class)
 	@CollectionTable(name = "PRODUCTOS_EN_CARTERA")
-    @Column(name = "PRECIO_ADQUISICION")
+	@Column(name = "PRECIO_ADQUISICION")
 	private Map<ProductoFinanciero, Double> productosFinancieros = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para

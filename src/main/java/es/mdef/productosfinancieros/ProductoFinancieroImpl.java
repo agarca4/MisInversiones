@@ -2,21 +2,17 @@ package es.mdef.productosfinancieros;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Inheritance;
 import javax.persistence.MappedSuperclass;
 
-//@Entity
-//@MappedSuperclass
-@Entity
-@Inheritance
+
+@Embeddable
+@MappedSuperclass
 public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 
-	@Id
+	
 	@Column(name = "NOMBRE_PRODUCTO")
 	String nombreProducto;
-	
+
 	String comercializadora;
 	int isin;
 

@@ -126,6 +126,8 @@ public class MisInversionesApplication {
 
 		CarteraInversionDAO CarteraAPersistir = context.getBean(CarteraInversionDAO.class);
 		CarteraAPersistir.save(((GestorCarteraImpl) miGestorCartera).getCartera());
+		
+
 
 		context.close();
 	}
