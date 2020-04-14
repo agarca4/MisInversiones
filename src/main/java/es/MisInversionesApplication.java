@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
-
 import es.mdef.GestorCartera;
 import es.mdef.GestorCarteraImpl;
 import es.mdef.productosfinancieros.ProductoFinanciero;
@@ -26,9 +25,9 @@ import es.mdef.usuarios.Usuario;
 public class MisInversionesApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
-	private static GestorCartera<FondoInversion> miGestorCartera = new GestorCarteraImpl("Cartera defensiva");
+	private static GestorCartera<ProductoFinanciero> miGestorCartera = new GestorCarteraImpl("Cartera defensiva");
 
-	protected static GestorCartera<FondoInversion> getMiGestorCartera() {
+	protected static GestorCartera<ProductoFinanciero> getMiGestorCartera() {
 		return miGestorCartera;
 	}
 
@@ -37,11 +36,11 @@ public class MisInversionesApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
 		// creo los productos
-		FondoInversion fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
+		ProductoFinanciero fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
 				TipoFondo.RENTA_VARIABLE);
-		FondoInversion fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
+		ProductoFinanciero fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
 				TipoFondo.RENTA_FIJA);
-		FondoInversion fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
+		ProductoFinanciero fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
 				TipoFondo.MIXTO);
 		
 

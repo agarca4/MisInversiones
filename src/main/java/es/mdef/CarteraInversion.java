@@ -5,15 +5,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.MapKeyColumn;
 import javax.persistence.OneToMany;
 
+import es.mdef.productosfinancieros.ProductoFinanciero;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
@@ -27,10 +26,10 @@ public class CarteraInversion {
 	@ElementCollection
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
-	@ElementCollection
+	@OneToMany(targetEntity = FondoInversion.class, mappedBy = "cartera")
 	@CollectionTable(name = "PRODUCTOS_EN_CARTERA")
     @Column(name = "PRECIO_ADQUISICION")
-	private Map<FondoInversion, Double> productosFinancieros = new HashMap<>();
+	private Map<ProductoFinanciero, Double> productosFinancieros = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
 	// evitar que se cree ninguna Cartera fuera
@@ -45,7 +44,7 @@ public class CarteraInversion {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	Map<FondoInversion, Double> getProductosInversion() {
+	Map<ProductoFinanciero, Double> getProductosInversion() {
 		return productosFinancieros;
 	}
 

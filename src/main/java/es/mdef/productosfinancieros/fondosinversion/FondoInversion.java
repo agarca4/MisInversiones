@@ -1,19 +1,24 @@
 package es.mdef.productosfinancieros.fondosinversion;
 
-import javax.persistence.Embeddable;
+import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 
-import es.mdef.productosfinancieros.ProductoFinanciero;
+import es.mdef.CarteraInversion;
+import es.mdef.productosfinancieros.ProductoFinancieroImpl;
 
-@Embeddable
-public class FondoInversion extends ProductoFinanciero {
+@Entity
+public class FondoInversion extends ProductoFinancieroImpl {
 
 	@Enumerated(EnumType.STRING)
 	private SectorFondo sector;
 	@Enumerated(EnumType.STRING)
 	private TipoFondo tipo;
 	private String riesgo;
+	
+	@ManyToOne
+	private CarteraInversion cartera;
 
 	FondoInversion() {
 	}
@@ -63,5 +68,7 @@ public class FondoInversion extends ProductoFinanciero {
 		return super.toString() + ", centrado en el sector: " + getSector() + " ,de tipo " + getTipo() + " y riesgo "
 				+ getRiesgo();
 	}
+
+
 
 }
