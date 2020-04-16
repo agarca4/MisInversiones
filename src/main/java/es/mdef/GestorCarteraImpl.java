@@ -117,9 +117,9 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		while (it.hasNext()) {
 			ProductoFinanciero key = it.next();
 			valorInicial = getCartera().getProductosInversion().get(key);
-			for (String nombreProductoImportado : getImportador().getInformeMercado().keySet()) {
-				if (key.getNombreProducto().contains(nombreProductoImportado)) {
-					valorActual = getImportador().getInformeMercado().get(nombreProductoImportado);
+			for (InformacionMercado nombreProductoImportado : getImportador().getInformeMercado()) {
+				if (key.getNombreProducto().contains(nombreProductoImportado.getNombreProductoImportado())) {
+					valorActual = nombreProductoImportado.getValorActualProductoImportado();
 					rentabilidadParcial = (((valorActual - valorInicial) / valorInicial) * 100) * valorInicial
 							/ getCapitalTotal();
 				}

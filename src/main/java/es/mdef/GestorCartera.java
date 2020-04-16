@@ -2,7 +2,6 @@ package es.mdef;
 
 import java.util.Collection;
 import java.util.Map;
-
 import es.mdef.usuarios.Usuario;
 
 public interface GestorCartera<T> {
