@@ -15,9 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 @Entity
@@ -75,9 +73,23 @@ public class Importador {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+		generarJsonInfoImportada();
+		
 		log.info(String.valueOf(getInformeMercado()));
 
+	}
+
+	// este metodo me genera un Json con la info que he importado
+	void generarJsonInfoImportada() {
+
+		File miInformeMercado = new File("InformeMercado.json");
+		ObjectMapper mapper = new ObjectMapper();
+		mapper.addMixIn(InformacionMercado.class, MixinInformacionMercado.class);
+		try {
+			mapper.writerWithDefaultPrettyPrinter().writeValue(miInformeMercado, getInformeMercado());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 }
 
@@ -85,10 +97,10 @@ public class Importador {
 //@JsonPropertyOrder({ "HC", "AC", "home", "golesLocal" })
 abstract class MixinInformacionMercado {
 
-	@JsonProperty("Nombre Producto")
+	@JsonProperty("nombreProducto")
 	public abstract String getNombreProductoImportado();
-	@JsonProperty("Valor de Mercado")
+
+	@JsonProperty("valorMercado")
 	public abstract Double getValorActualProductoImportado();
-	
 
 }

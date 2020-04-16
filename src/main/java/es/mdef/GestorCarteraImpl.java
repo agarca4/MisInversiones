@@ -1,10 +1,16 @@
 package es.mdef;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import es.mdef.productosfinancieros.ProductoFinanciero;
 import es.mdef.usuarios.Usuario;
 
@@ -37,13 +43,13 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 	public void compraProductoFinanciero(ProductoFinanciero producto, double capitalInvertido) {
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
 
-		if (!(getCartera().getProductosInversion().containsKey(producto))) {
-			getCartera().getProductosInversion().put(producto, capitalInvertido);
+		if (!(getCartera().getProductosFinancieros().containsKey(producto))) {
+			getCartera().getProductosFinancieros().put(producto, capitalInvertido);
 
 		} else {
 
-			double valorAnterior = getCartera().getProductosInversion().get(producto);
-			getCartera().getProductosInversion().put(producto, valorAnterior + capitalInvertido);
+			double valorAnterior = getCartera().getProductosFinancieros().get(producto);
+			getCartera().getProductosFinancieros().put(producto, valorAnterior + capitalInvertido);
 		}
 
 	}
@@ -51,15 +57,15 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 	@Override
 	public void vendeProductoFinanciero(ProductoFinanciero producto, double capitalDesinvertido) {
 
-		if (getCartera().getProductosInversion().containsKey(producto)) {
+		if (getCartera().getProductosFinancieros().containsKey(producto)) {
 
 			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - capitalDesinvertido);
-			double valorAnterior = getCartera().getProductosInversion().get(producto);
+			double valorAnterior = getCartera().getProductosFinancieros().get(producto);
 
 			if (valorAnterior == capitalDesinvertido) {
-				getCartera().getProductosInversion().remove(producto);
+				getCartera().getProductosFinancieros().remove(producto);
 			} else {
-				getCartera().getProductosInversion().put(producto, valorAnterior - capitalDesinvertido);
+				getCartera().getProductosFinancieros().put(producto, valorAnterior - capitalDesinvertido);
 
 			}
 
@@ -102,7 +108,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 	@Override
 	public Map<ProductoFinanciero, Double> listarProductos() {
 
-		return getCartera().getProductosInversion();
+		return getCartera().getProductosFinancieros();
 
 	}
 
@@ -112,11 +118,11 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		double valorInicial = 0.0;
 		double rentabilidadParcial = 0.0;
 		double rentabilidadCartera = 0.0;
-		Iterator<ProductoFinanciero> it = getCartera().getProductosInversion().keySet().iterator();
+		Iterator<ProductoFinanciero> it = getCartera().getProductosFinancieros().keySet().iterator();
 
 		while (it.hasNext()) {
 			ProductoFinanciero key = it.next();
-			valorInicial = getCartera().getProductosInversion().get(key);
+			valorInicial = getCartera().getProductosFinancieros().get(key);
 			for (InformacionMercado nombreProductoImportado : getImportador().getInformeMercado()) {
 				if (key.getNombreProducto().contains(nombreProductoImportado.getNombreProductoImportado())) {
 					valorActual = nombreProductoImportado.getValorActualProductoImportado();
@@ -139,6 +145,21 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		caculaRentabilidad();
 		listarProductos();
 		getCapitalTotal();
+		generarJsonCartera();
+	}
+
+	// este metodo me genera un Json con la info que he importado
+	void generarJsonCartera() {
+
+		File miCartera = new File("Cartera.json");
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			mapper.writerWithDefaultPrettyPrinter().writeValue(miCartera, getCartera());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 }
+
+

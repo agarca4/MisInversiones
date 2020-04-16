@@ -3,8 +3,6 @@ package es.mdef.productosfinancieros.fondosinversion;
 import javax.persistence.Embeddable;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.ManyToOne;
-import es.mdef.CarteraInversion;
 import es.mdef.productosfinancieros.ProductoFinancieroImpl;
 
 @Embeddable

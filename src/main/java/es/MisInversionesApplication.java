@@ -42,7 +42,6 @@ public class MisInversionesApplication {
 				TipoFondo.RENTA_FIJA);
 		ProductoFinanciero fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
 				TipoFondo.MIXTO);
-		
 
 		// Me creo un par de usuarios
 		Usuario usuario1 = new Usuario("Juan");
@@ -126,8 +125,6 @@ public class MisInversionesApplication {
 
 		CarteraInversionDAO CarteraAPersistir = context.getBean(CarteraInversionDAO.class);
 		CarteraAPersistir.save(((GestorCarteraImpl) miGestorCartera).getCartera());
-		
-
 
 		context.close();
 	}

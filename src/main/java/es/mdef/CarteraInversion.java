@@ -46,19 +46,23 @@ public class CarteraInversion {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	Map<ProductoFinanciero, Double> getProductosInversion() {
+	public Map<ProductoFinanciero, Double> getProductosFinancieros() {
 		return productosFinancieros;
 	}
 
-	double getCapitalTotal() {
+	public double getCapitalTotal() {
 		return capitalTotal;
+	}
+
+	public Instant getFechaCreacionCartera() {
+		return fechaCreacionCartera;
 	}
 
 	void setCapitalTotal(double capitalTotal) {
 		this.capitalTotal = capitalTotal;
 	}
 
-	String getNombreCartera() {
+	public	String getNombreCartera() {
 		return nombreCartera;
 	}
 
@@ -66,11 +70,11 @@ public class CarteraInversion {
 		this.nombreCartera = nombreCartera;
 	}
 
-	Collection<Usuario> getUsuarios() {
+	public Collection<Usuario> getUsuarios() {
 		return usuarios;
 	}
 
-	double getRentabilidadActual() {
+	public double getRentabilidadActual() {
 		return rentabilidadActual;
 	}
 
