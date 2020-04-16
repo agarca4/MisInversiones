@@ -1,20 +1,20 @@
 {
   "nombreCartera" : "Cartera defensiva",
   "fechaCreacionCartera" : {
-    "nano" : 585890000,
-    "epochSecond" : 1587039482
+    "nano" : 388302000,
+    "epochSecond" : 1587071700
   },
   "capitalTotal" : 9000.0,
   "usuarios" : [ {
     "nombre" : "Juan",
-    "id" : "c7f2c646-dac4-4d99-843f-33ceb3acfbd6"
+    "id" : "4e8c9210-c76f-416a-835d-00bdea7cca5f"
   }, {
     "nombre" : "Victoria",
-    "id" : "4a13f01a-e46c-4f33-85de-8cb9f5206676"
+    "id" : "eb384822-5420-43e5-b83a-42f97857f7d0"
   } ],
   "rentabilidadActual" : 22.222222222222218,
   "productosFinancieros" : {
-    "Producto Financiero con nombre Edeficandi, de la comercializadora Pictetd, con ISIN 478120, centrado en el sector: INDUSTRIA ,de tipo RENTA_FIJA y riesgo BAJO" : 8500.0,
-    "Producto Financiero con nombre SP500, de la comercializadora Amundi, con ISIN 555555, centrado en el sector: CONSUMO_CICLICO ,de tipo RENTA_VARIABLE y riesgo ALTO" : 500.0
+    "Producto Financiero con nombre SP500, de la comercializadora Amundi, con ISIN 555555, centrado en el sector: CONSUMO_CICLICO ,de tipo RENTA_VARIABLE y riesgo ALTO" : 500.0,
+    "Producto Financiero con nombre Edeficandi, de la comercializadora Pictetd, con ISIN 478120, centrado en el sector: INDUSTRIA ,de tipo RENTA_FIJA y riesgo BAJO" : 8500.0
   }
 }
