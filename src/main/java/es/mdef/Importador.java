@@ -15,8 +15,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 
 @Entity
 public class Importador {
@@ -29,7 +31,6 @@ public class Importador {
 
 	@ElementCollection
 	@CollectionTable(name = "PRODUCTOS_IMPORTADOS")
-	@Column(name = "VALOR_DE_MERCADO")
 	private Collection<InformacionMercado> informeMercado = new ArrayList<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
@@ -68,7 +69,7 @@ public class Importador {
 
 		File miInformeMercado = new File("InformeMercado.json");
 		ObjectMapper mapper = new ObjectMapper();
-		// mapper.addMixIn(InformacionMercado.class, MixinCuentaFinanciera.class);
+		mapper.addMixIn(InformacionMercado.class, MixinInformacionMercado.class);
 		try {
 			mapper.writerWithDefaultPrettyPrinter().writeValue(miInformeMercado, getInformeMercado());
 		} catch (IOException e) {
@@ -81,10 +82,13 @@ public class Importador {
 }
 
 //@JsonIgnoreProperties({ "nombreDeLaSerie" })
-//// @JsonPropertyOrder({ "HC", "AC", "home", "golesLocal" })
-//abstract class MixinCuentaFinanciera {
-//
-//	@JsonProperty("nSecuencial")
-//	public abstract String getNumeroSecuencial();
+//@JsonPropertyOrder({ "HC", "AC", "home", "golesLocal" })
+abstract class MixinInformacionMercado {
 
-//}
+	@JsonProperty("Nombre Producto")
+	public abstract String getNombreProductoImportado();
+	@JsonProperty("Valor de Mercado")
+	public abstract Double getValorActualProductoImportado();
+	
+
+}

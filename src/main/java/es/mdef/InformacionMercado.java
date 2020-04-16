@@ -1,18 +1,21 @@
 package es.mdef;
 
+import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
 @Embeddable
 public class InformacionMercado {
 
+	@Column(name = "PRODUCTO")
 	String nombreProductoImportado;
+	@Column(name = "VALOR_DE_MERCADO")
 	Double ValorActualProductoImportado;
 
 	InformacionMercado() {
 
 	}
 
-	String getNombreProductoImportado() {
+	public String getNombreProductoImportado() {
 		return nombreProductoImportado;
 	}
 
@@ -20,7 +23,7 @@ public class InformacionMercado {
 		this.nombreProductoImportado = nombreProductoImportado;
 	}
 
-	Double getValorActualProductoImportado() {
+	public Double getValorActualProductoImportado() {
 		return ValorActualProductoImportado;
 	}
 
