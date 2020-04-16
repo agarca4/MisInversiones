@@ -6,6 +6,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
@@ -13,6 +16,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.MapKeyColumn;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -24,12 +29,15 @@ public class Importador {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "NUMERO_DE_IMPORTACION")
+	@Column(name = "Nº_DE_IMPORTACION")
 	private long importacionNumero;
 
 	@ElementCollection
 	@CollectionTable(name = "PRODUCTOS_IMPORTADOS")
-	private Collection<InformacionMercado> informeMercado = new ArrayList<>();
+	@MapKeyColumn(name = "PRODUCTO")
+	@Column(name = "VALOR_DE_MERCADO")
+	// @Column(name = "NOMBRE_PRODUCTO_IMPORTADO")
+	private Map<String, Double> informeMercado = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
 	// evitar que se cree ningun Importador fuera
@@ -38,7 +46,7 @@ public class Importador {
 	Importador() {
 	}
 
-	public Collection<InformacionMercado> getInformeMercado() {
+	public Map<String, Double> getInformeMercado() {
 		return informeMercado;
 	}
 
@@ -47,34 +55,23 @@ public class Importador {
 
 		// limpio la colección porque me interesan unicamente los ultimos datos de
 		// mercado para calcular ahora la rentabilidad
-		informeMercado.clear();
+		getInformeMercado().clear();
 
 		try (BufferedReader buffer = new BufferedReader(
 				new InputStreamReader(Importador.class.getClassLoader().getResource(url).openStream(), "UTF-8"))) {
 			String linea;
 			buffer.readLine();
 			while ((linea = buffer.readLine()) != null) {
-				InformacionMercado informacionMercado = new InformacionMercado();
 				String[] columnas = linea.split(",");
-				informacionMercado.setNombreProductoImportado(columnas[0]);
-				informacionMercado.setValorActualProductoImportado(Double.parseDouble(columnas[1]));
-				this.getInformeMercado().add(informacionMercado);
+				getInformeMercado().put(columnas[0], Double.parseDouble(columnas[1]));
 
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		File miInformeMercado = new File("InformeMercado.json");
-		ObjectMapper mapper = new ObjectMapper();
-		mapper.addMixIn(InformacionMercado.class, MixinInformacionMercado.class);
-		try {
-			mapper.writerWithDefaultPrettyPrinter().writeValue(miInformeMercado, getInformeMercado());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 		generarJsonInfoImportada();
-		
+
 		log.info(String.valueOf(getInformeMercado()));
 
 	}
@@ -84,7 +81,7 @@ public class Importador {
 
 		File miInformeMercado = new File("InformeMercado.json");
 		ObjectMapper mapper = new ObjectMapper();
-		mapper.addMixIn(InformacionMercado.class, MixinInformacionMercado.class);
+		//mapper.addMixIn(InformacionMercado.class, MixinInformacionMercado.class);
 		try {
 			mapper.writerWithDefaultPrettyPrinter().writeValue(miInformeMercado, getInformeMercado());
 		} catch (IOException e) {
@@ -95,12 +92,12 @@ public class Importador {
 
 //@JsonIgnoreProperties({ "nombreDeLaSerie" })
 //@JsonPropertyOrder({ "HC", "AC", "home", "golesLocal" })
-abstract class MixinInformacionMercado {
-
-	@JsonProperty("nombreProducto")
-	public abstract String getNombreProductoImportado();
-
-	@JsonProperty("valorMercado")
-	public abstract Double getValorActualProductoImportado();
-
-}
+//abstract class MixinInformacionMercado {
+//
+//	@JsonProperty("nombreProducto")
+//	public abstract String getNombreProductoImportado();
+//
+//	@JsonProperty("valorMercado")
+//	public abstract Double getValorActualProductoImportado();
+//
+//}

@@ -1,16 +1,16 @@
 {
   "nombreCartera" : "Cartera defensiva",
   "fechaCreacionCartera" : {
-    "nano" : 43882000,
-    "epochSecond" : 1587035574
+    "nano" : 585890000,
+    "epochSecond" : 1587039482
   },
   "capitalTotal" : 9000.0,
   "usuarios" : [ {
     "nombre" : "Juan",
-    "id" : "a015768d-3138-45ab-9b55-b2c2330208a8"
+    "id" : "c7f2c646-dac4-4d99-843f-33ceb3acfbd6"
   }, {
     "nombre" : "Victoria",
-    "id" : "31a74495-aaa3-4116-a642-224c6e3188a5"
+    "id" : "4a13f01a-e46c-4f33-85de-8cb9f5206676"
   } ],
   "rentabilidadActual" : 22.222222222222218,
   "productosFinancieros" : {

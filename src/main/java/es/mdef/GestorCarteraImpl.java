@@ -123,9 +123,9 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		while (it.hasNext()) {
 			ProductoFinanciero key = it.next();
 			valorInicial = getCartera().getProductosFinancieros().get(key);
-			for (InformacionMercado nombreProductoImportado : getImportador().getInformeMercado()) {
-				if (key.getNombreProducto().contains(nombreProductoImportado.getNombreProductoImportado())) {
-					valorActual = nombreProductoImportado.getValorActualProductoImportado();
+			for (String nombreProductoImportado : getImportador().getInformeMercado().keySet()) {
+				if (key.getNombreProducto().contains(nombreProductoImportado)) {
+					valorActual = getImportador().getInformeMercado().get(nombreProductoImportado);
 					rentabilidadParcial = (((valorActual - valorInicial) / valorInicial) * 100) * valorInicial
 							/ getCapitalTotal();
 				}
@@ -138,6 +138,18 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 
 	}
 
+	// este metodo me genera un Json con la info de mi cartera de inversiones
+	void generarJsonCartera() {
+
+		File miCartera = new File("MiCartera.json");
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			mapper.writerWithDefaultPrettyPrinter().writeValue(miCartera, getCartera());
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
 	// Este metodo se corresponde con el Caso de Uso CONSULTAR CARTERA
 	@Override
 	public void consultarCartera(String url) {
@@ -148,18 +160,4 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero> {
 		generarJsonCartera();
 	}
 
-	// este metodo me genera un Json con la info que he importado
-	void generarJsonCartera() {
-
-		File miCartera = new File("Cartera.json");
-		ObjectMapper mapper = new ObjectMapper();
-		try {
-			mapper.writerWithDefaultPrettyPrinter().writeValue(miCartera, getCartera());
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-
 }
-
-

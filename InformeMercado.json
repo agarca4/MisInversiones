@@ -1,10 +1,5 @@
-[ {
-  "nombreProducto" : "SP500",
-  "valorMercado" : 5000.0
-}, {
-  "nombreProducto" : "Edeficandi",
-  "valorMercado" : 6000.0
-}, {
-  "nombreProducto" : "MidTem",
-  "valorMercado" : 500.0
-} ]
+{
+  "Edeficandi" : 6000.0,
+  "SP500" : 5000.0,
+  "MidTem" : 500.0
+}
