@@ -122,11 +122,11 @@ public class MisInversionesApplication {
 		// NO por xml
 		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
 		infoMercadoImportada.save(((GestorCarteraImpl) miGestorCartera).getImportador());
-
+//
 		CarteraInversionDAO CarteraAPersistir = context.getBean(CarteraInversionDAO.class);
 		CarteraAPersistir.save(((GestorCarteraImpl) miGestorCartera).getCartera());
 
-		context.close();
+		//context.close();
 	}
 
 }
