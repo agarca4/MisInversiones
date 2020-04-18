@@ -5,12 +5,19 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+
+import javax.persistence.CascadeType;
 import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.MapKeyClass;
+import javax.persistence.OneToMany;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import es.mdef.productosfinancieros.ProductoFinanciero;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
@@ -23,13 +30,13 @@ public class CarteraInversion {
 	private Instant fechaCreacionCartera;
 	private double capitalTotal;
 
-	@ElementCollection
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	//@ElementCollection
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
 
 	@ElementCollection
 	@MapKeyClass(FondoInversion.class)
-	@CollectionTable(name = "PRODUCTOS_EN_CARTERA")
 	@Column(name = "PRECIO_ADQUISICION")
 	private Map<ProductoFinanciero, Double> productosFinancieros = new HashMap<>();
 
@@ -62,7 +69,7 @@ public class CarteraInversion {
 		this.capitalTotal = capitalTotal;
 	}
 
-	public	String getNombreCartera() {
+	public String getNombreCartera() {
 		return nombreCartera;
 	}
 
@@ -85,6 +92,13 @@ public class CarteraInversion {
 	 */
 	void setRentabilidadActual(double rentabilidadActual) {
 		this.rentabilidadActual = rentabilidadActual;
+	}
+
+	@Override
+	public String toString() {
+		return "CarteraInversion " + getNombreCartera() + ": " + getProductosFinancieros() + ", capital total: "
+				+ getCapitalTotal() + ", creada el: " + getFechaCreacionCartera() + ", usuarios: " + getUsuarios()
+				+ ", Rentabilidad Actual:" + getRentabilidadActual();
 	}
 
 }

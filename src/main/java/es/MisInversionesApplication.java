@@ -9,8 +9,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.annotation.PropertySource;
+
+import es.mdef.CarteraInversion;
 import es.mdef.GestorCartera;
 import es.mdef.GestorCarteraImpl;
+import es.mdef.Importador;
 import es.mdef.productosfinancieros.ProductoFinanciero;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.productosfinancieros.fondosinversion.SectorFondo;
@@ -20,14 +23,29 @@ import es.mdef.repositorios.ImportadorDAO;
 import es.mdef.usuarios.Usuario;
 
 @SpringBootApplication
-@PropertySource({ "logging.properties" })
+/*
+ * SpringBoot lee automaticamente lo que tenga en application.properties, que es
+ * un archivo que crea el en automatico, y puedo meter todas las propiedades ahí
+ * si quiero, pero tb puedo hacer otros properties y le digo a SpringBoot que
+ * busque en ellos con la anotacion @PropertySource
+ * 
+ * @PropertySource({ "xxxxxx.properties" })
+ */
+/*
+ * Con esta anotacion le digo que ademas de la configuracion por defecto de
+ * SpringBoot, tenga tb en cuenta esa configuracion por XML que hay en ese
+ * archivo. Recordar que al usar SpringBoot ya no hace falta archivos xml de
+ * scaneo, puesto que SpringBoot escaneará a partir del paquete donde esté la
+ * anotacion que lo arranca
+ */
 @ImportResource({ "classpath:config/jpa-config.xml" })
 public class MisInversionesApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
-	private static GestorCartera<ProductoFinanciero> miGestorCartera = new GestorCarteraImpl("Cartera defensiva");
+	private static GestorCartera<ProductoFinanciero, CarteraInversion, Importador> miGestorCartera = new GestorCarteraImpl(
+			"Cartera agresiva");
 
-	protected static GestorCartera<ProductoFinanciero> getMiGestorCartera() {
+	protected static GestorCartera<ProductoFinanciero, CarteraInversion, Importador> getMiGestorCartera() {
 		return miGestorCartera;
 	}
 
@@ -46,6 +64,7 @@ public class MisInversionesApplication {
 		// Me creo un par de usuarios
 		Usuario usuario1 = new Usuario("Juan");
 		Usuario usuario2 = new Usuario("Victoria");
+		Usuario usuario3 = new Usuario("Belen");
 
 		getMiGestorCartera().altaUsuario(usuario1);
 		getMiGestorCartera().altaUsuario(usuario2);
@@ -121,12 +140,19 @@ public class MisInversionesApplication {
 		// Aquí voy a guardar en la BBDD la info importada vía csv, usando anotaciones,
 		// NO por xml
 		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
-		infoMercadoImportada.save(((GestorCarteraImpl) miGestorCartera).getImportador());
+		infoMercadoImportada.save(miGestorCartera.getImportador());
 //
-		CarteraInversionDAO CarteraAPersistir = context.getBean(CarteraInversionDAO.class);
-		CarteraAPersistir.save(((GestorCarteraImpl) miGestorCartera).getCartera());
+		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
+		miGestorCartera.altaUsuario(usuario3);
+		log.info(miGestorCartera.listarUsuarios().toString());
+		log.info(miGestorCartera.listarProductos().toString());
+		miCartera.save(miGestorCartera.getCartera());
 
-		//context.close();
+		// miCartera.deleteAll();
+		log.info(miCartera.findAll().toString());
+
+		/* No cierro el contexto para que la api se quede a la escucha de peticiones */
+		// context.close();
 	}
 
 }

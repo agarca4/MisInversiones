@@ -5,8 +5,10 @@ import javax.persistence.Embeddable;
 import javax.persistence.MappedSuperclass;
 
 
+
 @Embeddable
 @MappedSuperclass
+//@JsonDeserialize(as = FondoInversion.class)
 public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 
 	
@@ -43,8 +45,8 @@ public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 
 	@Override
 	public String toString() {
-		return "Producto Financiero con nombre " + getNombreProducto() + ", de la comercializadora "
-				+ getComercializadora() + ", con ISIN " + getIsin();
+		return "Producto Financiero: " + getNombreProducto() + ", comercializadora: "
+				+ getComercializadora() + ",ISIN: " + getIsin();
 	}
 
 }

@@ -4,7 +4,11 @@ import java.util.Collection;
 import java.util.Map;
 import es.mdef.usuarios.Usuario;
 
-public interface GestorCartera<T> {
+public interface GestorCartera<T, S, U> {
+
+	public S getCartera();
+
+	public U getImportador();
 
 	public void compraProductoFinanciero(T producto, double capitalInvertido);
 

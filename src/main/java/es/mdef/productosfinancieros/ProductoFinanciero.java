@@ -1,5 +1,8 @@
 package es.mdef.productosfinancieros;
 
+
+
+//@JsonDeserialize(as = FondoInversion.class)
 public interface ProductoFinanciero {
 
 	public String getNombreProducto();
