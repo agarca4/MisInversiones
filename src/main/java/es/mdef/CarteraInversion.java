@@ -5,19 +5,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.persistence.CascadeType;
-import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.MapKeyClass;
 import javax.persistence.OneToMany;
-
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-
 import es.mdef.productosfinancieros.ProductoFinanciero;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
@@ -30,7 +24,7 @@ public class CarteraInversion {
 	private Instant fechaCreacionCartera;
 	private double capitalTotal;
 
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+	@OneToMany(cascade = CascadeType.ALL)
 	//@ElementCollection
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;

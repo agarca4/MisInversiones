@@ -1,7 +1,6 @@
 package es.mdef.productosfinancieros.fondosinversion;
 
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import es.mdef.productosfinancieros.ProductoFinancieroImpl;
@@ -11,10 +10,8 @@ public class FondoInversion extends ProductoFinancieroImpl {
 
 	@Enumerated(EnumType.STRING)
 	private SectorFondo sector;
-
 	@Enumerated(EnumType.STRING)
 	private TipoFondo tipo;
-
 	private String riesgo;
 
 	FondoInversion() {
@@ -61,8 +58,7 @@ public class FondoInversion extends ProductoFinancieroImpl {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", sector: " + getSector() + " ,tipo: " + getTipo() + ", riesgo: "
-				+ getRiesgo();
+		return super.toString() + ", sector: " + getSector() + " ,tipo: " + getTipo() + ", riesgo: " + getRiesgo();
 	}
 
 }

@@ -4,19 +4,15 @@ import javax.persistence.Column;
 import javax.persistence.Embeddable;
 import javax.persistence.MappedSuperclass;
 
-
-
 @Embeddable
 @MappedSuperclass
 //@JsonDeserialize(as = FondoInversion.class)
 public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 
-	
 	@Column(name = "NOMBRE_PRODUCTO")
-	String nombreProducto;
-
-	String comercializadora;
-	int isin;
+	private String nombreProducto;
+	private String comercializadora;
+	private int isin;
 
 	protected ProductoFinancieroImpl() {
 	}
@@ -45,8 +41,8 @@ public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 
 	@Override
 	public String toString() {
-		return "Producto Financiero: " + getNombreProducto() + ", comercializadora: "
-				+ getComercializadora() + ",ISIN: " + getIsin();
+		return "Producto Financiero: " + getNombreProducto() + ", comercializadora: " + getComercializadora()
+				+ ",ISIN: " + getIsin();
 	}
 
 }
