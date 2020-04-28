@@ -1,20 +1,20 @@
 {
   "nombreCartera" : "Cartera agresiva",
   "fechaCreacionCartera" : {
-    "nano" : 297120000,
-    "epochSecond" : 1587653269
+    "nano" : 547302000,
+    "epochSecond" : 1588098679
   },
   "capitalTotal" : 9000.0,
   "usuarios" : [ {
-    "nombre" : "Juan",
-    "id" : "99ac2ec3-936c-4d9a-a840-f6fd59fce1a2"
-  }, {
     "nombre" : "Victoria",
-    "id" : "4995efbd-7e99-4586-a061-decb04ae376c"
+    "id" : 2
+  }, {
+    "nombre" : "Belen",
+    "id" : 3
   } ],
   "rentabilidadActual" : 22.222222222222218,
   "productosFinancieros" : {
-    "Producto Financiero: Edeficandi, comercializadora: Pictetd,ISIN: 478120, sector: INDUSTRIA ,tipo: RENTA_FIJA, riesgo: BAJO" : 8500.0,
-    "Producto Financiero: SP500, comercializadora: Amundi,ISIN: 555555, sector: CONSUMO_CICLICO ,tipo: RENTA_VARIABLE, riesgo: ALTO" : 500.0
+    "Producto Financiero: SP500, comercializadora: Amundi,ISIN: 555555, sector: CONSUMO_CICLICO ,tipo: RENTA_VARIABLE, riesgo: ALTO" : 500.0,
+    "Producto Financiero: Edeficandi, comercializadora: Pictetd,ISIN: 478120, sector: INDUSTRIA ,tipo: RENTA_FIJA, riesgo: BAJO" : 8500.0
   }
 }

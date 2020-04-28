@@ -13,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.MapKeyClass;
 import javax.persistence.OneToMany;
 import es.mdef.productosfinancieros.ProductoFinanciero;
+import es.mdef.productosfinancieros.ProductoFinancieroImpl;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
@@ -24,15 +25,15 @@ public class CarteraInversion {
 	private Instant fechaCreacionCartera;
 	private double capitalTotal;
 
-	@OneToMany(cascade = CascadeType.ALL)
-	//@ElementCollection
+	@OneToMany(cascade = CascadeType.ALL, targetEntity = Usuario.class, mappedBy = "cartera")
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
 
-	@ElementCollection
-	@MapKeyClass(FondoInversion.class)
-	@Column(name = "PRECIO_ADQUISICION")
-	private Map<ProductoFinanciero, Double> productosFinancieros = new HashMap<>();
+	// @ElementCollection
+	@OneToMany(targetEntity = ProductoFinancieroImpl.class, mappedBy = "cartera", cascade = CascadeType.ALL)
+	// @MapKeyClass(FondoInversion.class)
+	// @Column(name = "PRECIO_ADQUISICION")
+	private Map<ProductoFinancieroImpl, Double> productosFinancieros = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
 	// evitar que se cree ninguna Cartera fuera
@@ -47,7 +48,7 @@ public class CarteraInversion {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	public Map<ProductoFinanciero, Double> getProductosFinancieros() {
+	public Map<ProductoFinancieroImpl, Double> getProductosFinancieros() {
 		return productosFinancieros;
 	}
 
@@ -71,6 +72,7 @@ public class CarteraInversion {
 		this.nombreCartera = nombreCartera;
 	}
 
+	@OneToMany(targetEntity = Usuario.class)
 	public Collection<Usuario> getUsuarios() {
 		return usuarios;
 	}

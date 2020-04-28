@@ -28,7 +28,7 @@ public class Importador {
 	private long importacionNumero;
 
 	@ElementCollection
-	@CollectionTable(name = "PRODUCTOS_IMPORTADOS")
+	@CollectionTable(name = "INFORMACION_DE_MERCADO")
 	@MapKeyColumn(name = "PRODUCTO")
 	@Column(name = "VALOR_DE_MERCADO")
 	// @Column(name = "NOMBRE_PRODUCTO_IMPORTADO")

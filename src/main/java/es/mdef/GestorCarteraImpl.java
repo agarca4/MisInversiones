@@ -9,11 +9,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import es.mdef.productosfinancieros.ProductoFinanciero;
+import es.mdef.productosfinancieros.ProductoFinancieroImpl;
 import es.mdef.usuarios.Usuario;
 
 //Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
 
-public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero, CarteraInversion, Importador> {
+public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, CarteraInversion, Importador> {
 
 	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
 	private CarteraInversion cartera;
@@ -40,7 +41,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero, Cart
 	}
 
 	@Override
-	public void compraProductoFinanciero(ProductoFinanciero producto, double capitalInvertido) {
+	public void compraProductoFinanciero(ProductoFinancieroImpl producto, double capitalInvertido) {
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
 
 		if (!(getCartera().getProductosFinancieros().containsKey(producto))) {
@@ -55,7 +56,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero, Cart
 	}
 
 	@Override
-	public void vendeProductoFinanciero(ProductoFinanciero producto, double capitalDesinvertido) {
+	public void vendeProductoFinanciero(ProductoFinancieroImpl producto, double capitalDesinvertido) {
 
 		if (getCartera().getProductosFinancieros().containsKey(producto)) {
 
@@ -84,6 +85,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero, Cart
 	public void altaUsuario(Usuario usuario) {
 		if (!(getCartera().getUsuarios().contains(usuario))) {
 			getCartera().getUsuarios().add(usuario);
+			usuario.setCartera(getCartera());
 		} else {
 			log.error(String.valueOf("El usuario que pretende dar de alta ya está asociado a la cartera "
 					+ getCartera().getNombreCartera()));
@@ -95,6 +97,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero, Cart
 	public void bajaUsuario(Usuario usuario) {
 
 		getCartera().getUsuarios().remove(usuario);
+		usuario.setCartera(null);
 
 	}
 
@@ -106,7 +109,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero, Cart
 	}
 
 	@Override
-	public Map<ProductoFinanciero, Double> listarProductos() {
+	public Map<ProductoFinancieroImpl, Double> listarProductos() {
 
 		return getCartera().getProductosFinancieros();
 
@@ -118,7 +121,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinanciero, Cart
 		double valorInicial = 0.0;
 		double rentabilidadParcial = 0.0;
 		double rentabilidadCartera = 0.0;
-		Iterator<ProductoFinanciero> it = getCartera().getProductosFinancieros().keySet().iterator();
+		Iterator<ProductoFinancieroImpl> it = getCartera().getProductosFinancieros().keySet().iterator();
 
 		while (it.hasNext()) {
 			ProductoFinanciero key = it.next();

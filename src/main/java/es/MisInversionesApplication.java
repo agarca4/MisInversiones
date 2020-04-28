@@ -13,11 +13,13 @@ import es.mdef.GestorCartera;
 import es.mdef.GestorCarteraImpl;
 import es.mdef.Importador;
 import es.mdef.productosfinancieros.ProductoFinanciero;
+import es.mdef.productosfinancieros.ProductoFinancieroImpl;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.productosfinancieros.fondosinversion.SectorFondo;
 import es.mdef.productosfinancieros.fondosinversion.TipoFondo;
 import es.mdef.repositorios.CarteraInversionDAO;
 import es.mdef.repositorios.ImportadorDAO;
+import es.mdef.repositorios.UsuarioDAO;
 import es.mdef.usuarios.Usuario;
 
 @SpringBootApplication
@@ -40,10 +42,10 @@ import es.mdef.usuarios.Usuario;
 public class MisInversionesApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
-	private static GestorCartera<ProductoFinanciero, CarteraInversion, Importador> miGestorCartera = new GestorCarteraImpl(
+	private static GestorCartera<ProductoFinancieroImpl, CarteraInversion, Importador> miGestorCartera = new GestorCarteraImpl(
 			"Cartera agresiva");
 
-	protected static GestorCartera<ProductoFinanciero, CarteraInversion, Importador> getMiGestorCartera() {
+	protected static GestorCartera<ProductoFinancieroImpl, CarteraInversion, Importador> getMiGestorCartera() {
 		return miGestorCartera;
 	}
 
@@ -51,33 +53,27 @@ public class MisInversionesApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
-		// creo los productos
-		ProductoFinanciero fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
+		FondoInversion fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
 				TipoFondo.RENTA_VARIABLE);
-		ProductoFinanciero fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
+		FondoInversion fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
 				TipoFondo.RENTA_FIJA);
-		ProductoFinanciero fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
+		FondoInversion fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
 				TipoFondo.MIXTO);
 
-		// Me creo un par de usuarios
-		Usuario usuario1 = new Usuario("Juan");
-		Usuario usuario2 = new Usuario("Victoria");
-		Usuario usuario3 = new Usuario("Belen");
+		Usuario usuario1 = new Usuario("Juan", 0001, getMiGestorCartera().getCartera());
+		Usuario usuario2 = new Usuario("Victoria", 0002, getMiGestorCartera().getCartera());
+		Usuario usuario3 = new Usuario("Belen", 0003, getMiGestorCartera().getCartera());
 
 		getMiGestorCartera().altaUsuario(usuario1);
 		getMiGestorCartera().altaUsuario(usuario2);
-//		miGestorCartera.listarUsuarios();
-//		miGestorCartera.bajaUsuario(usuario1);
-//		miGestorCartera.listarUsuarios();
+		getMiGestorCartera().altaUsuario(usuario3);
+		getMiGestorCartera().bajaUsuario(usuario1);
 
 		// compro para mi cartera los productos que habia creado con el factory,
 		// asociandole el importe que invierto
-		// los listo
 		getMiGestorCartera().compraProductoFinanciero(fondo1, 500);
 		getMiGestorCartera().compraProductoFinanciero(fondo2, 7500);
 		getMiGestorCartera().compraProductoFinanciero(fondo3, 900);
-		// System.err.println(miGestorCartera.listarProductos());
-		// System.err.println(miGestorCartera.listarUsuarios());
 
 		// Compruebo que funciona correctamente el metodo, me salta el log.error cuando
 		// trato de vender un producto q ya no tengo
@@ -86,31 +82,8 @@ public class MisInversionesApplication {
 		getMiGestorCartera().vendeProductoFinanciero(fondo3, 900);
 		getMiGestorCartera().compraProductoFinanciero(fondo2, 4000);
 		getMiGestorCartera().vendeProductoFinanciero(fondo3, 500);
-//		// los listo para ver que funcionan bien los metodos
-//		miGestorCartera.listarProductos();
-		// compruebo el capital total
-		// log.warn(String.valueOf(miGestorCartera.getCapitalTotal()));
 
-		// Importo los datos de los valores actuales del mercado a traves del Importador
-		// y un csv que he creado yo mismo
-		// miGestorCartera.importarDatos();
-
-		// con la info del mercado importada y la info de la inversion hecha que está
-		// en el Map, calculo la rentabilidad de la cartera
-		// Funciona correctamente, con los datos que hay da un 100% de rentabilidad que
-		// es lo que tiene que dar, puesto que el valor de mercado es justo el doble de
-		// lo que invertí
-		// miGestorCartera.caculaRentabilidad();
-
-		// Aquí voy a probar el nuevo metodo consultarCartera();
 		getMiGestorCartera().consultarCartera("infoMercado.csv");
-
-		/*
-		 * Aqui voy a probar mi BBDD h2 guardando los 2 usuarios Lo hago usando
-		 */
-//		UsuarioDAO usuarioDAO = context.getBean(UsuarioDAO.class);
-//		usuarioDAO.save(usuario1);
-//		usuarioDAO.save(usuario2);
 
 		/*
 		 * Aqui voy a guardar en la BBDD los productos financieros, lo hago con con
@@ -141,16 +114,14 @@ public class MisInversionesApplication {
 		infoMercadoImportada.save(miGestorCartera.getImportador());
 //
 		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
-		miGestorCartera.altaUsuario(usuario3);
-		log.info(miGestorCartera.listarUsuarios().toString());
-		log.info(miGestorCartera.listarProductos().toString());
 		miCartera.save(miGestorCartera.getCartera());
 
-		// miCartera.deleteAll();
 		log.info(miCartera.findAll().toString());
 
-		/* No cierro el contexto para que la api se quede a la escucha de peticiones */
 		// context.close();
+
+		log.info(miGestorCartera.listarUsuarios().toString());
+		log.info(miGestorCartera.listarProductos().toString());
 	}
 
 }
