@@ -10,9 +10,9 @@ public interface GestorCartera<T, S, U> {
 
 	public U getImportador();
 
-	public void compraProductoFinanciero(T producto, double capitalInvertido);
+	public void compraProductoFinanciero(T producto, Double capitalInvertido);
 
-	public void vendeProductoFinanciero(T producto, double capitalDesinvertido);
+	public void vendeProductoFinanciero(T producto, Double capitalDesinvertido);
 
 	public double getCapitalTotal();
 

@@ -13,31 +13,34 @@ import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 import es.mdef.CarteraInversion;
+import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 
 //@Embeddable
 //@MappedSuperclass
 //@JsonDeserialize(as = FondoInversion.class)
 @Entity
-@Inheritance(strategy = InheritanceType.JOINED)
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "PRODUCTO_FINANCIERO")
+//@JsonDeserialize(as = FondoInversion.class)
 public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 
 	@Column(name = "NOMBRE_PRODUCTO")
 	private String nombreProducto;
 	private String comercializadora;
 	@Id
-	private int isin;
+	private Integer isin;
 	@ManyToOne(fetch = FetchType.LAZY)
 	//@JoinColumn(name = "xxxxx")
-	@JoinTable(name="ACTIV_PART", joinColumns=@JoinColumn(name="ACT_NOMB" , referencedColumnName="NOMBRE_ACT"),
-	inverseJoinColumns=@JoinColumn(name="PART_DNI", referencedColumnName="PERS_DNI"))
+	//@JoinTable(name="PRODUCTO_FINANCIERO")
 	private CarteraInversion cartera;
 
 	protected ProductoFinancieroImpl() {
 	}
 
-	protected ProductoFinancieroImpl(String nombreProducto, String comercializadora, int isin) {
+	protected ProductoFinancieroImpl(String nombreProducto, String comercializadora, Integer isin) {
 		super();
 		this.nombreProducto = nombreProducto;
 		this.comercializadora = comercializadora;
@@ -59,7 +62,7 @@ public abstract class ProductoFinancieroImpl implements ProductoFinanciero {
 	}
 
 	@Override
-	public int getIsin() {
+	public Integer getIsin() {
 		return isin;
 	}
 

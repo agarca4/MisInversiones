@@ -9,6 +9,6 @@ public interface ProductoFinanciero {
 
 	public String getComercializadora();
 
-	public int getIsin();
+	public Integer getIsin();
 
 }

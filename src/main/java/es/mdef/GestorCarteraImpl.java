@@ -41,7 +41,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, 
 	}
 
 	@Override
-	public void compraProductoFinanciero(ProductoFinancieroImpl producto, double capitalInvertido) {
+	public void compraProductoFinanciero(ProductoFinancieroImpl producto, Double capitalInvertido) {
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
 
 		if (!(getCartera().getProductosFinancieros().containsKey(producto))) {
@@ -49,19 +49,19 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, 
 
 		} else {
 
-			double valorAnterior = getCartera().getProductosFinancieros().get(producto);
+			Double valorAnterior = getCartera().getProductosFinancieros().get(producto);
 			getCartera().getProductosFinancieros().put(producto, valorAnterior + capitalInvertido);
 		}
 
 	}
 
 	@Override
-	public void vendeProductoFinanciero(ProductoFinancieroImpl producto, double capitalDesinvertido) {
+	public void vendeProductoFinanciero(ProductoFinancieroImpl producto, Double capitalDesinvertido) {
 
 		if (getCartera().getProductosFinancieros().containsKey(producto)) {
 
 			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - capitalDesinvertido);
-			double valorAnterior = getCartera().getProductosFinancieros().get(producto);
+			Double valorAnterior = getCartera().getProductosFinancieros().get(producto);
 
 			if (valorAnterior == capitalDesinvertido) {
 				getCartera().getProductosFinancieros().remove(producto);

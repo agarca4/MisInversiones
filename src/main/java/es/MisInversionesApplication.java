@@ -53,11 +53,11 @@ public class MisInversionesApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
-		FondoInversion fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
+		ProductoFinancieroImpl fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
 				TipoFondo.RENTA_VARIABLE);
-		FondoInversion fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
+		ProductoFinancieroImpl fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
 				TipoFondo.RENTA_FIJA);
-		FondoInversion fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
+		ProductoFinancieroImpl fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
 				TipoFondo.MIXTO);
 
 		Usuario usuario1 = new Usuario("Juan", 0001, getMiGestorCartera().getCartera());
@@ -71,17 +71,17 @@ public class MisInversionesApplication {
 
 		// compro para mi cartera los productos que habia creado con el factory,
 		// asociandole el importe que invierto
-		getMiGestorCartera().compraProductoFinanciero(fondo1, 500);
-		getMiGestorCartera().compraProductoFinanciero(fondo2, 7500);
-		getMiGestorCartera().compraProductoFinanciero(fondo3, 900);
+		getMiGestorCartera().compraProductoFinanciero(fondo1, 500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo2, 7500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo3, 900.00);
 
 		// Compruebo que funciona correctamente el metodo, me salta el log.error cuando
 		// trato de vender un producto q ya no tengo
-		getMiGestorCartera().vendeProductoFinanciero(fondo2, 2000);
-		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000);
-		getMiGestorCartera().vendeProductoFinanciero(fondo3, 900);
-		getMiGestorCartera().compraProductoFinanciero(fondo2, 4000);
-		getMiGestorCartera().vendeProductoFinanciero(fondo3, 500);
+		getMiGestorCartera().vendeProductoFinanciero(fondo2, 2000.00);
+		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000.00);
+		getMiGestorCartera().vendeProductoFinanciero(fondo3, 900.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo2, 4000.00);
+		getMiGestorCartera().vendeProductoFinanciero(fondo3, 500.00);
 
 		getMiGestorCartera().consultarCartera("infoMercado.csv");
 

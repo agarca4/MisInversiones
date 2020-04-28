@@ -1,10 +1,10 @@
 {
   "nombreCartera" : "Cartera agresiva",
   "fechaCreacionCartera" : {
-    "nano" : 547302000,
-    "epochSecond" : 1588098679
+    "nano" : 86063000,
+    "epochSecond" : 1588103295
   },
-  "capitalTotal" : 9000.0,
+  "capitalTotal" : 8500.0,
   "usuarios" : [ {
     "nombre" : "Victoria",
     "id" : 2
@@ -12,9 +12,10 @@
     "nombre" : "Belen",
     "id" : 3
   } ],
-  "rentabilidadActual" : 22.222222222222218,
+  "rentabilidadActual" : 35.29411764705882,
   "productosFinancieros" : {
-    "Producto Financiero: SP500, comercializadora: Amundi,ISIN: 555555, sector: CONSUMO_CICLICO ,tipo: RENTA_VARIABLE, riesgo: ALTO" : 500.0,
-    "Producto Financiero: Edeficandi, comercializadora: Pictetd,ISIN: 478120, sector: INDUSTRIA ,tipo: RENTA_FIJA, riesgo: BAJO" : 8500.0
+    "Producto Financiero: MidTem, comercializadora: Axa,ISIN: 742069, sector: CONSUMO_DEFENSIVO ,tipo: MIXTO, riesgo: MEDIO" : -500.0,
+    "Producto Financiero: Edeficandi, comercializadora: Pictetd,ISIN: 478120, sector: INDUSTRIA ,tipo: RENTA_FIJA, riesgo: BAJO" : 8500.0,
+    "Producto Financiero: SP500, comercializadora: Amundi,ISIN: 555555, sector: CONSUMO_CICLICO ,tipo: RENTA_VARIABLE, riesgo: ALTO" : 500.0
   }
 }
