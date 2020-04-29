@@ -3,29 +3,73 @@ package es.mdef.productosfinancieros.fondosinversion;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import es.mdef.productosfinancieros.ProductoFinancieroImpl;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import es.mdef.CarteraInversion;
 
-//@Embeddable
 @Entity
-@Table(name="FONDO_INVERSION")
-public class FondoInversion extends ProductoFinancieroImpl {
+@Table(name = "FONDOS_DE_INVERSION")
+public class FondoInversion {
 
+	@Id
+	private Integer isin;
+	private String nombre;
 	@Enumerated(EnumType.STRING)
 	private SectorFondo sector;
 	@Enumerated(EnumType.STRING)
 	private TipoFondo tipo;
 	private String riesgo;
+	private Double valor;
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "CARTERA")
+	@JsonBackReference
+	private CarteraInversion cartera;
 
 	FondoInversion() {
 	}
 
-	public FondoInversion(String nombreProducto, String comercializadora, int isin, SectorFondo sector,
-			TipoFondo tipo) {
-		super(nombreProducto, comercializadora, isin);
+	public FondoInversion(String nombreProducto, Integer isin, SectorFondo sector, TipoFondo tipo) {
+		this.nombre = nombreProducto;
+		this.isin = isin;
 		this.sector = sector;
 		this.tipo = tipo;
 		setRiesgo();
+	}
+
+	public Double getValor() {
+		return valor;
+	}
+
+	public void setValor(Double precioAdquisicion) {
+		this.valor = precioAdquisicion;
+	}
+
+	public CarteraInversion getCartera() {
+		return cartera;
+	}
+
+	public void setCartera(CarteraInversion cartera) {
+		this.cartera = cartera;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public Integer getIsin() {
+		return isin;
+	}
+
+	public void setIsin(Integer isin) {
+		this.isin = isin;
 	}
 
 	public SectorFondo getSector() {
@@ -33,15 +77,23 @@ public class FondoInversion extends ProductoFinancieroImpl {
 
 	}
 
+	public void setSector(SectorFondo sector) {
+		this.sector = sector;
+	}
+
 	public TipoFondo getTipo() {
 		return tipo;
+	}
+
+	public void setTipo(TipoFondo tipo) {
+		this.tipo = tipo;
 	}
 
 	public String getRiesgo() {
 		return riesgo;
 	}
 
-	void setRiesgo() {
+	public void setRiesgo() {
 		switch (this.tipo) {
 		case RENTA_FIJA:
 			this.riesgo = "BAJO";
@@ -61,7 +113,8 @@ public class FondoInversion extends ProductoFinancieroImpl {
 
 	@Override
 	public String toString() {
-		return super.toString() + ", sector: " + getSector() + " ,tipo: " + getTipo() + ", riesgo: " + getRiesgo();
+		return getNombre() + ", valor: " + getValor() + ", ISIN: " + getIsin() + ", sector: "
+				+ getSector() + ", tipo: " + getTipo() + ", riesgo: " + getRiesgo();
 	}
 
 }

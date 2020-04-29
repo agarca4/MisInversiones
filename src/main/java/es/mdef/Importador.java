@@ -31,7 +31,6 @@ public class Importador {
 	@CollectionTable(name = "INFORMACION_DE_MERCADO")
 	@MapKeyColumn(name = "PRODUCTO")
 	@Column(name = "VALOR_DE_MERCADO")
-	// @Column(name = "NOMBRE_PRODUCTO_IMPORTADO")
 	private Map<String, Double> informeMercado = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para

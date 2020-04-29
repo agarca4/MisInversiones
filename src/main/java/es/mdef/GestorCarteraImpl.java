@@ -3,18 +3,15 @@ package es.mdef;
 import java.io.File;
 import java.io.IOException;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import es.mdef.productosfinancieros.ProductoFinanciero;
-import es.mdef.productosfinancieros.ProductoFinancieroImpl;
+import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
 //Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
 
-public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, CarteraInversion, Importador> {
+public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraInversion, Importador> {
 
 	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
 	private CarteraInversion cartera;
@@ -32,7 +29,6 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, 
 		return importador;
 	}
 
-//Ahora mismo no uso la fecha de creacion de la cartera, pero me será util cuando implemente más funcionalidades
 	public GestorCarteraImpl(String nombreCartera) {
 		super();
 		this.cartera = new CarteraInversion();
@@ -41,43 +37,45 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, 
 	}
 
 	@Override
-	public void compraProductoFinanciero(ProductoFinancieroImpl producto, Double capitalInvertido) {
+	public void compraProductoFinanciero(FondoInversion producto, Double capitalInvertido) {
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
 
-		if (!(getCartera().getProductosFinancieros().containsKey(producto))) {
-			getCartera().getProductosFinancieros().put(producto, capitalInvertido);
+		if (!(getCartera().getProductosFinancieros().contains(producto))) {
+			producto.setValor(capitalInvertido);
+			getCartera().getProductosFinancieros().add(producto);
+			producto.setCartera(getCartera());
 
 		} else {
 
-			Double valorAnterior = getCartera().getProductosFinancieros().get(producto);
-			getCartera().getProductosFinancieros().put(producto, valorAnterior + capitalInvertido);
+			producto.setValor(producto.getValor() + capitalInvertido);
+
 		}
 
 	}
 
 	@Override
-	public void vendeProductoFinanciero(ProductoFinancieroImpl producto, Double capitalDesinvertido) {
+	public void vendeProductoFinanciero(FondoInversion producto, Double capitalDesinvertido) {
 
-		if (getCartera().getProductosFinancieros().containsKey(producto)) {
+		if (getCartera().getProductosFinancieros().contains(producto)
+				&& capitalDesinvertido.doubleValue() >= producto.getValor()) {
 
-			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - capitalDesinvertido);
-			Double valorAnterior = getCartera().getProductosFinancieros().get(producto);
-
-			if (valorAnterior == capitalDesinvertido) {
-				getCartera().getProductosFinancieros().remove(producto);
-			} else {
-				getCartera().getProductosFinancieros().put(producto, valorAnterior - capitalDesinvertido);
-
-			}
+			getCartera().getProductosFinancieros().remove(producto);
+			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - producto.getValor().doubleValue());
+			producto.setCartera(null);
+		} else if (getCartera().getProductosFinancieros().contains(producto)
+				&& capitalDesinvertido.doubleValue() < producto.getValor()) {
+			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - capitalDesinvertido.doubleValue());
+			producto.setValor(producto.getValor().doubleValue() - capitalDesinvertido.doubleValue());
 
 		} else {
 			log.error("Ese producto no existe en su cartera");
+
 		}
 
 	}
 
 	@Override
-	public double getCapitalTotal() {
+	public Double getCapitalTotal() {
 		return getCartera().getCapitalTotal();
 	}
 
@@ -87,8 +85,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, 
 			getCartera().getUsuarios().add(usuario);
 			usuario.setCartera(getCartera());
 		} else {
-			log.error(String.valueOf("El usuario que pretende dar de alta ya está asociado a la cartera "
-					+ getCartera().getNombreCartera()));
+			log.error(String.valueOf("El usuario ya existe " + getCartera().getNombreCartera()));
 
 		}
 	}
@@ -109,34 +106,32 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, 
 	}
 
 	@Override
-	public Map<ProductoFinancieroImpl, Double> listarProductos() {
+	public Collection<FondoInversion> listarProductos() {
 
 		return getCartera().getProductosFinancieros();
 
 	}
 
 	@Override
-	public double caculaRentabilidad() {
-		double valorActual = 0.0;
-		double valorInicial = 0.0;
-		double rentabilidadParcial = 0.0;
-		double rentabilidadCartera = 0.0;
-		Iterator<ProductoFinancieroImpl> it = getCartera().getProductosFinancieros().keySet().iterator();
+	public Double caculaRentabilidad() {
+		Double valorActual = 0.0;
+		Double valorInicial = 0.0;
+		Double rentabilidadCartera = 0.0;
 
-		while (it.hasNext()) {
-			ProductoFinanciero key = it.next();
-			valorInicial = getCartera().getProductosFinancieros().get(key);
-			for (String nombreProductoImportado : getImportador().getInformeMercado().keySet()) {
-				if (key.getNombreProducto().contains(nombreProductoImportado)) {
-					valorActual = getImportador().getInformeMercado().get(nombreProductoImportado);
-					rentabilidadParcial = (((valorActual - valorInicial) / valorInicial) * 100) * valorInicial
-							/ getCapitalTotal();
-				}
-
-			}
-			rentabilidadCartera += rentabilidadParcial;
-			getCartera().setRentabilidadActual(rentabilidadCartera);
+		for (FondoInversion producto : getCartera().getProductosFinancieros()) {
+			valorInicial += producto.getValor();
 		}
+		for (String nombreProductoImportado : getImportador().getInformeMercado().keySet()) {
+			valorActual += getImportador().getInformeMercado().get(nombreProductoImportado);
+
+		}
+
+		rentabilidadCartera = (((valorActual - valorInicial) / valorInicial) * 100) * valorInicial /
+
+				getCapitalTotal();
+
+		getCartera().setRentabilidadActual(rentabilidadCartera);
+
 		return rentabilidadCartera;
 
 	}
@@ -159,6 +154,7 @@ public class GestorCarteraImpl implements GestorCartera<ProductoFinancieroImpl, 
 		getImportador().importar(url);
 		caculaRentabilidad();
 		listarProductos();
+		listarUsuarios();
 		getCapitalTotal();
 		generarJsonCartera();
 	}

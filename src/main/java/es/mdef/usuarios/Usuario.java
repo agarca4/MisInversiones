@@ -5,17 +5,19 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import es.mdef.CarteraInversion;
 
 @Entity
+@Table(name = "USUARIOS")
 public class Usuario {
 
 	private String nombre;
 	@Id
-	private long id;
+	private Integer id;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CARTERA")
 	@JsonBackReference
@@ -24,11 +26,9 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(String nombre, long id, CarteraInversion cartera) {
-		super();
+	public Usuario(String nombre, Integer id) {
 		this.nombre = nombre;
 		this.id = id;
-		this.cartera = cartera;
 
 	}
 
@@ -36,7 +36,15 @@ public class Usuario {
 		return nombre;
 	}
 
-	public long getId() {
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
+
+	public Integer getId() {
 		return id;
 	}
 

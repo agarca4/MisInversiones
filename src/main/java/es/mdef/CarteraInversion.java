@@ -3,24 +3,20 @@ package es.mdef;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.Id;
-import javax.persistence.MapKey;
-import javax.persistence.MapKeyClass;
 import javax.persistence.OneToMany;
-import es.mdef.productosfinancieros.ProductoFinancieroImpl;
+
+import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
 @Entity
 public class CarteraInversion {
 
 	@Id
-	@Column(name= "NOMBRE_CARTERA")
+	@Column(name = "NOMBRE_CARTERA")
 	private String nombreCartera;
 	private Instant fechaCreacionCartera;
 	private double capitalTotal;
@@ -29,28 +25,24 @@ public class CarteraInversion {
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
 
-	// @ElementCollection
-	@OneToMany(targetEntity = ProductoFinancieroImpl.class, mappedBy = "cartera", cascade = CascadeType.ALL)
-	//@MapKeyClass(FondoInversion.class)
-	@MapKeyClass( ProductoFinancieroImpl.class )
-	//@Column(name = "PRECIO_ADQUISICION")
-	private Map<ProductoFinancieroImpl, Double> productosFinancieros = new HashMap<>();
+	@OneToMany(targetEntity = FondoInversion.class, mappedBy = "cartera", cascade = CascadeType.ALL)
+	private Collection<FondoInversion> productos = new ArrayList<>();
 
-	// Implemento el constructor por defecto con modificador de acceso package para
-	// evitar que se cree ninguna Cartera fuera
-	// del GestorCartera que es quien
-	// gobierna la logica del negocio
 	CarteraInversion() {
 		setFechaCreacionCartera(Instant.now());
 
 	}
 
+	public Collection<FondoInversion> getProductosFinancieros() {
+		return productos;
+	}
+
+	public void setProductosFinancieros(Collection<FondoInversion> productosFinancieros) {
+		this.productos = productosFinancieros;
+	}
+
 	void setFechaCreacionCartera(Instant fechaCreacionCartera) {
 		this.fechaCreacionCartera = fechaCreacionCartera;
-	}
-	@OneToMany(targetEntity = ProductoFinancieroImpl.class)
-	public Map<ProductoFinancieroImpl, Double> getProductosFinancieros() {
-		return productosFinancieros;
 	}
 
 	public double getCapitalTotal() {
@@ -73,9 +65,12 @@ public class CarteraInversion {
 		this.nombreCartera = nombreCartera;
 	}
 
-	@OneToMany(targetEntity = Usuario.class)
 	public Collection<Usuario> getUsuarios() {
 		return usuarios;
+	}
+
+	void setUsuarios(Collection<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 
 	public double getRentabilidadActual() {

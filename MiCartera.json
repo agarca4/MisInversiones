@@ -1,10 +1,10 @@
 {
   "nombreCartera" : "Cartera agresiva",
   "fechaCreacionCartera" : {
-    "nano" : 86063000,
-    "epochSecond" : 1588103295
+    "nano" : 43218000,
+    "epochSecond" : 1588164189
   },
-  "capitalTotal" : 8500.0,
+  "capitalTotal" : 3500.0,
   "usuarios" : [ {
     "nombre" : "Victoria",
     "id" : 2
@@ -12,10 +12,27 @@
     "nombre" : "Belen",
     "id" : 3
   } ],
-  "rentabilidadActual" : 35.29411764705882,
-  "productosFinancieros" : {
-    "Producto Financiero: MidTem, comercializadora: Axa,ISIN: 742069, sector: CONSUMO_DEFENSIVO ,tipo: MIXTO, riesgo: MEDIO" : -500.0,
-    "Producto Financiero: Edeficandi, comercializadora: Pictetd,ISIN: 478120, sector: INDUSTRIA ,tipo: RENTA_FIJA, riesgo: BAJO" : 8500.0,
-    "Producto Financiero: SP500, comercializadora: Amundi,ISIN: 555555, sector: CONSUMO_CICLICO ,tipo: RENTA_VARIABLE, riesgo: ALTO" : 500.0
-  }
+  "rentabilidadActual" : 7.142857142857143,
+  "productosFinancieros" : [ {
+    "isin" : 155555,
+    "nombre" : "SP500",
+    "sector" : "CONSUMO_CICLICO",
+    "tipo" : "RENTA_VARIABLE",
+    "riesgo" : "ALTO",
+    "valor" : 1500.0
+  }, {
+    "isin" : 288120,
+    "nombre" : "Edeficandi",
+    "sector" : "INDUSTRIA",
+    "tipo" : "RENTA_FIJA",
+    "riesgo" : "BAJO",
+    "valor" : 1000.0
+  }, {
+    "isin" : 312069,
+    "nombre" : "MidTem",
+    "sector" : "CONSUMO_DEFENSIVO",
+    "tipo" : "MIXTO",
+    "riesgo" : "MEDIO",
+    "valor" : 1000.0
+  } ]
 }

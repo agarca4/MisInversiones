@@ -12,14 +12,11 @@ import es.mdef.CarteraInversion;
 import es.mdef.GestorCartera;
 import es.mdef.GestorCarteraImpl;
 import es.mdef.Importador;
-import es.mdef.productosfinancieros.ProductoFinanciero;
-import es.mdef.productosfinancieros.ProductoFinancieroImpl;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.productosfinancieros.fondosinversion.SectorFondo;
 import es.mdef.productosfinancieros.fondosinversion.TipoFondo;
 import es.mdef.repositorios.CarteraInversionDAO;
 import es.mdef.repositorios.ImportadorDAO;
-import es.mdef.repositorios.UsuarioDAO;
 import es.mdef.usuarios.Usuario;
 
 @SpringBootApplication
@@ -42,10 +39,10 @@ import es.mdef.usuarios.Usuario;
 public class MisInversionesApplication {
 
 	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
-	private static GestorCartera<ProductoFinancieroImpl, CarteraInversion, Importador> miGestorCartera = new GestorCarteraImpl(
+	private static GestorCartera<FondoInversion, CarteraInversion, Importador> miGestorCartera = new GestorCarteraImpl(
 			"Cartera agresiva");
 
-	protected static GestorCartera<ProductoFinancieroImpl, CarteraInversion, Importador> getMiGestorCartera() {
+	protected static GestorCartera<FondoInversion, CarteraInversion, Importador> getMiGestorCartera() {
 		return miGestorCartera;
 	}
 
@@ -53,75 +50,39 @@ public class MisInversionesApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
-		ProductoFinancieroImpl fondo1 = new FondoInversion("SP500", "Amundi", 555555, SectorFondo.CONSUMO_CICLICO,
+		FondoInversion fondo1 = new FondoInversion("SP500", 155555, SectorFondo.CONSUMO_CICLICO,
 				TipoFondo.RENTA_VARIABLE);
-		ProductoFinancieroImpl fondo2 = new FondoInversion("Edeficandi", "Pictetd", 478120, SectorFondo.INDUSTRIA,
-				TipoFondo.RENTA_FIJA);
-		ProductoFinancieroImpl fondo3 = new FondoInversion("MidTem", "Axa", 742069, SectorFondo.CONSUMO_DEFENSIVO,
-				TipoFondo.MIXTO);
+		FondoInversion fondo2 = new FondoInversion("Edeficandi", 288120, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo3 = new FondoInversion("MidTem", 312069, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
 
-		Usuario usuario1 = new Usuario("Juan", 0001, getMiGestorCartera().getCartera());
-		Usuario usuario2 = new Usuario("Victoria", 0002, getMiGestorCartera().getCartera());
-		Usuario usuario3 = new Usuario("Belen", 0003, getMiGestorCartera().getCartera());
+		Usuario usuario1 = new Usuario("Juan", 1);
+		Usuario usuario2 = new Usuario("Victoria", 2);
+		Usuario usuario3 = new Usuario("Belen", 3);
 
 		getMiGestorCartera().altaUsuario(usuario1);
 		getMiGestorCartera().altaUsuario(usuario2);
 		getMiGestorCartera().altaUsuario(usuario3);
 		getMiGestorCartera().bajaUsuario(usuario1);
 
-		// compro para mi cartera los productos que habia creado con el factory,
-		// asociandole el importe que invierto
-		getMiGestorCartera().compraProductoFinanciero(fondo1, 500.00);
-		getMiGestorCartera().compraProductoFinanciero(fondo2, 7500.00);
-		getMiGestorCartera().compraProductoFinanciero(fondo3, 900.00);
+		// compro y vendo asociandole el importe que invierto o desinvierto
+		getMiGestorCartera().compraProductoFinanciero(fondo1, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo2, 2000.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo3, 1000.00);
 
-		// Compruebo que funciona correctamente el metodo, me salta el log.error cuando
-		// trato de vender un producto q ya no tengo
-		getMiGestorCartera().vendeProductoFinanciero(fondo2, 2000.00);
 		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000.00);
-		getMiGestorCartera().vendeProductoFinanciero(fondo3, 900.00);
-		getMiGestorCartera().compraProductoFinanciero(fondo2, 4000.00);
-		getMiGestorCartera().vendeProductoFinanciero(fondo3, 500.00);
 
 		getMiGestorCartera().consultarCartera("infoMercado.csv");
 
-		/*
-		 * Aqui voy a guardar en la BBDD los productos financieros, lo hago con con
-		 * configuracion del ORM con XML la variable debe ser de la clase, no de la
-		 * interfaz, por eso el casteo uso configuracion de ORM con XML con herencia El
-		 * sector del fondo viene de un Enum y no se como persistirlo Los campos
-		 * estaticos, en este caso es el riesgo, tampoco se persiste
-		 */
-//		FondoInversionRentaVariableDAO fondoInversionRentaVariableDAO = context
-//				.getBean(FondoInversionRentaVariableDAO.class);
-//		FondoInversionRentaFijaDAO fondoInversionRentaFijaDAO = context.getBean(FondoInversionRentaFijaDAO.class);
-//		FondoInversionMixtoDAO fondoInversionMixtoDAO = context.getBean(FondoInversionMixtoDAO.class);
-
-		// voy a crear otro producto mas
-//		Object[] valorArgumentos4 = { "NN (L) Smart Connectivity - P Cap EUR", "NN Investment Partners BV",
-//				Sector.TECNOLOGIA, 192961 };
-//		ProductoFinanciero producto4 = ProductoFinancieroFactory
-//				.crearProductoFinanciero(FondoInversionRentaVariable.class, argumentos, valorArgumentos4);
-//
-//		fondoInversionRentaVariableDAO.save((FondoInversionRentaVariable) producto1);
-//		fondoInversionRentaVariableDAO.save((FondoInversionRentaVariable) producto4);
-//		fondoInversionRentaFijaDAO.save((FondoInversionRentaFija) producto2);
-//		fondoInversionMixtoDAO.save((FondoInversionMixto) producto3);
-
-		// Aquí voy a guardar en la BBDD la info importada vía csv, usando anotaciones,
-		// NO por xml
 		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
+		infoMercadoImportada.deleteAll();
 		infoMercadoImportada.save(miGestorCartera.getImportador());
-//
-		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
-		miCartera.save(miGestorCartera.getCartera());
 
-		log.info(miCartera.findAll().toString());
+		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
+		miCartera.deleteAll();
+		miCartera.save(miGestorCartera.getCartera());
 
 		// context.close();
 
-		log.info(miGestorCartera.listarUsuarios().toString());
-		log.info(miGestorCartera.listarProductos().toString());
 	}
 
 }
