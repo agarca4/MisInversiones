@@ -16,6 +16,7 @@ import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.productosfinancieros.fondosinversion.SectorFondo;
 import es.mdef.productosfinancieros.fondosinversion.TipoFondo;
 import es.mdef.repositorios.CarteraInversionDAO;
+import es.mdef.repositorios.FondoInversionDAO;
 import es.mdef.repositorios.ImportadorDAO;
 import es.mdef.usuarios.Usuario;
 
@@ -50,10 +51,10 @@ public class MisInversionesApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
-		FondoInversion fondo1 = new FondoInversion("SP500", 155555, SectorFondo.CONSUMO_CICLICO,
+		FondoInversion fondo1 = new FondoInversion("SP500", "155555", SectorFondo.CONSUMO_CICLICO,
 				TipoFondo.RENTA_VARIABLE);
-		FondoInversion fondo2 = new FondoInversion("Edeficandi", 288120, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
-		FondoInversion fondo3 = new FondoInversion("MidTem", 312069, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
+		FondoInversion fondo2 = new FondoInversion("Edeficandi", "288120", SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo3 = new FondoInversion("MidTem", "312069", SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
 
 		Usuario usuario1 = new Usuario("Juan");
 		Usuario usuario2 = new Usuario("Victoria");
@@ -74,12 +75,15 @@ public class MisInversionesApplication {
 		getMiGestorCartera().consultarCartera("infoMercado.csv");
 
 		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
-		infoMercadoImportada.deleteAll();
+		//infoMercadoImportada.deleteAll();
 		infoMercadoImportada.save(miGestorCartera.getImportador());
 
 		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
-		miCartera.deleteAll();
+		//miCartera.deleteAll();
 		miCartera.save(miGestorCartera.getCartera());
+		
+//		FondoInversionDAO misFondos = context.getBean(FondoInversionDAO.class);
+//		misFondos.deleteAll();
 
 		// context.close();
 

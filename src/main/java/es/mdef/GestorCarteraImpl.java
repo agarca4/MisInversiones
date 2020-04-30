@@ -40,9 +40,9 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	public void compraProductoFinanciero(FondoInversion producto, Double capitalInvertido) {
 		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
 
-		if (!(getCartera().getProductosFinancieros().contains(producto))) {
+		if (!(getCartera().getFondos().contains(producto))) {
 			producto.setValor(capitalInvertido);
-			getCartera().getProductosFinancieros().add(producto);
+			getCartera().getFondos().add(producto);
 			producto.setCartera(getCartera());
 
 		} else {
@@ -56,13 +56,13 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	@Override
 	public void vendeProductoFinanciero(FondoInversion producto, Double capitalDesinvertido) {
 
-		if (getCartera().getProductosFinancieros().contains(producto)
+		if (getCartera().getFondos().contains(producto)
 				&& capitalDesinvertido.doubleValue() >= producto.getValor()) {
 
-			getCartera().getProductosFinancieros().remove(producto);
+			getCartera().getFondos().remove(producto);
 			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - producto.getValor().doubleValue());
 			producto.setCartera(null);
-		} else if (getCartera().getProductosFinancieros().contains(producto)
+		} else if (getCartera().getFondos().contains(producto)
 				&& capitalDesinvertido.doubleValue() < producto.getValor()) {
 			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - capitalDesinvertido.doubleValue());
 			producto.setValor(producto.getValor().doubleValue() - capitalDesinvertido.doubleValue());
@@ -108,7 +108,7 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	@Override
 	public Collection<FondoInversion> listarProductos() {
 
-		return getCartera().getProductosFinancieros();
+		return getCartera().getFondos();
 
 	}
 
@@ -118,7 +118,7 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 		Double valorInicial = 0.0;
 		Double rentabilidadCartera = 0.0;
 
-		for (FondoInversion producto : getCartera().getProductosFinancieros()) {
+		for (FondoInversion producto : getCartera().getFondos()) {
 			valorInicial += producto.getValor();
 		}
 		for (String nombreProductoImportado : getImportador().getInformeMercado().keySet()) {

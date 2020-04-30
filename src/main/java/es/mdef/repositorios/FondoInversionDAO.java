@@ -5,6 +5,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 
 @RepositoryRestResource
-public interface FondoInversionDAO extends JpaRepository<FondoInversion, Integer>{
+public interface FondoInversionDAO extends JpaRepository<FondoInversion, String>{
 
 }

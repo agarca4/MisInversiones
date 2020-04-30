@@ -10,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import es.mdef.CarteraInversion;
@@ -19,11 +18,12 @@ import es.mdef.CarteraInversion;
 @Table(name = "USUARIOS")
 public class Usuario {
 
-	private String nombre;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true)
-	private Integer id;
+	private String id;
+	private String nombre;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CARTERA")
 	@JsonBackReference
@@ -45,11 +45,11 @@ public class Usuario {
 		this.nombre = nombre;
 	}
 
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
 

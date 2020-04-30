@@ -1,34 +1,34 @@
 {
   "nombreCartera" : "Cartera agresiva",
   "fechaCreacionCartera" : {
-    "nano" : 324968000,
-    "epochSecond" : 1588231895
+    "nano" : 32663000,
+    "epochSecond" : 1588264478
   },
   "capitalTotal" : 3500.0,
   "usuarios" : [ {
-    "nombre" : "Victoria",
-    "id" : null
+    "id" : null,
+    "nombre" : "Victoria"
   }, {
-    "nombre" : "Belen",
-    "id" : null
+    "id" : null,
+    "nombre" : "Belen"
   } ],
   "rentabilidadActual" : 7.142857142857143,
-  "productosFinancieros" : [ {
-    "isin" : 155555,
+  "fondos" : [ {
+    "isin" : "155555",
     "nombre" : "SP500",
     "sector" : "CONSUMO_CICLICO",
     "tipo" : "RENTA_VARIABLE",
     "riesgo" : "ALTO",
     "valor" : 1500.0
   }, {
-    "isin" : 288120,
+    "isin" : "288120",
     "nombre" : "Edeficandi",
     "sector" : "INDUSTRIA",
     "tipo" : "RENTA_FIJA",
     "riesgo" : "BAJO",
     "valor" : 1000.0
   }, {
-    "isin" : 312069,
+    "isin" : "312069",
     "nombre" : "MidTem",
     "sector" : "CONSUMO_DEFENSIVO",
     "tipo" : "MIXTO",

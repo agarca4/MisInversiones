@@ -25,20 +25,20 @@ public class CarteraInversion {
 	private Collection<Usuario> usuarios = new ArrayList<>();
 	private double rentabilidadActual;
 
-	@OneToMany(targetEntity = FondoInversion.class, mappedBy = "cartera", cascade = CascadeType.ALL)
-	private Collection<FondoInversion> productos = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL, targetEntity = FondoInversion.class, mappedBy = "cartera")
+	private Collection<FondoInversion> fondos = new ArrayList<>();
 
 	CarteraInversion() {
 		setFechaCreacionCartera(Instant.now());
 
 	}
 
-	public Collection<FondoInversion> getProductosFinancieros() {
-		return productos;
+	public Collection<FondoInversion> getFondos() {
+		return fondos;
 	}
 
-	public void setProductosFinancieros(Collection<FondoInversion> productosFinancieros) {
-		this.productos = productosFinancieros;
+	public void setFondos(Collection<FondoInversion> fondos) {
+		this.fondos = fondos;
 	}
 
 	void setFechaCreacionCartera(Instant fechaCreacionCartera) {
@@ -88,9 +88,9 @@ public class CarteraInversion {
 
 	@Override
 	public String toString() {
-		return "CarteraInversion " + getNombreCartera() + ": " + getProductosFinancieros() + ", capital total: "
+		return "CarteraInversion " + getNombreCartera() + ": " + getFondos() + ", capital total: "
 				+ getCapitalTotal() + ", creada el: " + getFechaCreacionCartera() + ", usuarios: " + getUsuarios()
-				+ ", Rentabilidad Actual:" + getRentabilidadActual();
+				+ ", Rentabilidad:" + getRentabilidadActual();
 	}
 
 }

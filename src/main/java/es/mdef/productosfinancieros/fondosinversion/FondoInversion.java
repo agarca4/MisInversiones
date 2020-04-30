@@ -16,7 +16,7 @@ import es.mdef.CarteraInversion;
 public class FondoInversion {
 
 	@Id
-	private Integer isin;
+	private String isin;
 	private String nombre;
 	@Enumerated(EnumType.STRING)
 	private SectorFondo sector;
@@ -32,7 +32,7 @@ public class FondoInversion {
 	FondoInversion() {
 	}
 
-	public FondoInversion(String nombreProducto, Integer isin, SectorFondo sector, TipoFondo tipo) {
+	public FondoInversion(String nombreProducto, String isin, SectorFondo sector, TipoFondo tipo) {
 		this.nombre = nombreProducto;
 		this.isin = isin;
 		this.sector = sector;
@@ -64,11 +64,11 @@ public class FondoInversion {
 		this.nombre = nombre;
 	}
 
-	public Integer getIsin() {
+	public String getIsin() {
 		return isin;
 	}
 
-	public void setIsin(Integer isin) {
+	public void setIsin(String isin) {
 		this.isin = isin;
 	}
 
