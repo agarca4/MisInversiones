@@ -55,9 +55,9 @@ public class MisInversionesApplication {
 		FondoInversion fondo2 = new FondoInversion("Edeficandi", 288120, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
 		FondoInversion fondo3 = new FondoInversion("MidTem", 312069, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
 
-		Usuario usuario1 = new Usuario("Juan", 1);
-		Usuario usuario2 = new Usuario("Victoria", 2);
-		Usuario usuario3 = new Usuario("Belen", 3);
+		Usuario usuario1 = new Usuario("Juan");
+		Usuario usuario2 = new Usuario("Victoria");
+		Usuario usuario3 = new Usuario("Belen");
 
 		getMiGestorCartera().altaUsuario(usuario1);
 		getMiGestorCartera().altaUsuario(usuario2);

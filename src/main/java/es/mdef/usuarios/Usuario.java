@@ -1,11 +1,15 @@
 package es.mdef.usuarios;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
@@ -17,6 +21,8 @@ public class Usuario {
 
 	private String nombre;
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(unique = true)
 	private Integer id;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CARTERA")
@@ -26,9 +32,8 @@ public class Usuario {
 	public Usuario() {
 	}
 
-	public Usuario(String nombre, Integer id) {
+	public Usuario(String nombre) {
 		this.nombre = nombre;
-		this.id = id;
 
 	}
 

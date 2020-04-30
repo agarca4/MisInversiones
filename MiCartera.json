@@ -1,16 +1,16 @@
 {
   "nombreCartera" : "Cartera agresiva",
   "fechaCreacionCartera" : {
-    "nano" : 43218000,
-    "epochSecond" : 1588164189
+    "nano" : 324968000,
+    "epochSecond" : 1588231895
   },
   "capitalTotal" : 3500.0,
   "usuarios" : [ {
     "nombre" : "Victoria",
-    "id" : 2
+    "id" : null
   }, {
     "nombre" : "Belen",
-    "id" : 3
+    "id" : null
   } ],
   "rentabilidadActual" : 7.142857142857143,
   "productosFinancieros" : [ {
