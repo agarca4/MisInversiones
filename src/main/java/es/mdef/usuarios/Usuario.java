@@ -18,7 +18,6 @@ import es.mdef.CarteraInversion;
 @Table(name = "USUARIOS")
 public class Usuario {
 
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true)
@@ -39,14 +38,6 @@ public class Usuario {
 
 	public String getNombre() {
 		return nombre;
-	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
-	public void setId(String id) {
-		this.id = id;
 	}
 
 	public String getId() {

@@ -6,31 +6,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
-import javax.persistence.CollectionTable;
-import javax.persistence.Column;
-import javax.persistence.ElementCollection;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.MapKeyColumn;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Entity
 public class Importador {
+
 	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "Nº_DE_IMPORTACION")
-	private long importacionNumero;
-
-	@ElementCollection
-	@CollectionTable(name = "INFORMACION_DE_MERCADO")
-	@MapKeyColumn(name = "PRODUCTO")
-	@Column(name = "VALOR_DE_MERCADO")
 	private Map<String, Double> informeMercado = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
@@ -75,7 +58,7 @@ public class Importador {
 
 		File miInformeMercado = new File("InformeMercado.json");
 		ObjectMapper mapper = new ObjectMapper();
-		//mapper.addMixIn(InformacionMercado.class, MixinInformacionMercado.class);
+		// mapper.addMixIn(InformacionMercado.class, MixinInformacionMercado.class);
 		try {
 			mapper.writerWithDefaultPrettyPrinter().writeValue(miInformeMercado, getInformeMercado());
 		} catch (IOException e) {

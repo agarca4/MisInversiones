@@ -1,8 +1,8 @@
 {
   "nombreCartera" : "Cartera agresiva",
   "fechaCreacionCartera" : {
-    "nano" : 32663000,
-    "epochSecond" : 1588264478
+    "nano" : 270244000,
+    "epochSecond" : 1588360394
   },
   "capitalTotal" : 3500.0,
   "usuarios" : [ {

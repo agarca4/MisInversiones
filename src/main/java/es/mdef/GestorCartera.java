@@ -1,6 +1,7 @@
 package es.mdef;
 
 import java.util.Collection;
+
 import es.mdef.usuarios.Usuario;
 
 public interface GestorCartera<T, S, U> {
@@ -23,8 +24,6 @@ public interface GestorCartera<T, S, U> {
 
 	public Collection<T> listarProductos();
 
-	public Double caculaRentabilidad();
-
-	public void consultarCartera(String url);
+	public Double calcularRentabilidad(String url);
 
 }

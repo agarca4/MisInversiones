@@ -8,22 +8,29 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
 @Entity
+@Table(name = "CARTERAS")
 public class CarteraInversion {
 
 	@Id
 	@Column(name = "NOMBRE_CARTERA")
 	private String nombreCartera;
+	@Column(name = "FECHA_ALTA")
 	private Instant fechaCreacionCartera;
-	private double capitalTotal;
+	@Column(name = "CAPITAL_INVERTIDO")
+	private double capitalInvertido;
+
+	@Transient
+	private GestorCarteraImpl gestor;
 
 	@OneToMany(cascade = CascadeType.ALL, targetEntity = Usuario.class, mappedBy = "cartera")
 	private Collection<Usuario> usuarios = new ArrayList<>();
-	private double rentabilidadActual;
+	private Double rentabilidad;
 
 	@OneToMany(cascade = CascadeType.ALL, targetEntity = FondoInversion.class, mappedBy = "cartera")
 	private Collection<FondoInversion> fondos = new ArrayList<>();
@@ -45,16 +52,16 @@ public class CarteraInversion {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	public double getCapitalTotal() {
-		return capitalTotal;
+	public double getCapitalInvertido() {
+		return capitalInvertido;
 	}
 
 	public Instant getFechaCreacionCartera() {
 		return fechaCreacionCartera;
 	}
 
-	void setCapitalTotal(double capitalTotal) {
-		this.capitalTotal = capitalTotal;
+	void setCapitalInvertido(double capitalTotal) {
+		this.capitalInvertido = capitalTotal;
 	}
 
 	public String getNombreCartera() {
@@ -73,24 +80,24 @@ public class CarteraInversion {
 		this.usuarios = usuarios;
 	}
 
-	public double getRentabilidadActual() {
-		return rentabilidadActual;
+	public Double getRentabilidad(String url) {
+		getGestor().calcularRentabilidad(url);
+		return rentabilidad;
 	}
 
-	/*
-	 * Esto no significa que vaya a setear el valor de la rentabilidad a pelo sino
-	 * que en el metodo para calcularla que está en el gestor cartera, llamará a
-	 * este metodo para asignarsela
-	 */
-	void setRentabilidadActual(double rentabilidadActual) {
-		this.rentabilidadActual = rentabilidadActual;
+	void setRentabilidad(Double rentabilidad) {
+		this.rentabilidad = rentabilidad;
+	}
+
+	private GestorCarteraImpl getGestor() {
+		return gestor;
 	}
 
 	@Override
 	public String toString() {
-		return "CarteraInversion " + getNombreCartera() + ": " + getFondos() + ", capital total: "
-				+ getCapitalTotal() + ", creada el: " + getFechaCreacionCartera() + ", usuarios: " + getUsuarios()
-				+ ", Rentabilidad:" + getRentabilidadActual();
+		return getNombreCartera() + ": " + getFondos() + ", capital total: " + getCapitalInvertido() + ", creada el: "
+				+ getFechaCreacionCartera() + ", usuarios: " + getUsuarios() + ", Rentabilidad:"
+				+ rentabilidad;
 	}
 
 }

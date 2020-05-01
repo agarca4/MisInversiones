@@ -12,7 +12,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import es.mdef.CarteraInversion;
 
 @Entity
-@Table(name = "FONDOS_DE_INVERSION")
+@Table(name = "FONDOS")
 public class FondoInversion {
 
 	@Id
@@ -60,16 +60,8 @@ public class FondoInversion {
 		return nombre;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-
 	public String getIsin() {
 		return isin;
-	}
-
-	public void setIsin(String isin) {
-		this.isin = isin;
 	}
 
 	public SectorFondo getSector() {
@@ -77,16 +69,8 @@ public class FondoInversion {
 
 	}
 
-	public void setSector(SectorFondo sector) {
-		this.sector = sector;
-	}
-
 	public TipoFondo getTipo() {
 		return tipo;
-	}
-
-	public void setTipo(TipoFondo tipo) {
-		this.tipo = tipo;
 	}
 
 	public String getRiesgo() {
@@ -113,8 +97,8 @@ public class FondoInversion {
 
 	@Override
 	public String toString() {
-		return getNombre() + ", valor: " + getValor() + ", ISIN: " + getIsin() + ", sector: "
-				+ getSector() + ", tipo: " + getTipo() + ", riesgo: " + getRiesgo();
+		return getNombre() + ", valor: " + getValor() + ", ISIN: " + getIsin() + ", sector: " + getSector() + ", tipo: "
+				+ getTipo() + ", riesgo: " + getRiesgo();
 	}
 
 }

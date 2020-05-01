@@ -14,31 +14,26 @@ import es.mdef.usuarios.Usuario;
 public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraInversion, Importador> {
 
 	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
-	private CarteraInversion cartera;
 	private Importador importador;
+	private CarteraInversion cartera;
 
-	// uso private para los get de cartera e importador, xq quiero que todo se haga
-	// a traves del gestor
-	@Override
 	public CarteraInversion getCartera() {
 		return cartera;
 	}
 
-	@Override
 	public Importador getImportador() {
 		return importador;
 	}
 
 	public GestorCarteraImpl(String nombreCartera) {
-		super();
-		this.cartera = new CarteraInversion();
 		this.importador = new Importador();
+		this.cartera = new CarteraInversion();
 		getCartera().setNombreCartera(nombreCartera);
 	}
 
 	@Override
 	public void compraProductoFinanciero(FondoInversion producto, Double capitalInvertido) {
-		getCartera().setCapitalTotal(getCartera().getCapitalTotal() + capitalInvertido);
+		getCartera().setCapitalInvertido(getCartera().getCapitalInvertido() + capitalInvertido);
 
 		if (!(getCartera().getFondos().contains(producto))) {
 			producto.setValor(capitalInvertido);
@@ -56,15 +51,14 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	@Override
 	public void vendeProductoFinanciero(FondoInversion producto, Double capitalDesinvertido) {
 
-		if (getCartera().getFondos().contains(producto)
-				&& capitalDesinvertido.doubleValue() >= producto.getValor()) {
+		if (getCartera().getFondos().contains(producto) && capitalDesinvertido.doubleValue() >= producto.getValor()) {
 
 			getCartera().getFondos().remove(producto);
-			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - producto.getValor().doubleValue());
+			getCartera().setCapitalInvertido(getCartera().getCapitalInvertido() - producto.getValor().doubleValue());
 			producto.setCartera(null);
 		} else if (getCartera().getFondos().contains(producto)
 				&& capitalDesinvertido.doubleValue() < producto.getValor()) {
-			getCartera().setCapitalTotal(getCartera().getCapitalTotal() - capitalDesinvertido.doubleValue());
+			getCartera().setCapitalInvertido(getCartera().getCapitalInvertido() - capitalDesinvertido.doubleValue());
 			producto.setValor(producto.getValor().doubleValue() - capitalDesinvertido.doubleValue());
 
 		} else {
@@ -76,7 +70,7 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 
 	@Override
 	public Double getCapitalTotal() {
-		return getCartera().getCapitalTotal();
+		return getCartera().getCapitalInvertido();
 	}
 
 	@Override
@@ -113,7 +107,10 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	}
 
 	@Override
-	public Double caculaRentabilidad() {
+	public Double calcularRentabilidad(String url) {
+
+		getImportador().importar(url);
+
 		Double valorActual = 0.0;
 		Double valorInicial = 0.0;
 		Double rentabilidadCartera = 0.0;
@@ -130,7 +127,7 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 
 				getCapitalTotal();
 
-		getCartera().setRentabilidadActual(rentabilidadCartera);
+		getCartera().setRentabilidad(rentabilidadCartera);
 
 		return rentabilidadCartera;
 
@@ -146,17 +143,6 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	}
-
-	// Este metodo se corresponde con el Caso de Uso CONSULTAR CARTERA
-	@Override
-	public void consultarCartera(String url) {
-		getImportador().importar(url);
-		caculaRentabilidad();
-		listarProductos();
-		listarUsuarios();
-		getCapitalTotal();
-		generarJsonCartera();
 	}
 
 }

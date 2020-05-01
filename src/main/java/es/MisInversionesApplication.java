@@ -8,6 +8,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.ImportResource;
+
 import es.mdef.CarteraInversion;
 import es.mdef.GestorCartera;
 import es.mdef.GestorCarteraImpl;
@@ -16,8 +17,6 @@ import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.productosfinancieros.fondosinversion.SectorFondo;
 import es.mdef.productosfinancieros.fondosinversion.TipoFondo;
 import es.mdef.repositorios.CarteraInversionDAO;
-import es.mdef.repositorios.FondoInversionDAO;
-import es.mdef.repositorios.ImportadorDAO;
 import es.mdef.usuarios.Usuario;
 
 @SpringBootApplication
@@ -39,11 +38,10 @@ import es.mdef.usuarios.Usuario;
 @ImportResource({ "classpath:config/jpa-config.xml" })
 public class MisInversionesApplication {
 
-	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
 	private static GestorCartera<FondoInversion, CarteraInversion, Importador> miGestorCartera = new GestorCarteraImpl(
 			"Cartera agresiva");
 
-	protected static GestorCartera<FondoInversion, CarteraInversion, Importador> getMiGestorCartera() {
+	private static GestorCartera<FondoInversion, CarteraInversion, Importador> getMiGestorCartera() {
 		return miGestorCartera;
 	}
 
@@ -65,25 +63,15 @@ public class MisInversionesApplication {
 		getMiGestorCartera().altaUsuario(usuario3);
 		getMiGestorCartera().bajaUsuario(usuario1);
 
-		// compro y vendo asociandole el importe que invierto o desinvierto
 		getMiGestorCartera().compraProductoFinanciero(fondo1, 1500.00);
 		getMiGestorCartera().compraProductoFinanciero(fondo2, 2000.00);
 		getMiGestorCartera().compraProductoFinanciero(fondo3, 1000.00);
-
 		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000.00);
 
-		getMiGestorCartera().consultarCartera("infoMercado.csv");
-
-		ImportadorDAO infoMercadoImportada = context.getBean(ImportadorDAO.class);
-		//infoMercadoImportada.deleteAll();
-		infoMercadoImportada.save(miGestorCartera.getImportador());
+		getMiGestorCartera().calcularRentabilidad("infoMercado.csv");
 
 		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
-		//miCartera.deleteAll();
 		miCartera.save(miGestorCartera.getCartera());
-		
-//		FondoInversionDAO misFondos = context.getBean(FondoInversionDAO.class);
-//		misFondos.deleteAll();
 
 		// context.close();
 
