@@ -1,13 +1,17 @@
 package es.mdef.productosfinancieros.fondosinversion;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import es.mdef.CarteraInversion;
 
@@ -16,7 +20,9 @@ import es.mdef.CarteraInversion;
 public class FondoInversion {
 
 	@Id
-	private String isin;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(unique = true)
+	private String id;
 	private String nombre;
 	@Enumerated(EnumType.STRING)
 	private SectorFondo sector;
@@ -32,9 +38,8 @@ public class FondoInversion {
 	FondoInversion() {
 	}
 
-	public FondoInversion(String nombreProducto, String isin, SectorFondo sector, TipoFondo tipo) {
+	public FondoInversion(String nombreProducto, SectorFondo sector, TipoFondo tipo) {
 		this.nombre = nombreProducto;
-		this.isin = isin;
 		this.sector = sector;
 		this.tipo = tipo;
 		setRiesgo();
@@ -58,10 +63,6 @@ public class FondoInversion {
 
 	public String getNombre() {
 		return nombre;
-	}
-
-	public String getIsin() {
-		return isin;
 	}
 
 	public SectorFondo getSector() {
@@ -97,8 +98,8 @@ public class FondoInversion {
 
 	@Override
 	public String toString() {
-		return getNombre() + ", valor: " + getValor() + ", ISIN: " + getIsin() + ", sector: " + getSector() + ", tipo: "
-				+ getTipo() + ", riesgo: " + getRiesgo();
+		return getNombre() + ", valor: " + getValor() + ", sector: " + getSector() + ", tipo: " + getTipo()
+				+ ", riesgo: " + getRiesgo();
 	}
 
 }

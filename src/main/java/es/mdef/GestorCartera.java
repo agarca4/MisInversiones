@@ -4,11 +4,9 @@ import java.util.Collection;
 
 import es.mdef.usuarios.Usuario;
 
-public interface GestorCartera<T, S, U> {
+public interface GestorCartera<T, S> {
 
 	public S getCartera();
-
-	public U getImportador();
 
 	public void compraProductoFinanciero(T producto, Double capitalInvertido);
 
@@ -23,7 +21,5 @@ public interface GestorCartera<T, S, U> {
 	public Collection<Usuario> listarUsuarios();
 
 	public Collection<T> listarProductos();
-
-	public Double calcularRentabilidad(String url);
 
 }

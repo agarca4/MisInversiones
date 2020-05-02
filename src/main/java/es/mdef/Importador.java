@@ -13,8 +13,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Importador {
 
 	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
-
-	private Map<String, Double> informeMercado = new HashMap<>();
+	private static String url = "infoMercado.csv";
+	private static Map<String, Double> informeMercado = new HashMap<>();
 
 	// Implemento el constructor por defecto con modificador de acceso package para
 	// evitar que se cree ningun Importador fuera
@@ -23,12 +23,12 @@ public class Importador {
 	Importador() {
 	}
 
-	public Map<String, Double> getInformeMercado() {
+	public static Map<String, Double> getInformeMercado() {
 		return informeMercado;
 	}
 
 //Este metodo me importa la info de un csv y me la pasa a un Collection
-	public void importar(String url) {
+	public static Map<String, Double> importar() {
 
 		// limpio la colección porque me interesan unicamente los ultimos datos de
 		// mercado para calcular ahora la rentabilidad
@@ -51,10 +51,12 @@ public class Importador {
 
 		log.info(String.valueOf(getInformeMercado()));
 
+		return informeMercado;
+
 	}
 
 	// este metodo me genera un Json con la info que he importado
-	void generarJsonInfoImportada() {
+	static void generarJsonInfoImportada() {
 
 		File miInformeMercado = new File("InformeMercado.json");
 		ObjectMapper mapper = new ObjectMapper();

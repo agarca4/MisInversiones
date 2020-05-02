@@ -9,7 +9,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Transient;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
@@ -24,9 +23,6 @@ public class CarteraInversion {
 	private Instant fechaCreacionCartera;
 	@Column(name = "CAPITAL_INVERTIDO")
 	private double capitalInvertido;
-
-	@Transient
-	private GestorCarteraImpl gestor;
 
 	@OneToMany(cascade = CascadeType.ALL, targetEntity = Usuario.class, mappedBy = "cartera")
 	private Collection<Usuario> usuarios = new ArrayList<>();
@@ -80,24 +76,35 @@ public class CarteraInversion {
 		this.usuarios = usuarios;
 	}
 
-	public Double getRentabilidad(String url) {
-		getGestor().calcularRentabilidad(url);
+	public Double getRentabilidad() {
+
+		Importador.importar();
+		Double valorActual = 0.0;
+		Double valorInicial = 0.0;
+		Collection<String> listaNombres = new ArrayList<>();
+
+		for (FondoInversion producto : getFondos()) {
+			valorInicial += producto.getValor();
+			listaNombres.add(producto.getNombre());
+		}
+		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
+			if (listaNombres.contains(nombreProductoImportado)) {
+				valorActual += Importador.getInformeMercado().get(nombreProductoImportado);
+			}
+
+		}
+
+		rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) * valorInicial /
+
+				getCapitalInvertido();
+
 		return rentabilidad;
-	}
-
-	void setRentabilidad(Double rentabilidad) {
-		this.rentabilidad = rentabilidad;
-	}
-
-	private GestorCarteraImpl getGestor() {
-		return gestor;
 	}
 
 	@Override
 	public String toString() {
 		return getNombreCartera() + ": " + getFondos() + ", capital total: " + getCapitalInvertido() + ", creada el: "
-				+ getFechaCreacionCartera() + ", usuarios: " + getUsuarios() + ", Rentabilidad:"
-				+ rentabilidad;
+				+ getFechaCreacionCartera() + ", usuarios: " + getUsuarios() + ", Rentabilidad:" + getRentabilidad();
 	}
 
 }

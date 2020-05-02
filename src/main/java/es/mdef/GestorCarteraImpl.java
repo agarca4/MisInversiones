@@ -11,22 +11,16 @@ import es.mdef.usuarios.Usuario;
 
 //Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
 
-public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraInversion, Importador> {
+public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraInversion> {
 
 	private static final Logger log = LoggerFactory.getLogger(GestorCarteraImpl.class);
-	private Importador importador;
 	private CarteraInversion cartera;
 
 	public CarteraInversion getCartera() {
 		return cartera;
 	}
 
-	public Importador getImportador() {
-		return importador;
-	}
-
 	public GestorCarteraImpl(String nombreCartera) {
-		this.importador = new Importador();
 		this.cartera = new CarteraInversion();
 		getCartera().setNombreCartera(nombreCartera);
 	}
@@ -103,33 +97,6 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	public Collection<FondoInversion> listarProductos() {
 
 		return getCartera().getFondos();
-
-	}
-
-	@Override
-	public Double calcularRentabilidad(String url) {
-
-		getImportador().importar(url);
-
-		Double valorActual = 0.0;
-		Double valorInicial = 0.0;
-		Double rentabilidadCartera = 0.0;
-
-		for (FondoInversion producto : getCartera().getFondos()) {
-			valorInicial += producto.getValor();
-		}
-		for (String nombreProductoImportado : getImportador().getInformeMercado().keySet()) {
-			valorActual += getImportador().getInformeMercado().get(nombreProductoImportado);
-
-		}
-
-		rentabilidadCartera = (((valorActual - valorInicial) / valorInicial) * 100) * valorInicial /
-
-				getCapitalTotal();
-
-		getCartera().setRentabilidad(rentabilidadCartera);
-
-		return rentabilidadCartera;
 
 	}
 
