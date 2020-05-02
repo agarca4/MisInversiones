@@ -29,7 +29,9 @@ public class FondoInversion {
 	@Enumerated(EnumType.STRING)
 	private TipoFondo tipo;
 	private String riesgo;
-	private Double valor;
+	@Column(name="PRECIO_COMPRA_PARTICIPACIONES")
+	private Double precioParticipacion;
+	private Double capitalInvertido;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CARTERA")
 	@JsonBackReference
@@ -38,19 +40,24 @@ public class FondoInversion {
 	FondoInversion() {
 	}
 
-	public FondoInversion(String nombreProducto, SectorFondo sector, TipoFondo tipo) {
+	public FondoInversion(String nombreProducto, Double precioParticipacion, SectorFondo sector, TipoFondo tipo) {
 		this.nombre = nombreProducto;
+		this.precioParticipacion = precioParticipacion;
 		this.sector = sector;
 		this.tipo = tipo;
 		setRiesgo();
 	}
 
-	public Double getValor() {
-		return valor;
+	public Double getCapitalInvertido() {
+		return capitalInvertido;
 	}
 
-	public void setValor(Double precioAdquisicion) {
-		this.valor = precioAdquisicion;
+	public void setCapitalInvertido(Double capitalInvertido) {
+		this.capitalInvertido = capitalInvertido;
+	}
+
+	public Double getPrecioParticipacion() {
+		return precioParticipacion;
 	}
 
 	public CarteraInversion getCartera() {
@@ -78,7 +85,7 @@ public class FondoInversion {
 		return riesgo;
 	}
 
-	public void setRiesgo() {
+	void setRiesgo() {
 		switch (this.tipo) {
 		case RENTA_FIJA:
 			this.riesgo = "BAJO";
@@ -98,8 +105,8 @@ public class FondoInversion {
 
 	@Override
 	public String toString() {
-		return getNombre() + ", valor: " + getValor() + ", sector: " + getSector() + ", tipo: " + getTipo()
-				+ ", riesgo: " + getRiesgo();
+		return getNombre() + ", valor: " + getPrecioParticipacion() + ", sector: " + getSector() + ", tipo: "
+				+ getTipo() + ", riesgo: " + getRiesgo();
 	}
 
 }

@@ -12,8 +12,6 @@ public interface GestorCartera<T, S> {
 
 	public void vendeProductoFinanciero(T producto, Double capitalDesinvertido);
 
-	public Double getCapitalTotal();
-
 	public void altaUsuario(Usuario usuario);
 
 	public void bajaUsuario(Usuario usuario);

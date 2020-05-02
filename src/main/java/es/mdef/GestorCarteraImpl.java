@@ -26,18 +26,15 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	}
 
 	@Override
-	public void compraProductoFinanciero(FondoInversion producto, Double capitalInvertido) {
-		getCartera().setCapitalInvertido(getCartera().getCapitalInvertido() + capitalInvertido);
+	public void compraProductoFinanciero(FondoInversion fondo, Double capitalInvertido) {
 
-		if (!(getCartera().getFondos().contains(producto))) {
-			producto.setValor(capitalInvertido);
-			getCartera().getFondos().add(producto);
-			producto.setCartera(getCartera());
+		if (!(getCartera().getFondos().contains(fondo))) {
+			getCartera().getFondos().add(fondo);
+			fondo.setCartera(getCartera());
+			fondo.setCapitalInvertido(capitalInvertido);
 
 		} else {
-
-			producto.setValor(producto.getValor() + capitalInvertido);
-
+			fondo.setCapitalInvertido(fondo.getCapitalInvertido() + capitalInvertido);
 		}
 
 	}
@@ -45,26 +42,21 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 	@Override
 	public void vendeProductoFinanciero(FondoInversion producto, Double capitalDesinvertido) {
 
-		if (getCartera().getFondos().contains(producto) && capitalDesinvertido.doubleValue() >= producto.getValor()) {
-
+		if (getCartera().getFondos().contains(producto)
+				&& capitalDesinvertido.doubleValue() >= producto.getCapitalInvertido()) {
+			producto.setCapitalInvertido(0.0);
 			getCartera().getFondos().remove(producto);
-			getCartera().setCapitalInvertido(getCartera().getCapitalInvertido() - producto.getValor().doubleValue());
 			producto.setCartera(null);
 		} else if (getCartera().getFondos().contains(producto)
-				&& capitalDesinvertido.doubleValue() < producto.getValor()) {
-			getCartera().setCapitalInvertido(getCartera().getCapitalInvertido() - capitalDesinvertido.doubleValue());
-			producto.setValor(producto.getValor().doubleValue() - capitalDesinvertido.doubleValue());
+				&& capitalDesinvertido.doubleValue() < producto.getCapitalInvertido()) {
+			producto.setCapitalInvertido(
+					producto.getCapitalInvertido().doubleValue() - capitalDesinvertido.doubleValue());
 
 		} else {
 			log.error("Ese producto no existe en su cartera");
 
 		}
 
-	}
-
-	@Override
-	public Double getCapitalTotal() {
-		return getCartera().getCapitalInvertido();
 	}
 
 	@Override

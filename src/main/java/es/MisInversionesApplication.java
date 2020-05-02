@@ -45,9 +45,10 @@ public class MisInversionesApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
-		FondoInversion fondo1 = new FondoInversion("SP500", SectorFondo.CONSUMO_CICLICO, TipoFondo.RENTA_VARIABLE);
-		FondoInversion fondo2 = new FondoInversion("Edeficandi", SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
-		FondoInversion fondo3 = new FondoInversion("MidTem", SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
+		FondoInversion fondo1 = new FondoInversion("SP500", 70.00, SectorFondo.CONSUMO_CICLICO,
+				TipoFondo.RENTA_VARIABLE);
+		FondoInversion fondo2 = new FondoInversion("Edeficandi", 50.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo3 = new FondoInversion("MidTem", 16.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
 
 		Usuario usuario1 = new Usuario("Juan");
 		Usuario usuario2 = new Usuario("Victoria");

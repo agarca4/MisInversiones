@@ -3,6 +3,9 @@ package es.mdef;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -44,16 +47,20 @@ public class CarteraInversion {
 		this.fondos = fondos;
 	}
 
+	public Instant getFechaCreacionCartera() {
+		return fechaCreacionCartera;
+	}
+
 	void setFechaCreacionCartera(Instant fechaCreacionCartera) {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
 	public double getCapitalInvertido() {
+		capitalInvertido = 0.0;
+		for (FondoInversion fondoInversion : getFondos()) {
+			capitalInvertido += fondoInversion.getCapitalInvertido();
+		}
 		return capitalInvertido;
-	}
-
-	public Instant getFechaCreacionCartera() {
-		return fechaCreacionCartera;
 	}
 
 	void setCapitalInvertido(double capitalTotal) {
@@ -76,27 +83,28 @@ public class CarteraInversion {
 		this.usuarios = usuarios;
 	}
 
+	// rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) *
+	// (proporcion inversion en ese producto respecto a la inversion total)
 	public Double getRentabilidad() {
 
 		Importador.importar();
-		Double valorActual = 0.0;
-		Double valorInicial = 0.0;
-		Collection<String> listaNombres = new ArrayList<>();
+		Map<String, Double> capitalInvertido = new HashMap<>();
+		Map<String, Double> misFondos = new HashMap<>();
+		rentabilidad = 0.0;
 
 		for (FondoInversion producto : getFondos()) {
-			valorInicial += producto.getValor();
-			listaNombres.add(producto.getNombre());
+			misFondos.put(producto.getNombre(), producto.getPrecioParticipacion());
+			capitalInvertido.put(producto.getNombre(), producto.getCapitalInvertido());
+
 		}
 		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
-			if (listaNombres.contains(nombreProductoImportado)) {
-				valorActual += Importador.getInformeMercado().get(nombreProductoImportado);
+			if (misFondos.containsKey(nombreProductoImportado)) {
+				rentabilidad += (((Importador.getInformeMercado().get(nombreProductoImportado)
+						- misFondos.get(nombreProductoImportado)) / misFondos.get(nombreProductoImportado)) * 100)
+						* (capitalInvertido.get(nombreProductoImportado) / getCapitalInvertido());
 			}
 
 		}
-
-		rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) * valorInicial /
-
-				getCapitalInvertido();
 
 		return rentabilidad;
 	}
