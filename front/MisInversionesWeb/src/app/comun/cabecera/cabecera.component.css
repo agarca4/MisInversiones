@@ -1,0 +1,14 @@
+.rayaHorizontal{
+    border-top: 4px solid #8c8b8b;
+}
+.rayaBottom{
+    border-bottom: 4px solid #8c8b8b;
+}
+
+.logo{
+    max-width: 50%;
+}
+
+.enlaceActivo{
+    border-bottom: 17px solid red;
+}
