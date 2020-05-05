@@ -16,6 +16,7 @@ build
 
 # dependencies
 /node_modules
+/front/MisInversionesWeb/node_modules
 
 # profiling files
 chrome-profiler-events*.json
