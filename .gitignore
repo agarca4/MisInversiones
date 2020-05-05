@@ -8,11 +8,11 @@ build
 # See http://help.github.com/ignore-files/ for more about ignoring files.
 
 # compiled output
-/dist
-/tmp
-/out-tsc
+/front/MisInversionesWeb/dist
+/front/MisInversionesWeb/tmp
+/front/MisInversionesWeb/out-tsc
 # Only exists if Bazel was run
-/bazel-out
+/front/MisInversionesWeb/bazel-out
 
 # dependencies
 /front/MisInversionesWeb/node_modules
@@ -22,32 +22,32 @@ chrome-profiler-events*.json
 speed-measure-plugin*.json
 
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
-*.sublime-workspace
+/front/MisInversionesWeb/.idea
+/front/MisInversionesWeb.project
+/front/MisInversionesWeb.classpath
+/front/MisInversionesWeb.c9/
+/front/MisInversionesWeb*.launch
+/front/MisInversionesWeb.settings/
+/front/MisInversionesWeb*.sublime-workspace
 
 # IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
-.history/*
+/front/MisInversionesWeb.vscode/*
+/front/MisInversionesWeb!.vscode/settings.json
+/front/MisInversionesWeb!.vscode/tasks.json
+/front/MisInversionesWeb!.vscode/launch.json
+/front/MisInversionesWeb!.vscode/extensions.json
+/front/MisInversionesWeb.history/*
 
 # misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-yarn-error.log
-testem.log
-/typings
+/front/MisInversionesWeb/.sass-cache
+/front/MisInversionesWeb/connect.lock
+/front/MisInversionesWeb/coverage
+/front/MisInversionesWeb/libpeerconnection.log
+/front/MisInversionesWebnpm-debug.log
+/front/MisInversionesWebyarn-error.log
+/front/MisInversionesWebtestem.log
+/front/MisInversionesWeb/typings
 
 # System Files
-.DS_Store
-Thumbs.db
+/front/MisInversionesWeb.DS_Store
+/front/MisInversionesWebThumbs.db
