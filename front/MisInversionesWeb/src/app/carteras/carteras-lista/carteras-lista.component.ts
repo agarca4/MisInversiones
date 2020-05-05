@@ -12,7 +12,6 @@ export class CarterasListaComponent implements OnInit {
   carterasLista;
 
 
-
   //aquí meto la dependencia del tipo de la interfaz (clase abstracta)
   //en el app.module, ya le digo cul tiene q usar, si la local o la de la api
   constructor(private carterasService: CarterasService) {
@@ -20,6 +19,7 @@ export class CarterasListaComponent implements OnInit {
 
   ngOnInit(): void {
     this.carterasLista = this.carterasService.getCarteras();
+
   }
 
   isRentabilidadNegativa(cartera) {
@@ -28,10 +28,12 @@ export class CarterasListaComponent implements OnInit {
     }
   }
 
-  filtrar(filtro){
+
+
+  filtrar(filtro) {
     if (!filtro || filtro.trim().length == 0) {
       this.carterasLista = this.carterasService.getCarteras();
-    }else{
+    } else {
       this.carterasLista = this.carterasService.getCarterasConNombre(filtro);
     }
   }
