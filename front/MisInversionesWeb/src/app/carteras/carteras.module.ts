@@ -13,8 +13,7 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
 
 
 @NgModule({
-  declarations: [CarterasListaComponent, CarterasFormComponent, CarterasDetalleComponent, UsuariosFormComponent,
-    FondosFormComponent, CarterasHomeComponent, CarterasMenuComponent],
+  declarations: [CarterasListaComponent, CarterasFormComponent, CarterasDetalleComponent, UsuariosFormComponent, FondosFormComponent, CarterasHomeComponent, CarterasMenuComponent],
   imports: [
     CommonModule, ComunModule,
     RouterModule.forChild([
