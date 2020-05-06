@@ -9,8 +9,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
 import { RouterModule } from '@angular/router';
-
-
+import { MatButtonModule } from '@angular/material/button';
 
 
 
@@ -18,8 +17,8 @@ import { RouterModule } from '@angular/router';
   declarations: [CabeceraComponent, PieComponent, HomeComponent, NoDisponibleComponent],
   imports: [
     CommonModule,
-    MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, RouterModule
+    MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, RouterModule, MatButtonModule
   ],
-  exports: [CabeceraComponent, PieComponent, HomeComponent, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule]
+  exports: [CabeceraComponent, PieComponent, HomeComponent, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, MatButtonModule]
 })
 export class ComunModule { }

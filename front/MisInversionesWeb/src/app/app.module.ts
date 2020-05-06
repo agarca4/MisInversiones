@@ -7,7 +7,6 @@ import { CarterasService } from './servicios/carteras.service';
 import { CarterasLocalService } from './servicios/carteras-local.service';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './comun/home/home.component';
-import { CarterasModule } from './carteras/carteras.module';
 
 
 @NgModule({
@@ -17,7 +16,7 @@ import { CarterasModule } from './carteras/carteras.module';
   imports: [
     BrowserModule,
     ComunModule,
-    BrowserAnimationsModule,CarterasModule,
+    BrowserAnimationsModule,
     RouterModule.forRoot([
       {
         path: '',

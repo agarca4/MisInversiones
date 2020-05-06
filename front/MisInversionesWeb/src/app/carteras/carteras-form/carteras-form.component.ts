@@ -7,9 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarterasFormComponent implements OnInit {
 
+
+  cartera;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.cartera = {
+      nombreCartera: null,
+      fechaCreacionCartera: null,
+      capitalInvertido: 0.0,
+      rentabilidad: null
+
+    }
   }
 
 }

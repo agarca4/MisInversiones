@@ -28,6 +28,10 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
           {
             path: 'form',
             component: CarterasFormComponent
+          },
+          {
+            path: 'detalle',
+            component: CarterasDetalleComponent
           }
 
         ]
