@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "MisInversionesWeb"
+  "defaultProject": "MisInversionesWeb",
+  "cli": {
+    "analytics": "3b080067-2840-46f9-bed4-79c1c158600a"
+  }
 }
