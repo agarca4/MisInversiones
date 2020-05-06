@@ -9,6 +9,8 @@ import java.util.Map;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -20,6 +22,9 @@ import es.mdef.usuarios.Usuario;
 public class CarteraInversion {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(unique = true)
+	private String id;
 	@Column(name = "NOMBRE_CARTERA")
 	private String nombreCartera;
 	@Column(name = "FECHA_ALTA")
@@ -38,6 +43,17 @@ public class CarteraInversion {
 		setFechaCreacionCartera(Instant.now());
 
 	}
+	
+
+	public String getId() {
+		return id;
+	}
+
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
 
 	public Collection<FondoInversion> getFondos() {
 		return fondos;

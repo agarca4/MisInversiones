@@ -22,7 +22,7 @@
 
 #listaCarteras .nombre {
   position: absolute;
-  left: 375px;
+  left: 325px;
   top: 9px;
   font-weight: 500;
 
@@ -30,7 +30,7 @@
 
 #listaCarteras .capital {
   position: absolute;
-  left: 600px;
+  left: 625px;
   top: 9px;
   font-weight: 500;
 
@@ -38,7 +38,7 @@
 
 #listaCarteras .rentabilidad {
   position: absolute;
-  left: 750px;
+  left: 825px;
   top: 9px;
   font-weight: 500;
 

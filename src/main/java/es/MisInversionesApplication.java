@@ -61,7 +61,7 @@ public class MisInversionesApplication {
 
 		getMiGestorCartera().compraProductoFinanciero(fondo1, 1500.00);
 		getMiGestorCartera().compraProductoFinanciero(fondo2, 2000.00);
-		getMiGestorCartera().compraProductoFinanciero(fondo3, 1000.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo3, 2000.00);
 		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000.00);
 
 		getMiGestorCartera().getCartera().getRentabilidad();

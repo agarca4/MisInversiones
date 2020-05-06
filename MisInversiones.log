@@ -1,70 +1,512 @@
-2020-05-05 07:15  INFO 4426 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 4426 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/back/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/back/mis-inversiones-)
-2020-05-05 07:15  INFO 4426 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
-2020-05-05 07:15  INFO 4426 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-05-05 07:15  INFO 4426 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 3 JPA repository interfaces.
-2020-05-05 07:15  INFO 4426 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-05 07:15  INFO 4426 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-05 07:15  INFO 4426 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-05-05 07:15  INFO 4426 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-05 07:15  INFO 4426 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2006 ms
-2020-05-05 07:15  INFO 4426 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-05-05 07:15  INFO 4426 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-05-05 07:15  INFO 4426 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-05-05 07:15  INFO 4426 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-05-05 07:15  INFO 4426 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-05-05 07:15  INFO 4426 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-05-05 07:15  INFO 4426 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-05-05 07:15  INFO 4426 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-05-05 07:15  WARN 4426 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-05-05 07:15  INFO 4426 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-05 07:15  INFO 4426 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-05 07:15  INFO 4426 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 5.473 seconds (JVM running for 5.907)
-2020-05-05 07:15  INFO 4426 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:16  INFO 4426 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-05 07:16  INFO 4426 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-05 07:16  INFO 4426 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 26 ms
-2020-05-05 07:16  INFO 4426 --- [http-nio-8080-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:18  INFO 4426 --- [http-nio-8080-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:18  INFO 4426 --- [http-nio-8080-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:18  INFO 4426 --- [http-nio-8080-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:19  INFO 4426 --- [http-nio-8080-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:19  INFO 4426 --- [http-nio-8080-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:21  INFO 4426 --- [http-nio-8080-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:21  INFO 4426 --- [http-nio-8080-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 07:31  INFO 4426 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-05 07:31  INFO 4426 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-05-05 07:31  INFO 4426 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-05-05 07:31  INFO 4426 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2020-05-05 15:18  INFO 6109 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 6109 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
-2020-05-05 15:18  INFO 6109 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
-2020-05-05 15:18  INFO 6109 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2020-05-05 15:18  INFO 6109 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 34ms. Found 3 JPA repository interfaces.
-2020-05-05 15:18  INFO 6109 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
-2020-05-05 15:18  INFO 6109 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2020-05-05 15:18  INFO 6109 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
-2020-05-05 15:18  INFO 6109 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2020-05-05 15:18  INFO 6109 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1107 ms
-2020-05-05 15:18  INFO 6109 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2020-05-05 15:18  INFO 6109 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
-2020-05-05 15:18  INFO 6109 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
-2020-05-05 15:18  INFO 6109 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2020-05-05 15:18  INFO 6109 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2020-05-05 15:18  INFO 6109 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2020-05-05 15:18  INFO 6109 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2020-05-05 15:18  INFO 6109 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2020-05-05 15:18  WARN 6109 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2020-05-05 15:18  INFO 6109 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2020-05-05 15:18  INFO 6109 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2020-05-05 15:18  INFO 6109 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.058 seconds (JVM running for 3.322)
-2020-05-05 15:18  INFO 6109 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 15:18  INFO 6109 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-05-05 15:18  INFO 6109 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2020-05-05 15:18  INFO 6109 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
-2020-05-05 15:18  INFO 6109 --- [http-nio-8080-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 15:19  INFO 6109 --- [http-nio-8080-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 15:19  INFO 6109 --- [http-nio-8080-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 15:19  INFO 6109 --- [http-nio-8080-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
-2020-05-05 15:21  INFO 6109 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2020-05-05 15:21  INFO 6109 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2020-05-05 15:21  INFO 6109 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2020-05-05 15:21  INFO 6109 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:44  INFO 6705 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 6705 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:44  INFO 6705 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:44  INFO 6705 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:44  INFO 6705 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65ms. Found 3 JPA repository interfaces.
+2020-05-06 07:44  INFO 6705 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-06 07:44  INFO 6705 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:44  INFO 6705 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:44  INFO 6705 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:44  INFO 6705 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2331 ms
+2020-05-06 07:44  INFO 6705 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:44  INFO 6705 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:44  INFO 6705 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:44  INFO 6705 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:44  INFO 6705 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:44  INFO 6705 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:44  INFO 6705 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:44  INFO 6705 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:44  WARN 6705 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:44  INFO 6705 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:44  INFO 6705 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-06 07:44  INFO 6705 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-06 07:44 ERROR 6705 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-05-06 07:44  INFO 6705 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:44  INFO 6705 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:44  INFO 6705 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 07:44  INFO 6705 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:44  INFO 6802 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 6802 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:44  INFO 6802 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:44  INFO 6802 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:44  INFO 6802 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 3 JPA repository interfaces.
+2020-05-06 07:44  INFO 6802 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-06 07:44  INFO 6802 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:44  INFO 6802 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:44  INFO 6802 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:44  INFO 6802 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1300 ms
+2020-05-06 07:44  INFO 6802 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:44  INFO 6802 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:44  INFO 6802 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:44  INFO 6802 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:44  INFO 6802 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:44  INFO 6802 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:44  INFO 6802 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:44  INFO 6802 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:44  WARN 6802 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:44  INFO 6802 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:44  INFO 6802 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-06 07:44  INFO 6802 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-06 07:44 ERROR 6802 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-05-06 07:44  INFO 6802 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:44  INFO 6802 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:44  INFO 6802 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 07:44  INFO 6802 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:46  INFO 7121 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 7121 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:46  INFO 7121 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:46  INFO 7121 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:46  INFO 7121 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 56ms. Found 3 JPA repository interfaces.
+2020-05-06 07:46  INFO 7121 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-06 07:46  INFO 7121 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:46  INFO 7121 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:46  INFO 7121 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:46  INFO 7121 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1473 ms
+2020-05-06 07:46  INFO 7121 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:46  INFO 7121 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:46  INFO 7121 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:46  INFO 7121 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:46  INFO 7121 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:46  INFO 7121 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:46  INFO 7121 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:46  INFO 7121 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:46  WARN 7121 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:46  INFO 7121 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:46  INFO 7121 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-06 07:46  INFO 7121 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-06 07:46 ERROR 7121 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-05-06 07:46  INFO 7121 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:46  INFO 7121 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:46  INFO 7121 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 07:46  INFO 7121 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:47  INFO 7229 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 7229 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:47  INFO 7229 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:47  INFO 7229 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:47  INFO 7229 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 51ms. Found 3 JPA repository interfaces.
+2020-05-06 07:47  INFO 7229 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-06 07:47  INFO 7229 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:47  INFO 7229 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:47  INFO 7229 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:47  INFO 7229 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1288 ms
+2020-05-06 07:47  INFO 7229 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:47  INFO 7229 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:47  INFO 7229 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:47  INFO 7229 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:47  INFO 7229 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:47  INFO 7229 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:47  INFO 7229 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:47  INFO 7229 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:47  WARN 7229 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:47  INFO 7229 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:47  INFO 7229 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-06 07:47  INFO 7229 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-06 07:47 ERROR 7229 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-05-06 07:47  INFO 7229 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:47  INFO 7229 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:47  INFO 7229 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 07:47  INFO 7229 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:49  INFO 7436 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 7436 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:49  INFO 7436 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:49  INFO 7436 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:49  INFO 7436 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 3 JPA repository interfaces.
+2020-05-06 07:49  INFO 7436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 07:49  INFO 7436 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:49  INFO 7436 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:49  INFO 7436 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:49  INFO 7436 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1285 ms
+2020-05-06 07:49  INFO 7436 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:49  INFO 7436 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:49  INFO 7436 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:49  INFO 7436 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:49  INFO 7436 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:49  INFO 7436 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:49  INFO 7436 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:49  INFO 7436 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:49  WARN 7436 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:49  INFO 7436 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:49  INFO 7436 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 07:49  INFO 7436 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.734 seconds (JVM running for 4.154)
+2020-05-06 07:49  INFO 7436 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 07:50  INFO 7436 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:50  INFO 7436 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:50  INFO 7436 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 07:50  INFO 7436 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:50  INFO 7628 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 7628 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:50  INFO 7628 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:50  INFO 7628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:50  INFO 7628 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43ms. Found 3 JPA repository interfaces.
+2020-05-06 07:50  INFO 7628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 07:50  INFO 7628 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:50  INFO 7628 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:50  INFO 7628 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:50  INFO 7628 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1531 ms
+2020-05-06 07:50  INFO 7628 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:50  INFO 7628 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:50  INFO 7628 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:50  INFO 7628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:50  INFO 7628 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:50  INFO 7628 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:50  INFO 7628 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:50  INFO 7628 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:50  WARN 7628 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:50  INFO 7628 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:50  INFO 7628 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 07:50  INFO 7628 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 4.209 seconds (JVM running for 4.617)
+2020-05-06 07:50  INFO 7628 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 07:53  INFO 7628 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 07:53  INFO 7628 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 07:53  INFO 7628 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 24 ms
+2020-05-06 07:53  INFO 7628 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 07:53  INFO 7628 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:53  INFO 7628 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:53  INFO 7628 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 07:53  INFO 7628 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:57  INFO 3267 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 3267 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:57  INFO 3267 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:57  INFO 3267 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:57  INFO 3267 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 76ms. Found 3 JPA repository interfaces.
+2020-05-06 07:57  INFO 3267 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-05-06 07:57  INFO 3267 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:57  INFO 3267 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:57  INFO 3267 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:57  INFO 3267 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2146 ms
+2020-05-06 07:57  INFO 3267 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:57  INFO 3267 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:57  INFO 3267 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:57  INFO 3267 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:57  INFO 3267 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:57  INFO 3267 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:57  INFO 3267 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:57  INFO 3267 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:57  WARN 3267 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:57  INFO 3267 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:57  INFO 3267 --- [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2020-05-06 07:57  INFO 3267 --- [main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2020-05-06 07:57 ERROR 3267 --- [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2020-05-06 07:57  INFO 3267 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:57  INFO 3267 --- [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:57  INFO 3267 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 07:57  INFO 3267 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 07:58  INFO 3455 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 3455 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 07:58  INFO 3455 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 07:58  INFO 3455 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 07:58  INFO 3455 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 47ms. Found 3 JPA repository interfaces.
+2020-05-06 07:58  INFO 3455 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 07:58  INFO 3455 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 07:58  INFO 3455 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 07:58  INFO 3455 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 07:58  INFO 3455 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1337 ms
+2020-05-06 07:58  INFO 3455 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 07:58  INFO 3455 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 07:58  INFO 3455 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 07:58  INFO 3455 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 07:58  INFO 3455 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 07:58  INFO 3455 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 07:58  INFO 3455 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 07:58  INFO 3455 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 07:58  WARN 3455 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 07:58  INFO 3455 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 07:58  INFO 3455 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 07:58  INFO 3455 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.62 seconds (JVM running for 3.938)
+2020-05-06 07:58  INFO 3455 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 07:58  INFO 3455 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 07:58  INFO 3455 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 07:58  INFO 3455 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 23 ms
+2020-05-06 07:58  INFO 3455 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 07:59  INFO 3455 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 08:01  INFO 3455 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 08:01  INFO 3455 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 08:02  INFO 3455 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 08:02  INFO 3455 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 08:04  INFO 3455 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 08:04  INFO 3455 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 08:04  INFO 3455 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 08:04  INFO 3455 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 10:45  INFO 11807 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 11807 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 10:45  INFO 11807 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 10:45  INFO 11807 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 10:45  INFO 11807 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 60ms. Found 3 JPA repository interfaces.
+2020-05-06 10:45  INFO 11807 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 10:45  INFO 11807 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 10:45  INFO 11807 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 10:45  INFO 11807 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 10:45  INFO 11807 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1489 ms
+2020-05-06 10:45  INFO 11807 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 10:45  INFO 11807 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 10:45  INFO 11807 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 10:45  INFO 11807 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 10:45  INFO 11807 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 10:45  INFO 11807 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 10:45  INFO 11807 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 10:45  INFO 11807 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 10:45  WARN 11807 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 10:45  INFO 11807 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 10:45  INFO 11807 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 10:45  INFO 11807 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.883 seconds (JVM running for 4.319)
+2020-05-06 10:45  INFO 11807 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 10:52  INFO 11807 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 10:52  INFO 11807 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 10:52  INFO 11807 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 12 ms
+2020-05-06 10:52  INFO 11807 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 10:52  INFO 11807 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 10:54  INFO 11807 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 10:54  INFO 11807 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 10:56  INFO 11807 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 10:56  INFO 11807 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:23  INFO 11807 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:23  INFO 11807 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:23  INFO 11807 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 11:23  INFO 11807 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 11:23  INFO 13306 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 13306 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 11:23  INFO 13306 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 11:23  INFO 13306 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 11:23  INFO 13306 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49ms. Found 3 JPA repository interfaces.
+2020-05-06 11:23  INFO 13306 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 11:23  INFO 13306 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 11:23  INFO 13306 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 11:23  INFO 13306 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 11:23  INFO 13306 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1435 ms
+2020-05-06 11:23  INFO 13306 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 11:23  INFO 13306 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 11:23  INFO 13306 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 11:23  INFO 13306 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 11:23  INFO 13306 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 11:23  INFO 13306 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 11:23  INFO 13306 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 11:23  INFO 13306 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:23  WARN 13306 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 11:23  INFO 13306 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:23  INFO 13306 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 11:23  INFO 13306 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.939 seconds (JVM running for 4.271)
+2020-05-06 11:23  INFO 13306 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:27  INFO 13306 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 11:27  INFO 13306 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 11:27  INFO 13306 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 19 ms
+2020-05-06 11:27  INFO 13306 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:27  INFO 13306 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:28  INFO 13306 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:28  INFO 13306 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:28  INFO 13306 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 11:28  INFO 13306 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 11:49  INFO 14587 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 14587 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 11:49  INFO 14587 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 11:49  INFO 14587 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 11:49  INFO 14587 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 41ms. Found 3 JPA repository interfaces.
+2020-05-06 11:49  INFO 14587 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 11:49  INFO 14587 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 11:49  INFO 14587 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 11:49  INFO 14587 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 11:49  INFO 14587 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1256 ms
+2020-05-06 11:49  INFO 14587 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 11:49  INFO 14587 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 11:49  INFO 14587 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 11:49  INFO 14587 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 11:49  INFO 14587 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 11:49  INFO 14587 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 11:49  INFO 14587 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 11:49  INFO 14587 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:49  WARN 14587 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 11:49  INFO 14587 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:49  INFO 14587 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 11:49  INFO 14587 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.642 seconds (JVM running for 4.023)
+2020-05-06 11:49  INFO 14587 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:49  INFO 14587 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 11:49  INFO 14587 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 11:49  INFO 14587 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-05-06 11:49  INFO 14587 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:55  INFO 14587 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:55  INFO 14587 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:55  INFO 14587 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 11:55  INFO 14587 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 11:55  INFO 15010 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 15010 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 11:55  INFO 15010 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 11:55  INFO 15010 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 11:55  INFO 15010 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 70ms. Found 3 JPA repository interfaces.
+2020-05-06 11:55  INFO 15010 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 11:55  INFO 15010 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 11:55  INFO 15010 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 11:55  INFO 15010 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 11:55  INFO 15010 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1753 ms
+2020-05-06 11:55  INFO 15010 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 11:55  INFO 15010 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 11:55  INFO 15010 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 11:55  INFO 15010 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 11:55  INFO 15010 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 11:55  INFO 15010 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 11:55  INFO 15010 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 11:55  INFO 15010 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:55  WARN 15010 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 11:55  INFO 15010 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:55  INFO 15010 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 11:55  INFO 15010 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 4.846 seconds (JVM running for 5.357)
+2020-05-06 11:55  INFO 15010 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:55  INFO 15010 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 11:55  INFO 15010 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 11:55  INFO 15010 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2020-05-06 11:56  INFO 15010 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:56  INFO 15010 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:56  INFO 15010 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:56  INFO 15010 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 11:56  INFO 15010 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 11:57  INFO 15167 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 15167 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 11:57  INFO 15167 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 11:57  INFO 15167 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 11:57  INFO 15167 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44ms. Found 3 JPA repository interfaces.
+2020-05-06 11:57  INFO 15167 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 11:57  INFO 15167 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 11:57  INFO 15167 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 11:57  INFO 15167 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 11:57  INFO 15167 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1687 ms
+2020-05-06 11:57  INFO 15167 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 11:57  INFO 15167 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 11:57  INFO 15167 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 11:57  INFO 15167 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 11:57  INFO 15167 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 11:57  INFO 15167 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 11:57  INFO 15167 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 11:57  INFO 15167 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:57  WARN 15167 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 11:57  INFO 15167 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:57  INFO 15167 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 11:57  INFO 15167 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 4.856 seconds (JVM running for 5.297)
+2020-05-06 11:57  INFO 15167 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:57  INFO 15167 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 11:57  INFO 15167 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 11:57  INFO 15167 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-05-06 11:57  INFO 15167 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:59  INFO 15167 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:59  INFO 15167 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:59  INFO 15167 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 11:59  INFO 15167 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 11:59  INFO 15403 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 15403 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 11:59  INFO 15403 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 11:59  INFO 15403 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 11:59  INFO 15403 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39ms. Found 3 JPA repository interfaces.
+2020-05-06 11:59  INFO 15403 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 11:59  INFO 15403 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 11:59  INFO 15403 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 11:59  INFO 15403 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 11:59  INFO 15403 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1284 ms
+2020-05-06 11:59  INFO 15403 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 11:59  INFO 15403 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 11:59  INFO 15403 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 11:59  INFO 15403 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 11:59  INFO 15403 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 11:59  INFO 15403 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 11:59  INFO 15403 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 11:59  INFO 15403 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 11:59  WARN 15403 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 11:59  INFO 15403 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 11:59  INFO 15403 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 11:59  INFO 15403 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.459 seconds (JVM running for 3.747)
+2020-05-06 11:59  INFO 15403 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 11:59  INFO 15403 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 11:59  INFO 15403 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 11:59  INFO 15403 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2020-05-06 11:59  INFO 15403 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 12:01  INFO 15403 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 12:01  INFO 15403 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 12:01  INFO 15403 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 12:01  INFO 15403 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-06 12:01  INFO 15585 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 15585 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-06 12:01  INFO 15585 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-06 12:01  INFO 15585 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-06 12:01  INFO 15585 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 39ms. Found 3 JPA repository interfaces.
+2020-05-06 12:01  INFO 15585 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-06 12:01  INFO 15585 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-06 12:01  INFO 15585 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-06 12:01  INFO 15585 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-06 12:01  INFO 15585 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1313 ms
+2020-05-06 12:01  INFO 15585 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-06 12:01  INFO 15585 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-06 12:01  INFO 15585 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-06 12:01  INFO 15585 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-06 12:01  INFO 15585 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-06 12:01  INFO 15585 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-06 12:01  INFO 15585 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-06 12:01  INFO 15585 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 12:01  WARN 15585 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-06 12:01  INFO 15585 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-06 12:01  INFO 15585 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-06 12:01  INFO 15585 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.644 seconds (JVM running for 3.952)
+2020-05-06 12:01  INFO 15585 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 12:03  INFO 15585 --- [http-nio-8081-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-06 12:03  INFO 15585 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-06 12:03  INFO 15585 --- [http-nio-8081-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 15 ms
+2020-05-06 12:03  INFO 15585 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-06 12:06  INFO 15585 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-06 12:06  INFO 15585 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-06 12:06  INFO 15585 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-06 12:06  INFO 15585 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
