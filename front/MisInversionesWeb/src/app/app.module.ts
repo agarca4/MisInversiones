@@ -24,7 +24,7 @@ import { HomeComponent } from './comun/home/home.component';
       },
       {
         path: 'carteras',
-        loadChildren: './carteras/carteras.module#CarterasModule'
+        loadChildren: () => import('./carteras/carteras.module').then(mod => mod.CarterasModule) 
       },
 
     ])
