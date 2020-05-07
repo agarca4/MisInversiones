@@ -1,12 +1,15 @@
+<div>
 <h2>Nueva Cartera</h2>
-<form class="d-flex flex-column mt-5">
-    <mat-form-field>
-        <mat-label>Nombre de la cartera</mat-label>
-        <input matNativeControl> & <textarea matNativeControl></textarea>
-    </mat-form-field>
+<form #f='ngForm' class="d-flex flex-column mt-5" (ngSubmit)='guardar(f)'>
+  <mat-form-field appearance="fill">
+    <mat-label>nombre</mat-label>
+    <input matInput #nombreCartera='ngModel' [(ngModel)]='cartera.nombreCartera' name='nombreCartera' required minlength="4">
+    <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
+  </mat-form-field>
+  <div class="mt-5">
+    <button type="submit" mat-raised-button color="warn" [disabled]='f.invalid'>Guardar</button>
+    <button type="button" mat-button (click)='cancelar(f)'>Cancelar</button>
+  </div>
 
-    <div class="mt-5">
-        <button type="submit" mat-raised-button color="primary">Guardar</button>
-        <button type="button" mat-button>Cancelar</button>
-    </div>
 </form>
+</div>

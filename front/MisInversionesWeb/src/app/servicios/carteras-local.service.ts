@@ -24,4 +24,8 @@ export class CarterasLocalService extends CarterasService {
       }
     )
   }
+  crearCartera(cartera){
+    this.carteras.push(cartera);
+  }
+
 }

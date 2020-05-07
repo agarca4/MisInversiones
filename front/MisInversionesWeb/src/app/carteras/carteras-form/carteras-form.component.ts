@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { CarterasService } from 'src/app/servicios/carteras.service';
+import { Router } from '@angular/router';
+import { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'app-carteras-form',
@@ -9,8 +13,9 @@ export class CarterasFormComponent implements OnInit {
 
 
   cartera;
+ 
 
-  constructor() { }
+  constructor(private carterasService: CarterasService, private router: Router) { }
 
   ngOnInit() {
     this.cartera = {
@@ -20,6 +25,18 @@ export class CarterasFormComponent implements OnInit {
       rentabilidad: null
 
     }
+  }
+  guardar(f: NgForm) {
+    this.carterasService.crearCartera(this.cartera);
+    this.router.navigate(['/carteras']);
+  }
+  cancelar(f: NgForm) {
+    if (f.dirty) {
+      if (confirm('Las modificaciones se perderan. ¿Está seguro?') == false) {
+        return;
+      }
+    }
+    this.router.navigate(['/carteras']);
   }
 
 }
