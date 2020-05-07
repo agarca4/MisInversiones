@@ -1,8 +1,14 @@
+import { Cartera } from '../modelo/cartera';
+
 export abstract class CarterasService {
 
-    abstract getCarteras();
+    abstract getCarteras(): Cartera[];
 
-    abstract getCarterasConNombre(filtro);
+    abstract getCarterasConNombre(filtro): Cartera[];
 
-    abstract crearCartera(cartera);
+    abstract crearCartera(cartera: Cartera);
+
+    abstract getCarteraPorId(id): Cartera;
+
+    abstract modificarCartera(id: string, cartera: Cartera);
 }

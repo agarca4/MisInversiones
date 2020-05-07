@@ -54,8 +54,6 @@ public class MisInversionesApplication {
 		Usuario usuario2 = new Usuario("Victoria");
 		Usuario usuario3 = new Usuario("Belen");
 		
-		System.out.println(miGestorCartera.getCartera());
-
 		getMiGestorCartera().altaUsuario(usuario1);
 		getMiGestorCartera().altaUsuario(usuario2);
 		getMiGestorCartera().altaUsuario(usuario3);

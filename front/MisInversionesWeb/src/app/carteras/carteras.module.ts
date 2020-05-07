@@ -26,6 +26,10 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
             component: CarterasListaComponent
           },
           {
+            path: 'form/:id',
+            component: CarterasFormComponent
+          },
+          {
             path: 'form',
             component: CarterasFormComponent
           },

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { CarterasService } from './carteras.service';
 import { carteras_data } from "./../data/carteras.data";
+import { Cartera } from '../modelo/cartera';
 
 
 @Injectable()
@@ -27,5 +28,15 @@ export class CarterasLocalService extends CarterasService {
   crearCartera(cartera){
     this.carteras.push(cartera);
   }
+  
+  getCarteraPorId(id): Cartera{
+    return this.carteras[id];
+  }
+
+  modificarCartera(id: string, cartera: Cartera){
+    this.carteras[id] = cartera;
+
+  }
+
 
 }

@@ -1,15 +1,18 @@
 <div>
-<h2>Nueva Cartera</h2>
-<form #f='ngForm' class="d-flex flex-column mt-5" (ngSubmit)='guardar(f)'>
-  <mat-form-field appearance="fill">
-    <mat-label>nombre</mat-label>
-    <input matInput #nombreCartera='ngModel' [(ngModel)]='cartera.nombreCartera' name='nombreCartera' required minlength="4">
-    <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
-  </mat-form-field>
-  <div class="mt-5">
-    <button type="submit" mat-raised-button color="warn" [disabled]='f.invalid'>Guardar</button>
-    <button type="button" mat-button (click)='cancelar(f)'>Cancelar</button>
-  </div>
+  <h2 >{{titulo}}</h2>
+  <form #f='ngForm' class="d-flex flex-column mt-5" (ngSubmit)='guardar(f)'>
+    <mat-form-field appearance="fill">
+      <mat-label>nombre</mat-label>
+      <input matInput #nombreCartera='ngModel' [(ngModel)]='cartera.nombreCartera' name='nombreCartera' required
+        minlength="4">
+      <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
+    </mat-form-field>
+    <div class="mt-5">
+      <button type="submit" mat-raised-button color="warn" [disabled]='f.invalid'>Guardar</button>
+      <button type="button" mat-button (click)='cancelar(f)'>Cancelar</button>
+    </div>
+  </form>
+  <figure class="mt-5 mb-5"><img class="d-flex grafica img-fluid m-auto" src="../../../assets/img/carterasMenu.png"
+      alt="grafica"></figure>
 
-</form>
 </div>

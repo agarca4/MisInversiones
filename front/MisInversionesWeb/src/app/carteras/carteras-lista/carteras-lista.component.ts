@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarterasService } from 'src/app/servicios/carteras.service';
+import {Cartera} from './../../modelo/cartera'
 
 @Component({
   selector: 'app-carteras-lista',
@@ -9,7 +10,7 @@ import { CarterasService } from 'src/app/servicios/carteras.service';
 export class CarterasListaComponent implements OnInit {
 
 
-  carterasLista;
+  carterasLista: Cartera[];
 
 
 
