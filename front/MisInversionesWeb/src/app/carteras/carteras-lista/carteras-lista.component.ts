@@ -19,8 +19,10 @@ export class CarterasListaComponent implements OnInit {
   constructor(private carterasService: CarterasService) {
   }
 
-  ngOnInit(): void {
-    this.carterasLista = this.carterasService.getCarteras();
+  ngOnInit() {
+    this.carterasService.getCarteras().subscribe(
+      respuesta => this.carterasLista = respuesta['_embedded'].carteras
+    )
   }
 
   isRentabilidadNegativa(cartera) {
@@ -29,10 +31,11 @@ export class CarterasListaComponent implements OnInit {
     }
   }
 
-  filtrar(filtro){
+  filtrar(filtro?){
     if (!filtro || filtro.trim().length == 0) {
-      this.carterasLista = this.carterasService.getCarteras();
-    }else{
+      this.carterasService.getCarteras().subscribe(
+        respuesta => this.carterasLista = respuesta['_embedded'].carteras
+      )    }else{
       this.carterasLista = this.carterasService.getCarterasConNombre(filtro);
     }
   }

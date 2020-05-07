@@ -7,6 +7,7 @@ import { CarterasService } from './servicios/carteras.service';
 import { CarterasLocalService } from './servicios/carteras-local.service';
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './comun/home/home.component';
+import { CarterasApiService } from './servicios/carteras-api.service';
 
 
 @NgModule({
@@ -31,7 +32,7 @@ import { HomeComponent } from './comun/home/home.component';
   ],
   providers: [
     {
-      provide: CarterasService, useClass: CarterasLocalService
+      provide: CarterasService, useClass: CarterasApiService
     }
   ],
   bootstrap: [AppComponent]

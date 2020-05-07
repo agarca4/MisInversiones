@@ -1,8 +1,9 @@
 import { Cartera } from '../modelo/cartera';
+import { Observable } from 'rxjs';
 
 export abstract class CarterasService {
 
-    abstract getCarteras(): Cartera[];
+    abstract getCarteras(): Observable<Cartera[]>;
 
     abstract getCarterasConNombre(filtro): Cartera[];
 

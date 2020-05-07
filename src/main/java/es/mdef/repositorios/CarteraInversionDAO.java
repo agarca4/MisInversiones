@@ -6,7 +6,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 import es.mdef.CarteraInversion;
 
-@RepositoryRestResource(path="portfolio", itemResourceRel = "portfolio", collectionResourceRel = "portfolios")
+@RepositoryRestResource(path="carteras", itemResourceRel = "cartera", collectionResourceRel = "carteras")
 public interface CarteraInversionDAO extends JpaRepository<CarteraInversion, String> {
 
 

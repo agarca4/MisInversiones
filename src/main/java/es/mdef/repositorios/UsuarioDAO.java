@@ -4,7 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 import es.mdef.usuarios.Usuario;
 
-@RepositoryRestResource(path="usuario", itemResourceRel = "usuario", collectionResourceRel = "usuarios")
+@RepositoryRestResource(path="usuarios", itemResourceRel = "usuario", collectionResourceRel = "usuarios")
 public interface UsuarioDAO extends JpaRepository<Usuario, String> {
 
 }
