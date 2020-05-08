@@ -10,7 +10,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import es.mdef.CarteraInversion;
 
@@ -25,7 +24,6 @@ public class Usuario {
 	private String nombre;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CARTERA")
-	@JsonBackReference
 	private CarteraInversion cartera;
 
 	public Usuario() {

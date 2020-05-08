@@ -42,6 +42,6 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
       }
     ])
   ],
-  exports: []
+ 
 })
 export class CarterasModule { }

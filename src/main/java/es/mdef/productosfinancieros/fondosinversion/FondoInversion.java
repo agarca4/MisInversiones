@@ -11,8 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import es.mdef.CarteraInversion;
 
 @Entity
@@ -34,7 +32,6 @@ public class FondoInversion {
 	private Double capitalInvertido;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "CARTERA")
-	@JsonBackReference
 	private CarteraInversion cartera;
 
 	FondoInversion() {

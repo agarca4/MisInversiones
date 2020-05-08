@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { CarterasService } from './carteras.service';
 import { Cartera } from '../modelo/cartera';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient} from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
@@ -14,16 +15,15 @@ export class CarterasApiService extends CarterasService {
   }
 
   getCarteras(): Observable<Cartera[]> {
-    return this.http.get('http://localhost:8081/api/carteras');
+    return this.http.get('http://localhost:8081/api/carteras').pipe(
+      map(respuesta => respuesta['_embedded'].carteras)
+
+    );
 
   }
 
 
-
-
-
-
-  getCarterasConNombre(filtro: any): Cartera[] {
+  getCarterasConNombre(filtro: any): Observable<Cartera[]> {
     throw new Error("Method not implemented.");
   }
   crearCartera(cartera: Cartera) {

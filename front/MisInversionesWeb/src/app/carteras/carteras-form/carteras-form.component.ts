@@ -35,7 +35,10 @@ export class CarterasFormComponent implements OnInit {
         nombreCartera: null,
         fechaCreacionCartera: null,
         capitalInvertido: 0.0,
-        rentabilidad: 0.0
+        rentabilidad: 0.0,
+        usuarios: null,
+        fondos: null
+        
 
       }
       this.titulo = 'Alta nueva Cartera';
