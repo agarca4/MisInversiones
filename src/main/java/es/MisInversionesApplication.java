@@ -66,6 +66,7 @@ public class MisInversionesApplication {
 
 		getMiGestorCartera().getCartera().getRentabilidad();
 
+		
 		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
 		miCartera.deleteAll();
 		miCartera.save(miGestorCartera.getCartera());

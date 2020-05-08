@@ -4,10 +4,10 @@ import { AppComponent } from './app.component';
 import { ComunModule } from './comun/comun.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarterasService } from './servicios/carteras.service';
-
 import { RouterModule } from '@angular/router';
 import { HomeComponent } from './comun/home/home.component';
 import { CarterasApiService } from './servicios/carteras-api.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -17,7 +17,7 @@ import { CarterasApiService } from './servicios/carteras-api.service';
   imports: [
     BrowserModule,
     ComunModule,
-    BrowserAnimationsModule,
+    BrowserAnimationsModule,HttpClientModule,
     RouterModule.forRoot([
       {
         path: '',
