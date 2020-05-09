@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, ErrorHandler } from '@angular/core';
 import { AppComponent } from './app.component';
 import { ComunModule } from './comun/comun.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -10,6 +10,7 @@ import { CarterasApiService } from './servicios/carteras-api.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FondosService } from './servicios/fondos.service';
 import { FondosApiService } from './servicios/fondos-api.service';
+import { ManejadorError } from './comun/manejador-error';
 
 
 @NgModule({
@@ -38,6 +39,9 @@ import { FondosApiService } from './servicios/fondos-api.service';
     },
     {
       provide: FondosService, useClass: FondosApiService
+    },
+    {
+      provide: ErrorHandler, useClass: ManejadorError
     }
   ],
   bootstrap: [AppComponent]

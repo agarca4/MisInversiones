@@ -10,7 +10,7 @@ import { Cartera } from './../../modelo/cartera'
 export class CarterasListaComponent implements OnInit {
 
 
-  carterasLista: Cartera[];
+  carterasLista: Cartera[] = [];
 
   constructor(private carterasService: CarterasService) {
   }

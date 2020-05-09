@@ -8373,3 +8373,91 @@ Caused by: java.lang.IllegalArgumentException: Value must not be null!
 2020-05-09 18:57  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
 2020-05-09 18:58  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
 2020-05-09 18:58  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:59  INFO 7343 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:00  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:01  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:02  INFO 7343 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:02  INFO 7343 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:02  INFO 7343 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-09 19:02  INFO 7343 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 19:02  INFO 7343 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-09 19:02  INFO 7343 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-09 19:03  INFO 8250 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 8250 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-09 19:03  INFO 8250 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 19:03  INFO 8250 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 19:03  INFO 8250 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 38ms. Found 3 JPA repository interfaces.
+2020-05-09 19:03  INFO 8250 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-09 19:03  INFO 8250 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 19:03  INFO 8250 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 19:03  INFO 8250 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 19:03  INFO 8250 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1194 ms
+2020-05-09 19:03  INFO 8250 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 19:03  INFO 8250 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 19:03  INFO 8250 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 19:03  INFO 8250 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-09 19:03  INFO 8250 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-09 19:03  INFO 8250 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-09 19:03  INFO 8250 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 19:03  INFO 8250 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 19:03  WARN 8250 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-09 19:03  INFO 8250 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 19:03  INFO 8250 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-09 19:03  INFO 8250 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.334 seconds (JVM running for 3.59)
+2020-05-09 19:03  INFO 8250 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:03  INFO 8250 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 19:03  INFO 8250 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 19:03  INFO 8250 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-05-09 19:03  INFO 8250 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:05  INFO 8250 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:05  INFO 8250 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:05  INFO 8250 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:05  INFO 8250 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:05  INFO 8250 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:06  INFO 8250 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:06  INFO 8250 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:06  INFO 8250 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:06  INFO 8250 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 19:06  INFO 8250 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:09  INFO 8250 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:09  INFO 8250 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:09  INFO 8250 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:09  INFO 8250 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:17  INFO 8250 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:17  INFO 8250 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:18  INFO 8250 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:18  INFO 8250 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:24  INFO 8250 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:24  INFO 8250 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:32  INFO 8250 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:32  INFO 8250 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:50  INFO 8250 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:50  INFO 8250 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:50  INFO 8250 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:50  INFO 8250 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 20:53  INFO 8250 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-09 20:53  INFO 8250 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 20:53  INFO 8250 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-09 20:53  INFO 8250 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

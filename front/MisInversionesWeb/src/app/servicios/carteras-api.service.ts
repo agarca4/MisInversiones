@@ -37,6 +37,8 @@ export class CarterasApiService extends CarterasService {
     return this.http.post(url_base, cartera);
 
   }
+
+  
   getCarteraPorId(id: string): Observable<Cartera> {
 
     return this.http.get(`${url_base}/${id}`).pipe(
