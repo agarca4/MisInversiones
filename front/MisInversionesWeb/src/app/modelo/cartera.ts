@@ -6,6 +6,4 @@ export interface Cartera{
     fechaCreacionCartera: Date;
     capitalInvertido: number;
     rentabilidad: number;
-    usuarios: Usuario[];
-    fondos: Fondo[];
 }

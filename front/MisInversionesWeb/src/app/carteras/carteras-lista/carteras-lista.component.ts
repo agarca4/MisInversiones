@@ -19,6 +19,7 @@ export class CarterasListaComponent implements OnInit {
     this.carterasService.getCarteras().subscribe(
       respuesta => (this.carterasLista = respuesta)
     )
+   
   }
 
   isRentabilidadNegativa(cartera) {

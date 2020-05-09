@@ -8006,3 +8006,370 @@ java.lang.IllegalArgumentException: Invalid character found in the request targe
 2020-05-09 17:24  INFO 31372 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
 2020-05-09 17:32  INFO 31372 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
 2020-05-09 17:32  INFO 31372 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:36  INFO 31372 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:39  INFO 31372 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:39  INFO 31372 --- [http-nio-8081-exec-2] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header
+ Note: further occurrences of HTTP request parsing errors will be logged at DEBUG level.
+
+java.lang.IllegalArgumentException: Invalid character found in the request target. The valid characters are defined in RFC 7230 and RFC 3986
+	at org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:469) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:260) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+
+2020-05-09 17:39  INFO 31372 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:39  INFO 31372 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:39  INFO 31372 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:40  INFO 31372 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:40  INFO 31372 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:40  INFO 31372 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:40  INFO 31372 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:40  INFO 31372 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:40  INFO 31372 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:43  INFO 31372 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:49  INFO 31372 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:49  INFO 31372 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:49  INFO 31372 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 17:49  INFO 31372 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:06  INFO 31372 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:06  INFO 31372 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:07  INFO 31372 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:07  INFO 31372 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:07  INFO 31372 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:07  INFO 31372 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:07  INFO 31372 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:07  INFO 31372 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:09  INFO 31372 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:09  INFO 31372 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:09  INFO 31372 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:09  INFO 31372 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:11  INFO 31372 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:11  INFO 31372 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:15  INFO 31372 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:15  INFO 31372 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:18  INFO 31372 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:18  INFO 31372 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:18  INFO 31372 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:18  INFO 31372 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:18  INFO 31372 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-09 18:18  INFO 31372 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-09 18:18  INFO 5854 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 5854 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-09 18:18  INFO 5854 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 18:18  INFO 5854 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 18:18  INFO 5854 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 3 JPA repository interfaces.
+2020-05-09 18:18  INFO 5854 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-09 18:18  INFO 5854 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 18:18  INFO 5854 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 18:18  INFO 5854 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 18:18  INFO 5854 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1076 ms
+2020-05-09 18:18  INFO 5854 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 18:18  INFO 5854 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 18:18  INFO 5854 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 18:18  INFO 5854 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-09 18:18  INFO 5854 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-09 18:18  INFO 5854 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-09 18:18  INFO 5854 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 18:18  INFO 5854 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:18  WARN 5854 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-09 18:18  INFO 5854 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:18  INFO 5854 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-09 18:18  INFO 5854 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.107 seconds (JVM running for 3.368)
+2020-05-09 18:18  INFO 5854 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:18  INFO 5854 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 18:18  INFO 5854 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 18:18  INFO 5854 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-05-09 18:18  INFO 5854 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:19  INFO 5854 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:19  INFO 5854 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:23  INFO 5854 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:23  INFO 5854 --- [http-nio-8081-exec-7] org.apache.tomcat.util.http.Parameters   : Invalid chunk starting at byte [0] and ending at byte [9] with a value of [=agresiva] ignored
+ Note: further occurrences of Parameter errors will be logged at DEBUG level.
+2020-05-09 18:23 ERROR 5854 --- [http-nio-8081-exec-7] o.s.d.r.w.RepositoryRestExceptionHandler : Value must not be null!; nested exception is java.lang.IllegalArgumentException: Value must not be null!
+
+org.springframework.dao.InvalidDataAccessApiUsageException: Value must not be null!; nested exception is java.lang.IllegalArgumentException: Value must not be null!
+	at org.springframework.orm.jpa.EntityManagerFactoryUtils.convertJpaAccessExceptionIfPossible(EntityManagerFactoryUtils.java:374) ~[spring-orm-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:257) ~[spring-orm-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.translateExceptionIfPossible(AbstractEntityManagerFactoryBean.java:528) ~[spring-orm-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.dao.support.ChainedPersistenceExceptionTranslator.translateExceptionIfPossible(ChainedPersistenceExceptionTranslator.java:61) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.dao.support.DataAccessUtils.translateIfNecessary(DataAccessUtils.java:242) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:153) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:149) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:95) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:212) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at com.sun.proxy.$Proxy110.findByNombreIgnoreCaseContaining(Unknown Source) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.util.ReflectionUtils.invokeMethod(ReflectionUtils.java:282) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.data.repository.support.ReflectionRepositoryInvoker.invoke(ReflectionRepositoryInvoker.java:256) ~[spring-data-commons-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.repository.support.ReflectionRepositoryInvoker.invokeQueryMethod(ReflectionRepositoryInvoker.java:191) ~[spring-data-commons-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.rest.core.support.UnwrappingRepositoryInvokerFactory$UnwrappingRepositoryInvoker.invokeQueryMethod(UnwrappingRepositoryInvokerFactory.java:104) ~[spring-data-rest-core-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.data.rest.webmvc.RepositorySearchController.executeQueryMethod(RepositorySearchController.java:358) ~[spring-data-rest-webmvc-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at org.springframework.data.rest.webmvc.RepositorySearchController.executeSearch(RepositorySearchController.java:180) ~[spring-data-rest-webmvc-3.2.5.RELEASE.jar:3.2.5.RELEASE]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:106) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:879) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:793) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883) ~[spring-webmvc-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) ~[tomcat-embed-websocket-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:541) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:367) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:868) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1639) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628) ~[na:na]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.31.jar:9.0.31]
+	at java.base/java.lang.Thread.run(Thread.java:834) ~[na:na]
+Caused by: java.lang.IllegalArgumentException: Value must not be null!
+	at org.springframework.util.Assert.notNull(Assert.java:198) ~[spring-core-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.data.jpa.repository.query.ParameterMetadataProvider$ParameterMetadata.prepare(ParameterMetadataProvider.java:236) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.QueryParameterSetterFactory$CriteriaQueryParameterSetterFactory.getAndPrepare(QueryParameterSetterFactory.java:323) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.QueryParameterSetterFactory$CriteriaQueryParameterSetterFactory.lambda$create$1(QueryParameterSetterFactory.java:316) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.QueryParameterSetter$NamedOrIndexedQueryParameterSetter.setParameter(QueryParameterSetter.java:87) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:82) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.ParameterBinder.bind(ParameterBinder.java:74) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.ParameterBinder.bindAndPrepare(ParameterBinder.java:95) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery$QueryPreparer.invokeBinding(PartTreeJpaQuery.java:324) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery$QueryPreparer.createQuery(PartTreeJpaQuery.java:243) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.doCreateQuery(PartTreeJpaQuery.java:106) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.createQuery(AbstractJpaQuery.java:226) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$CollectionExecution.doExecute(JpaQueryExecution.java:126) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:88) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:154) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:142) ~[spring-data-jpa-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.doInvoke(RepositoryFactorySupport.java:618) ~[spring-data-commons-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport$QueryExecutorMethodInterceptor.invoke(RepositoryFactorySupport.java:605) ~[spring-data-commons-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:80) ~[spring-data-commons-2.2.5.RELEASE.jar:2.2.5.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:366) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:99) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186) ~[spring-aop-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139) ~[spring-tx-5.2.4.RELEASE.jar:5.2.4.RELEASE]
+	... 67 common frames omitted
+
+2020-05-09 18:28  INFO 5854 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:29  INFO 5854 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:29  INFO 5854 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:29  INFO 5854 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:29  INFO 5854 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:29  INFO 5854 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:29  INFO 5854 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:29  INFO 5854 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:31  INFO 5854 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:31  INFO 5854 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:32  INFO 5854 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:32  INFO 5854 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:34  INFO 5854 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:34  INFO 5854 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:34  INFO 5854 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:34  INFO 5854 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:35  INFO 5854 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:35  INFO 5854 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:37  INFO 5854 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:37  INFO 5854 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:37  INFO 5854 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:37  INFO 5854 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:38  INFO 5854 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:38  INFO 5854 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:38  INFO 5854 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:38  INFO 5854 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:38  INFO 5854 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:38  INFO 5854 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:40  INFO 5854 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:40  INFO 5854 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:40  INFO 5854 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-09 18:40  INFO 5854 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-09 18:40  INFO 6924 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 6924 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-09 18:40  INFO 6924 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 18:40  INFO 6924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 18:40  INFO 6924 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 40ms. Found 3 JPA repository interfaces.
+2020-05-09 18:40  INFO 6924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-09 18:40  INFO 6924 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 18:40  INFO 6924 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 18:40  INFO 6924 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 18:40  INFO 6924 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1230 ms
+2020-05-09 18:40  INFO 6924 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 18:40  INFO 6924 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 18:40  INFO 6924 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 18:40  INFO 6924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-09 18:40  INFO 6924 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-09 18:40  INFO 6924 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-09 18:40  INFO 6924 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 18:40  INFO 6924 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:40  WARN 6924 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-09 18:40  INFO 6924 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:40  INFO 6924 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-09 18:40  INFO 6924 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.307 seconds (JVM running for 3.666)
+2020-05-09 18:40  INFO 6924 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:40  INFO 6924 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 18:40  INFO 6924 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 18:40  INFO 6924 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2020-05-09 18:40  INFO 6924 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:40  INFO 6924 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:40  INFO 6924 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:41  INFO 6924 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:42  INFO 6924 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:43  INFO 6924 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:43  INFO 6924 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:43  INFO 6924 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:44  INFO 6924 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:44  INFO 6924 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:44  INFO 6924 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-09 18:44  INFO 6924 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-09 18:44  INFO 7223 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 7223 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-09 18:44  INFO 7223 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 18:44  INFO 7223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 18:44  INFO 7223 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 36ms. Found 3 JPA repository interfaces.
+2020-05-09 18:44  INFO 7223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-09 18:44  INFO 7223 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 18:44  INFO 7223 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 18:44  INFO 7223 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 18:44  INFO 7223 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1097 ms
+2020-05-09 18:44  INFO 7223 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 18:44  INFO 7223 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 18:44  INFO 7223 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 18:44  INFO 7223 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-09 18:44  INFO 7223 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-09 18:44  INFO 7223 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-09 18:44  INFO 7223 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 18:44  INFO 7223 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:44  WARN 7223 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-09 18:44  INFO 7223 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:44  INFO 7223 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-09 18:44  INFO 7223 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.087 seconds (JVM running for 3.327)
+2020-05-09 18:44  INFO 7223 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:45  INFO 7223 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:46  INFO 7223 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:46  INFO 7223 --- [SpringContextShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:46  INFO 7223 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-05-09 18:46  INFO 7223 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2020-05-09 18:46  INFO 7343 --- [main] es.MisInversionesApplication             : Starting MisInversionesApplication on antonio-portatil with PID 7343 (/home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-/build/classes/java/main started by antonio in /home/antonio/eclipse-workspace/01_DireccionDeProyectos/mis-inversiones-)
+2020-05-09 18:46  INFO 7343 --- [main] es.MisInversionesApplication             : No active profile set, falling back to default profiles: default
+2020-05-09 18:46  INFO 7343 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2020-05-09 18:46  INFO 7343 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 37ms. Found 3 JPA repository interfaces.
+2020-05-09 18:46  INFO 7343 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8081 (http)
+2020-05-09 18:46  INFO 7343 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-05-09 18:46  INFO 7343 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.31]
+2020-05-09 18:46  INFO 7343 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-05-09 18:46  INFO 7343 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1229 ms
+2020-05-09 18:46  INFO 7343 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2020-05-09 18:46  INFO 7343 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.12.Final
+2020-05-09 18:46  INFO 7343 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.0.Final}
+2020-05-09 18:46  INFO 7343 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-05-09 18:46  INFO 7343 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-05-09 18:46  INFO 7343 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2020-05-09 18:46  INFO 7343 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2020-05-09 18:46  INFO 7343 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2020-05-09 18:46  WARN 7343 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-05-09 18:46  INFO 7343 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-05-09 18:46  INFO 7343 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8081 (http) with context path ''
+2020-05-09 18:46  INFO 7343 --- [main] es.MisInversionesApplication             : Started MisInversionesApplication in 3.294 seconds (JVM running for 3.57)
+2020-05-09 18:46  INFO 7343 --- [main] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:46  INFO 7343 --- [http-nio-8081-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-05-09 18:46  INFO 7343 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-05-09 18:46  INFO 7343 --- [http-nio-8081-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2020-05-09 18:46  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:46  INFO 7343 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:46  INFO 7343 --- [http-nio-8081-exec-4] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:47  INFO 7343 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:47  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:47  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:47  INFO 7343 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:52  INFO 7343 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:52  INFO 7343 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:52  INFO 7343 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:52  INFO 7343 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:53  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:53  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:53  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:53  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:53  INFO 7343 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:53  INFO 7343 --- [http-nio-8081-exec-3] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:55  INFO 7343 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:55  INFO 7343 --- [http-nio-8081-exec-5] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:55  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:55  INFO 7343 --- [http-nio-8081-exec-6] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:56  INFO 7343 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:56  INFO 7343 --- [http-nio-8081-exec-7] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:56  INFO 7343 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:56  INFO 7343 --- [http-nio-8081-exec-8] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:57  INFO 7343 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:57  INFO 7343 --- [http-nio-8081-exec-9] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:57  INFO 7343 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:57  INFO 7343 --- [http-nio-8081-exec-10] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:57  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:57  INFO 7343 --- [http-nio-8081-exec-1] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:58  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}
+2020-05-09 18:58  INFO 7343 --- [http-nio-8081-exec-2] es.mdef.GestorCarteraImpl                : {Edeficandi=50.0, SP500=140.0, MidTem=16.0}

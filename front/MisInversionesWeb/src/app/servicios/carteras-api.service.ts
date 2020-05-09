@@ -20,7 +20,7 @@ export class CarterasApiService extends CarterasService {
 
   getCarteras(): Observable<Cartera[]> {
     return this.http.get(url_base).pipe(
-      map(respuesta => respuesta['_embedded'].carteras)
+      map(respuesta => respuesta['_embedded'] ? respuesta['_embedded'].carteras : [])
 
     );
 
@@ -28,7 +28,7 @@ export class CarterasApiService extends CarterasService {
 
   getCarterasConNombre(filtro: any): Observable<Cartera[]> {
 
-    return this.http.get(`${url_base}/search/nombre{?nombreCartera}=${filtro}`).pipe(
+    return this.http.get(`${url_base}/search/nombre/?nombre=${filtro}`).pipe(
       map(respuesta => respuesta['_embedded'] ? respuesta['_embedded'].carteras : [])
     )
 

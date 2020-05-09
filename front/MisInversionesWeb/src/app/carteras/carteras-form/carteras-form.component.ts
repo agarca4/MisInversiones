@@ -30,9 +30,8 @@ export class CarterasFormComponent implements OnInit {
       nombre: null,
       fechaCreacionCartera: new Date,
       capitalInvertido: null,
-      rentabilidad: null,
-      usuarios: [],
-      fondos: [],
+      rentabilidad: null
+      
     }
 
 

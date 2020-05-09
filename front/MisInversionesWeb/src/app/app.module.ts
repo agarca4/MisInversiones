@@ -8,6 +8,8 @@ import { RouterModule } from '@angular/router';
 import { HomeComponent } from './comun/home/home.component';
 import { CarterasApiService } from './servicios/carteras-api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FondosService } from './servicios/fondos.service';
+import { FondosApiService } from './servicios/fondos-api.service';
 
 
 @NgModule({
@@ -33,6 +35,9 @@ import { HttpClientModule } from '@angular/common/http';
   providers: [
     {
       provide: CarterasService, useClass: CarterasApiService
+    },
+    {
+      provide: FondosService, useClass: FondosApiService
     }
   ],
   bootstrap: [AppComponent]
