@@ -18,11 +18,11 @@
             event
           </mat-icon>
           <a class="">
-            <!--|date:'d/M/yyyy'-->
-            <span class="fechaCreacion">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
-            <span class="nombre ">{{cartera.nombreCartera}}</span>
-            <span class="capital ">{{cartera.capitalInvertido}} €</span>
-            <span class="rentabilidad">{{cartera.rentabilidad}} %</span>
+            <!--|date:'d/M/yyyy H:mm'-->
+            <span class="fechaCreacion">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy'}}</span>
+            <span class="nombre ">{{cartera.nombre}}</span>
+            <span class="capital ">{{cartera.capitalInvertido.toFixed(2)}} €</span>
+            <span class="rentabilidad">{{cartera.rentabilidad.toFixed(2)}} %</span>
           </a>
         </li>
       </ul>

@@ -22,7 +22,7 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 
 	public GestorCarteraImpl(String nombreCartera) {
 		this.cartera = new CarteraInversion();
-		getCartera().setNombreCartera(nombreCartera);
+		getCartera().setNombre(nombreCartera);
 	}
 
 	@Override
@@ -65,7 +65,7 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 			getCartera().getUsuarios().add(usuario);
 			usuario.setCartera(getCartera());
 		} else {
-			log.error(String.valueOf("El usuario ya existe " + getCartera().getNombreCartera()));
+			log.error(String.valueOf("El usuario ya existe " + getCartera().getNombre()));
 
 		}
 	}

@@ -35,7 +35,7 @@ import es.mdef.usuarios.Usuario;
 public class MisInversionesApplication {
 
 	private static GestorCartera<FondoInversion, CarteraInversion> miGestorCartera = new GestorCarteraImpl(
-			"Cartera agresiva");
+			"agresiva");
 
 	private static GestorCartera<FondoInversion, CarteraInversion> getMiGestorCartera() {
 		return miGestorCartera;

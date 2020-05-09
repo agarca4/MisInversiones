@@ -5,7 +5,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +13,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import org.springframework.web.bind.annotation.CrossOrigin;
-
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 @Entity
@@ -28,7 +24,7 @@ public class CarteraInversion {
 	@Column(unique = true)
 	private String id;
 	@Column(name = "NOMBRE_CARTERA")
-	private String nombreCartera;
+	private String nombre;
 	@Column(name = "FECHA_ALTA")
 	private Instant fechaCreacionCartera;
 	@Column(name = "CAPITAL_INVERTIDO")
@@ -86,12 +82,12 @@ public class CarteraInversion {
 		this.capitalInvertido = capitalTotal;
 	}
 
-	public String getNombreCartera() {
-		return nombreCartera;
+	public String getNombre() {
+		return nombre;
 	}
 
-	void setNombreCartera(String nombreCartera) {
-		this.nombreCartera = nombreCartera;
+	void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
 
 	public Collection<Usuario> getUsuarios() {
@@ -130,7 +126,7 @@ public class CarteraInversion {
 
 	@Override
 	public String toString() {
-		return getNombreCartera() + ": " + getFondos() + ", capital total: " + getCapitalInvertido() + ", creada el: "
+		return getNombre() + ": " + getFondos() + ", capital total: " + getCapitalInvertido() + ", creada el: "
 				+ getFechaCreacionCartera() + ", usuarios: " + getUsuarios() + ", Rentabilidad:" + getRentabilidad();
 	}
 

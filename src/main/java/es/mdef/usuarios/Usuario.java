@@ -9,9 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
-import org.springframework.web.bind.annotation.CrossOrigin;
-
 import es.mdef.CarteraInversion;
 
 @Entity

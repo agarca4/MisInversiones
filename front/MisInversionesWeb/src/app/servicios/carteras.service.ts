@@ -9,7 +9,7 @@ export abstract class CarterasService {
 
     abstract crearCartera(cartera: Cartera);
 
-    abstract getCarteraPorId(id): Cartera;
+    abstract getCarteraPorId(id: string): Observable <Cartera>;
 
     abstract modificarCartera(id: string, cartera: Cartera);
 }

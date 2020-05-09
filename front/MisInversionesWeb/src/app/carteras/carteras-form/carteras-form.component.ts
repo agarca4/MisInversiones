@@ -3,6 +3,7 @@ import { CarterasService } from 'src/app/servicios/carteras.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { Cartera } from 'src/app/modelo/cartera';
+import { HttpErrorResponse } from '@angular/common/http';
 
 
 @Component({
@@ -25,24 +26,30 @@ export class CarterasFormComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.cartera = {
+      nombre: null,
+      fechaCreacionCartera: new Date,
+      capitalInvertido: null,
+      rentabilidad: null,
+      usuarios: [],
+      fondos: [],
+    }
+
+
     let id = this.ruta.snapshot.paramMap.get('id');
     if (id) {
-      this.cartera = this.carterasService.getCarteraPorId(id);
+
+      this.carterasService.getCarteraPorId(id).subscribe(
+        (respuesta: any) => {
+          this.cartera = respuesta;
+
+        }
+      )
+
       this.titulo = 'Editar nombre de la Cartera';
     } else {
 
-      this.cartera = {
-        nombreCartera: null,
-        fechaCreacionCartera: null,
-        capitalInvertido: 0.0,
-        rentabilidad: 0.0,
-        usuarios: null,
-        fondos: null
-        
-
-      }
       this.titulo = 'Alta nueva Cartera';
-
     }
 
 
@@ -51,15 +58,20 @@ export class CarterasFormComponent implements OnInit {
   guardar(f: NgForm) {
     let id = this.ruta.snapshot.paramMap.get('id');
     if (id) {
-      this.carterasService.modificarCartera(id,this.cartera);
+      this.carterasService.modificarCartera(id, this.cartera).subscribe(
+        () => this.router.navigate(['/carteras'])
+      )
     } else {
-      this.carterasService.crearCartera(this.cartera);
+      this.carterasService.crearCartera(this.cartera).subscribe(
+        () => this.router.navigate(['/carteras'])
+      ),
+        (error: HttpErrorResponse) => {
+          alert('Mensaje desde el suscriptor: Se ha producido un error inesperado al crear la cartera: \n\n' + error.message)
+        }
 
     }
 
 
-
-    this.router.navigate(['/carteras']);
   }
   cancelar(f: NgForm) {
     if (f.dirty) {

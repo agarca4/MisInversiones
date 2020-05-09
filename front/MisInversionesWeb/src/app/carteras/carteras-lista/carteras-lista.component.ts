@@ -33,7 +33,7 @@ export class CarterasListaComponent implements OnInit {
         respuesta => (this.carterasLista = respuesta)
       )
     } else {
-      this.carterasService.getCarteras().subscribe(
+      this.carterasService.getCarterasConNombre(filtro).subscribe(
         respuesta => (this.carterasLista = respuesta)
       )
     }
