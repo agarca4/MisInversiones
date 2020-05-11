@@ -4,10 +4,22 @@
     <div class="col">
       <form #f='ngForm' class="d-flex flex-column mt-5 MiForm" (ngSubmit)='guardar(f)'>
         <mat-form-field appearance="fill">
-          <mat-label>nombre</mat-label>
-          <input matInput #nombre='ngModel' [(ngModel)]='cartera.nombre' name='nombre' required minlength="4"
-            maxlength="15">
-          <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
+        <mat-label>nombre</mat-label>
+        <input matInput #nombre='ngModel' [(ngModel)]='cartera.nombre' name='nombre' required minlength="4"
+          maxlength="15">
+        <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>capital</mat-label>
+          <input matInput #capitalIvertido='ngModel' [(ngModel)]='cartera.capitalInvertido' name='capitalInvertido'
+            required minlength="1" maxlength="20">
+          <mat-error>Campo requerido con al menos 1 caracteres</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+        <mat-label>rentabilidad</mat-label>
+        <input matInput #rentabilidad='ngModel' [(ngModel)]='cartera.rentabilidad' name='rentabilidad' required
+          minlength="1" maxlength="8">
+        <mat-error>Campo requerido con al menos 1 caracteres</mat-error>
         </mat-form-field>
         <div class="mt-5">
           <button type="submit" mat-raised-button color="warn" [disabled]='f.invalid'>Guardar</button>

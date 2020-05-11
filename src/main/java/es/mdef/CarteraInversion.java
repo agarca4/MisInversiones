@@ -71,14 +71,16 @@ public class CarteraInversion {
 	}
 
 	public double getCapitalInvertido() {
-		capitalInvertido = 0.0;
-		for (FondoInversion fondoInversion : getFondos()) {
-			capitalInvertido += fondoInversion.getCapitalInvertido();
-		}
+		
+//Igual que el calculo de la rentabilidad		
+//		capitalInvertido = 0.0;
+//		for (FondoInversion fondoInversion : getFondos()) {
+//			capitalInvertido += fondoInversion.getCapitalInvertido();
+//		}
 		return capitalInvertido;
 	}
 
-	void setCapitalInvertido(double capitalTotal) {
+	public void setCapitalInvertido(double capitalTotal) {
 		this.capitalInvertido = capitalTotal;
 	}
 
@@ -100,34 +102,47 @@ public class CarteraInversion {
 
 	// rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) *
 	// (proporcion inversion en ese producto respecto a la inversion total)
-	public Double getRentabilidad() {
-
-		Importador.importar();
-		Map<String, Double> capitalInvertido = new HashMap<>();
-		Map<String, Double> misFondos = new HashMap<>();
-		rentabilidad = 0.0;
-
-		for (FondoInversion producto : getFondos()) {
-			misFondos.put(producto.getNombre(), producto.getPrecioParticipacion());
-			capitalInvertido.put(producto.getNombre(), producto.getCapitalInvertido());
-
-		}
-		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
-			if (misFondos.containsKey(nombreProductoImportado)) {
-				rentabilidad += (((Importador.getInformeMercado().get(nombreProductoImportado)
-						- misFondos.get(nombreProductoImportado)) / misFondos.get(nombreProductoImportado)) * 100)
-						* (capitalInvertido.get(nombreProductoImportado) / getCapitalInvertido());
-			}
-
-		}
-
-		return rentabilidad;
-	}
+//Comento este metodo para que no me de pegas al setearle la rentabilidad en el front	
+//	public Double getRentabilidad() {
+//
+//		Importador.importar();
+//		Map<String, Double> capitalInvertido = new HashMap<>();
+//		Map<String, Double> misFondos = new HashMap<>();
+//		rentabilidad = 0.0;
+//
+//		for (FondoInversion producto : getFondos()) {
+//			misFondos.put(producto.getNombre(), producto.getPrecioParticipacion());
+//			capitalInvertido.put(producto.getNombre(), producto.getCapitalInvertido());
+//
+//		}
+//		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
+//			if (misFondos.containsKey(nombreProductoImportado)) {
+//				rentabilidad += (((Importador.getInformeMercado().get(nombreProductoImportado)
+//						- misFondos.get(nombreProductoImportado)) / misFondos.get(nombreProductoImportado)) * 100)
+//						* (capitalInvertido.get(nombreProductoImportado) / getCapitalInvertido());
+//			}
+//
+//		}
+//
+//		return rentabilidad;
+//	}
+	
+	
 
 	@Override
 	public String toString() {
 		return getNombre() + ": " + getFondos() + ", capital total: " + getCapitalInvertido() + ", creada el: "
 				+ getFechaCreacionCartera() + ", usuarios: " + getUsuarios() + ", Rentabilidad:" + getRentabilidad();
+	}
+
+
+	public Double getRentabilidad() {
+		return rentabilidad;
+	}
+
+
+	public void setRentabilidad(Double rentabilidad) {
+		this.rentabilidad = rentabilidad;
 	}
 
 }
