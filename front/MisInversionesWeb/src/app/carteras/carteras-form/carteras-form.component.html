@@ -4,10 +4,10 @@
     <div class="col">
       <form #f='ngForm' class="d-flex flex-column mt-5 MiForm" (ngSubmit)='guardar(f)'>
         <mat-form-field appearance="fill">
-        <mat-label>nombre</mat-label>
-        <input matInput #nombre='ngModel' [(ngModel)]='cartera.nombre' name='nombre' required minlength="4"
-          maxlength="15">
-        <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
+          <mat-label>nombre</mat-label>
+          <input matInput #nombre='ngModel' [(ngModel)]='cartera.nombre' name='nombre' required minlength="4"
+            maxlength="15">
+          <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
           <mat-label>capital</mat-label>
@@ -16,21 +16,26 @@
           <mat-error>Campo requerido con al menos 1 caracteres</mat-error>
         </mat-form-field>
         <mat-form-field appearance="fill">
-        <mat-label>rentabilidad</mat-label>
-        <input matInput #rentabilidad='ngModel' [(ngModel)]='cartera.rentabilidad' name='rentabilidad' required
-          minlength="1" maxlength="8">
-        <mat-error>Campo requerido con al menos 1 caracteres</mat-error>
+          <mat-label>rentabilidad</mat-label>
+          <input matInput #rentabilidad='ngModel' [(ngModel)]='cartera.rentabilidad' name='rentabilidad' required
+            minlength="1" maxlength="8">
+          <mat-error>Campo requerido con al menos 1 caracteres</mat-error>
         </mat-form-field>
         <div class="mt-5">
-          <button type="submit" mat-raised-button color="warn" [disabled]='f.invalid'>Guardar</button>
-          <button type="button" mat-button (click)='cancelar(f)'>Cancelar</button>
+          <button type="submit" mat-raised-button class="btn-success" [disabled]='f.invalid'>Guardar</button>
+          <button type="button" mat-button (click)='cancelar(f)' class="btn-danger">Cancelar</button>
         </div>
-
+        
+        
       </form>
     </div>
     <div class="col">
       <figure><img class="border border-secondary rounded-pill d-flex grafica img-fluid m-auto"
           src="../../../assets/img/inversion-segura-destacada-669x445.png" alt="grafica"></figure>
+          <br>
+          <p class="text-secondary text-right">
+            * La fecha será asignada automáticamente
+          </p>
     </div>
 
   </div>

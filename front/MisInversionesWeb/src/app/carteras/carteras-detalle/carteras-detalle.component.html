@@ -1,1 +1,43 @@
-<p>carteras-detalle works!</p>
+<header class="d-flex ">
+  <a class="mr-auto mt-3 align-middle text-secondary" href="">
+    <mat-icon class="mr-3 align-middle text-secondary" style="transform: scale(2);">undo</mat-icon>
+    <span>Volver a consultar Carteras</span>
+  </a>
+  <button class="p-2 ml-4 btn btn-info" mat-raised-button> Editar Cartera</button>
+  <button class="p-2 ml-4 btn btn-danger" mat-raised-button>Baja Cartera</button>
+</header>
+
+<section class=" container-fluid">
+  <h2 class="text-secondary text-center">Datos Básicos de la Cartera</h2>
+  <h3>
+    <div class="row text-info">
+      <mat-icon>schedule</mat-icon>
+      <span class="col">04/44/15 (fecha de alta)</span>
+      <span class="col">palomo</span>
+      <span class="col">5000 € invertidos</span>
+      <span class="col">7 % de rentabilidad</span>
+    </div>
+  </h3>
+  <h2 class="text-secondary text-center">Fondos de Inversión en Cartera</h2>
+  <h4>
+    <div class="row text-info d-flex">
+      <ul>
+        <!--<li *ngFor="let cartera of carterasLista" [class.carteraNegativa]="isRentabilidadNegativa(cartera)">-->
+       
+          <span class="col-lg">nombre</span>
+          <span class="col-lg">sector</span>
+          <span class="col-lg">riesgo</span>
+          <span class="col-lg">tipo</span>
+          <span class="col-lg">capital invertido €</span>
+          <span class="col-lg">precio</span>
+          
+        
+        <!--</li>-->
+      </ul>
+    </div>
+  </h4>
+</section>
+
+<a class="d-block text-center mt-5 text-secondary" href="#">
+  <mat-icon class="align-middle mr-2" style="color: green; transform: scale(1.2);">add_circle</mat-icon>Añadir Fondo
+</a>
