@@ -9,7 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
 
-//Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
 
 public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraInversion> {
 

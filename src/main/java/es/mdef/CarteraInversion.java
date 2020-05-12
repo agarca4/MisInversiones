@@ -15,6 +15,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 import es.mdef.usuarios.Usuario;
+
 @Entity
 @Table(name = "CARTERAS")
 public class CarteraInversion {
@@ -37,22 +38,18 @@ public class CarteraInversion {
 	@OneToMany(cascade = CascadeType.ALL, targetEntity = FondoInversion.class, mappedBy = "cartera")
 	private Collection<FondoInversion> fondos = new ArrayList<>();
 
-	
 	CarteraInversion() {
 		setFechaCreacionCartera(Instant.now());
 
 	}
-	
 
 	public String getId() {
 		return id;
 	}
 
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 
 	public Collection<FondoInversion> getFondos() {
 		return fondos;
@@ -71,12 +68,11 @@ public class CarteraInversion {
 	}
 
 	public double getCapitalInvertido() {
-		
-//Igual que el calculo de la rentabilidad		
-//		capitalInvertido = 0.0;
-//		for (FondoInversion fondoInversion : getFondos()) {
-//			capitalInvertido += fondoInversion.getCapitalInvertido();
-//		}
+
+		capitalInvertido = 0.0;
+		for (FondoInversion fondoInversion : getFondos()) {
+			capitalInvertido += fondoInversion.getCapitalInvertido();
+		}
 		return capitalInvertido;
 	}
 
@@ -100,46 +96,39 @@ public class CarteraInversion {
 		this.usuarios = usuarios;
 	}
 
-	// rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) *
-	// (proporcion inversion en ese producto respecto a la inversion total)
-//Comento este metodo para que no me de pegas al setearle la rentabilidad en el front	
-//	public Double getRentabilidad() {
-//
-//		Importador.importar();
-//		Map<String, Double> capitalInvertido = new HashMap<>();
-//		Map<String, Double> misFondos = new HashMap<>();
-//		rentabilidad = 0.0;
-//
-//		for (FondoInversion producto : getFondos()) {
-//			misFondos.put(producto.getNombre(), producto.getPrecioParticipacion());
-//			capitalInvertido.put(producto.getNombre(), producto.getCapitalInvertido());
-//
-//		}
-//		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
-//			if (misFondos.containsKey(nombreProductoImportado)) {
-//				rentabilidad += (((Importador.getInformeMercado().get(nombreProductoImportado)
-//						- misFondos.get(nombreProductoImportado)) / misFondos.get(nombreProductoImportado)) * 100)
-//						* (capitalInvertido.get(nombreProductoImportado) / getCapitalInvertido());
-//			}
-//
-//		}
-//
-//		return rentabilidad;
-//	}
-	
-	
+	/*
+	 * rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) *
+	 * (proporcion inversion en ese producto respecto a la inversion total)
+	 */
+	public Double getRentabilidad() {
+
+		Importador.importar();
+		Map<String, Double> capitalInvertido = new HashMap<>();
+		Map<String, Double> misFondos = new HashMap<>();
+		rentabilidad = 0.0;
+
+		for (FondoInversion producto : getFondos()) {
+			misFondos.put(producto.getNombre(), producto.getPrecioParticipacion());
+			capitalInvertido.put(producto.getNombre(), producto.getCapitalInvertido());
+
+		}
+		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
+			if (misFondos.containsKey(nombreProductoImportado)) {
+				rentabilidad += (((Importador.getInformeMercado().get(nombreProductoImportado)
+						- misFondos.get(nombreProductoImportado)) / misFondos.get(nombreProductoImportado)) * 100)
+						* (capitalInvertido.get(nombreProductoImportado) / getCapitalInvertido());
+			}
+
+		}
+
+		return rentabilidad;
+	}
 
 	@Override
 	public String toString() {
 		return getNombre() + ": " + getFondos() + ", capital total: " + getCapitalInvertido() + ", creada el: "
 				+ getFechaCreacionCartera() + ", usuarios: " + getUsuarios() + ", Rentabilidad:" + getRentabilidad();
 	}
-
-
-	public Double getRentabilidad() {
-		return rentabilidad;
-	}
-
 
 	public void setRentabilidad(Double rentabilidad) {
 		this.rentabilidad = rentabilidad;
