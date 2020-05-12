@@ -12,10 +12,10 @@
   <h3>
     <div class="row text-info">
       <mat-icon>schedule</mat-icon>
-      <span class="col">04/44/15 (fecha de alta)</span>
-      <span class="col">palomo</span>
-      <span class="col">5000 € invertidos</span>
-      <span class="col">7 % de rentabilidad</span>
+      <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
+      <span class="col">{{cartera.nombre}}</span>
+      <span class="col">{{cartera.capitalInvertido}} € invertidos</span>
+      <span class="col">{{cartera.rentabilidad}} % de rentabilidad</span>
     </div>
   </h3>
   <h2 class="text-secondary text-center">Fondos de Inversión en Cartera</h2>
