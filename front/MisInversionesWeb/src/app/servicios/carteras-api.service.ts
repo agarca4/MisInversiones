@@ -14,6 +14,8 @@ const url_base = 'http://localhost:8081/api/carteras';
 export class CarterasApiService extends CarterasService {
 
 
+
+
   constructor(private http: HttpClient) {
     super();
   }
@@ -38,7 +40,7 @@ export class CarterasApiService extends CarterasService {
 
   }
 
-  
+
   getCarteraPorId(id: string): Observable<Cartera> {
 
     return this.http.get(`${url_base}/${id}`).pipe(
@@ -63,5 +65,16 @@ export class CarterasApiService extends CarterasService {
       )
     )
 
+  }
+
+  getFondosPorCartera(id: String) {
+    return this.http.get(`${url_base}/${id}/fondos`).pipe(
+      map(respuesta => respuesta['_embedded'].fondos ? respuesta['_embedded'].fondos : [])
+    )
+  }
+
+  getIdCartera(cartera) {
+    let href = cartera['_links'].self.href;
+    return href.slice(href.lastIndexOf('/') + 1);
   }
 }

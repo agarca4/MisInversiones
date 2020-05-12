@@ -1,36 +1,10 @@
-.nombre {
-    position: relative;
-    font-weight: 500;
-  
-  }
 
-  .sector {
-    position: relative;
-    left: 100px;
-    font-weight: 500;
+ 
+
   
-  }
-  .riesgo {
+  #listaFondos li {
+    list-style: none;
     position: relative;
-    left: 200px;
-    font-weight: 500;
-  
+    height: 30px;
   }
-  .tipo {
-    position: relative;
-    left: 300px;
-    font-weight: 500;
   
-  }
-  .capital {
-    position: relative;
-    left: 400px;
-    font-weight: 500;
-  
-  }
-  .precio {
-    position: relative;
-    left: 500px;
-    font-weight: 500;
-  
-  }

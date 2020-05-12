@@ -1,5 +1,5 @@
 <header class="d-flex ">
-  <a class="mr-auto mt-3 align-middle text-secondary" href="">
+  <a class="mr-auto mt-3 align-middle text-secondary" routerLink='/carteras'>
     <mat-icon class="mr-3 align-middle text-secondary" style="transform: scale(2);">undo</mat-icon>
     <span>Volver a consultar Carteras</span>
   </a>
@@ -13,29 +13,28 @@
     <div class="row text-info">
       <mat-icon>schedule</mat-icon>
       <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
-      <span class="col">{{cartera.nombre}}</span>
-      <span class="col">{{cartera.capitalInvertido}} € invertidos</span>
-      <span class="col">{{cartera.rentabilidad}} % de rentabilidad</span>
+      <span class="col">Cartera: {{cartera.nombre}}</span>
+      <span class="col">{{cartera.capitalInvertido.toFixed(2)}} € invertidos</span>
+      <span class="col">{{cartera.rentabilidad.toFixed(2)}} % de rentabilidad</span>
     </div>
   </h3>
   <h2 class="text-secondary text-center">Fondos de Inversión en Cartera</h2>
   <h4>
-    <div class=" text-info d-flex justify-content-left">
-      
+    <div  id="listaFondos" class=" text-info d-flex justify-content-left">
+
       <ul>
-        <!--<li *ngFor="let cartera of carterasLista" [class.carteraNegativa]="isRentabilidadNegativa(cartera)">-->
-       
-          <span class="nombre">nombre</span>
-          <span class="sector">sector</span>
-          <span class="riesgo">riesgo</span>
-          <span class="tipo">tipo</span>
-          <span class="capital">capital invertido €</span>
-          <span class="precio">precio</span>
-          
-        
-        <!--</li>-->
+        <li *ngFor="let fondo of fondos" class="mb-1">
+          <mat-icon [style.color]="fondo.riesgo==='ALTO'? 'red':'green'">trending_up</mat-icon>
+          <span class="nombre">{{fondo.nombre}}</span>
+          <span class="sector">Sector: {{fondo.sector}}</span>
+          <span class="riesgo">Riesgo: {{fondo.riesgo}}</span>
+          <span class="tipo">Tipo: {{fondo.tipo}}</span>
+          <span class="capital">Capital:{{fondo.capitalInvertido}} €</span>
+
+
+        </li>
       </ul>
-    
+
     </div>
   </h4>
 </section>
@@ -43,4 +42,3 @@
 <a class="d-block text-right mt-5 text-secondary" href="#">
   <mat-icon class="align-middle mr-2" style="color: green; transform: scale(1.2);">add_circle</mat-icon>Añadir Fondo
 </a>
-

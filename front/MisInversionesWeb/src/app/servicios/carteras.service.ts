@@ -12,4 +12,8 @@ export abstract class CarterasService {
     abstract getCarteraPorId(id: string): Observable <Cartera>;
 
     abstract modificarCartera(id: string, cartera: Cartera);
+
+    abstract getFondosPorCartera(id: String);
+
+   abstract  getIdCartera(cartera);
 }

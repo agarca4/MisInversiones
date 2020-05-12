@@ -22,11 +22,12 @@
             card_travel
           </mat-icon>
           <!--|date:'d/M/yyyy H:mm'-->
+          <a [routerLink]="['/carteras', carterasService.getIdCartera(cartera)]">
           <span class="fecha">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
           <span class="nombre">{{cartera.nombre}}</span>
           <span class="capital">{{cartera.capitalInvertido.toFixed(2)}} €</span>
           <span class="rentabilidad">{{cartera.rentabilidad.toFixed(2)}} %</span>
-
+        </a>
         </li>
       </ul>
     </div>

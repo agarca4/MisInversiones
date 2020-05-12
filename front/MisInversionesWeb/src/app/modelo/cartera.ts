@@ -1,5 +1,4 @@
-import { Fondo } from './fondo';
-import { Usuario } from './usuario';
+
 
 export interface Cartera{
     nombre: String;

@@ -32,7 +32,7 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
             component: CarterasFormComponent
           },
           {
-            path: 'detalle',
+            path: ':id',
             component: CarterasDetalleComponent
           }
 
@@ -40,6 +40,7 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
       }
     ])
   ],
+  exports:[CarterasListaComponent]
  
 })
 export class CarterasModule { }
