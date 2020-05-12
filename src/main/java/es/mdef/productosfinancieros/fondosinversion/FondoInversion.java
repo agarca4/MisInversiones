@@ -40,7 +40,7 @@ public class FondoInversion {
 	}
 
 	public FondoInversion(String nombreProducto, Double precioParticipacion, SectorFondo sector, TipoFondo tipo) {
-		this.nombre = nombreProducto;
+		this.nombre = nombreProducto.toUpperCase();
 		this.precioParticipacion = precioParticipacion;
 		this.sector = sector;
 		this.tipo = tipo;

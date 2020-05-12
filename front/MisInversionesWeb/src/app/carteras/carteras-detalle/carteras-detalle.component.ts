@@ -32,14 +32,14 @@ export class CarterasDetalleComponent implements OnInit {
   constructor(
     private carterasService: CarterasService,
     private ruta: ActivatedRoute
-    ) { }
+  ) { }
 
   ngOnInit() {
-    
-this.idCartera = this.ruta.snapshot.paramMap.get('id');
 
-    
-    
+    this.idCartera = this.ruta.snapshot.paramMap.get('id');
+
+
+
     this.carterasService.getCarteraPorId(this.idCartera).subscribe(
       respuesta => this.cartera = respuesta
     )

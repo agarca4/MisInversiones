@@ -5,15 +5,15 @@ export abstract class CarterasService {
 
     abstract getCarteras(): Observable<Cartera[]>;
 
-    abstract getCarterasConNombre(filtro): Observable <Cartera[]>;
+    abstract getCarterasConNombre(filtro): Observable<Cartera[]>;
 
     abstract crearCartera(cartera: Cartera);
 
-    abstract getCarteraPorId(id: string): Observable <Cartera>;
+    abstract getCarteraPorId(id: string): Observable<Cartera>;
 
     abstract modificarCartera(id: string, cartera: Cartera);
 
     abstract getFondosPorCartera(id: String);
 
-   abstract  getIdCartera(cartera);
+    abstract getIdCartera(cartera);
 }

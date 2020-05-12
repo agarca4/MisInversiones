@@ -45,10 +45,10 @@ public class MisInversionesApplication {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
 
-		FondoInversion fondo1 = new FondoInversion("SP500", 70.00, SectorFondo.CONSUMO_CICLICO,
+		FondoInversion fondo1 = new FondoInversion("sp500", 150.00, SectorFondo.CONSUMO_CICLICO,
 				TipoFondo.RENTA_VARIABLE);
-		FondoInversion fondo2 = new FondoInversion("Edeficandi", 50.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
-		FondoInversion fondo3 = new FondoInversion("MidTem", 16.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
+		FondoInversion fondo2 = new FondoInversion("edeficandi", 52.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo3 = new FondoInversion("MIdTem", 18.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
 
 		Usuario usuario1 = new Usuario("Juan");
 		Usuario usuario2 = new Usuario("Victoria");
@@ -65,11 +65,7 @@ public class MisInversionesApplication {
 		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000.00);
 
 		
-		//Como en el front no se va a implementar el alta de fondos nuevos, al crear una cartera siempre me va a dar 0 capital y 0 rentabilidad
-		//para evitar esto he comentado los metodos de getRentabilidad() y getCapital(), de forma que pueda setearselos en el back y tambien en el front.
-		//Cuando implemente en el front la funcionalidad de alta fondos nuevos, ya podré usar estos metodos que calculan ambas propiedades
-		getMiGestorCartera().getCartera().setCapitalInvertido(50000);
-		getMiGestorCartera().getCartera().setRentabilidad(4.0);
+		getMiGestorCartera().getCartera().getRentabilidad();
 
 		
 		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);

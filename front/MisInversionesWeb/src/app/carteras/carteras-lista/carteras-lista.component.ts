@@ -12,7 +12,7 @@ export class CarterasListaComponent implements OnInit {
 
   carterasLista: Cartera[] = [];
 
-  constructor(private carterasService: CarterasService) {
+  constructor(public carterasService: CarterasService) {
   }
 
   ngOnInit() {
