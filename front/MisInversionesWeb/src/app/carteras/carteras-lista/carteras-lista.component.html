@@ -1,33 +1,35 @@
-
+<div>
+  <div class="h5 text-secondary text-center">Haga "click" en el nombre para conocer detalles </div>
+  <mat-form-field class="d-block">
+    <input #buscar matInput placeholder="Buscar..." (keyup.enter)="filtrar(buscar.value)">
+  </mat-form-field>
+  <div class="text-danger" *ngIf='carterasLista.length == 0 && buscar.value != ""'>
+    No hay carteras con el nombre '{{buscar.value}}'
+  </div>
   <div>
-    <div class="h5 text-secondary text-center">Haga "click" en el nombre para conocer detalles </div>
-    <mat-form-field class="d-block">
-      <input #buscar matInput placeholder="Buscar..." (keyup.enter)="filtrar(buscar.value)">
-    </mat-form-field>
-    <div class="text-danger" *ngIf='carterasLista.length == 0 && buscar.value != ""'>
-      No hay carteras con el nombre '{{buscar.value}}'
-    </div>
-    <div>
-      <div *ngIf="carterasLista.length > 0" class="h5 text-secondary">Resultados 1 - {{carterasLista.length}} de
-        {{carterasLista.length}} carteras</div>
-    
-    </div>
-    <div id="listaCarteras" class="m1-n5 mt-2">
+    <div *ngIf="carterasLista.length > 0" class="h5 text-secondary">Resultados 1 - {{carterasLista.length}} de
+      {{carterasLista.length}} carteras</div>
+
+  </div>
+  <div class="flex-fill">
+
+
+    <div id="listaCarteras" class="d-flex justify-content-left">
       <ul>
         <li *ngFor="let cartera of carterasLista" [class.carteraNegativa]="isRentabilidadNegativa(cartera)">
-          <mat-icon>
-            schedule
-          </mat-icon>
-            <!--|date:'d/M/yyyy H:mm'-->
-            <span class="fechaCreacion">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
-            <span class="nombre ">{{cartera.nombre}}</span>
-            <span class="capital ">{{cartera.capitalInvertido.toFixed(2)}} €</span>
-            <span class="rentabilidad">{{cartera.rentabilidad.toFixed(2)}} %</span>
-          
-        </li>
-      
 
+          <mat-icon>
+            card_travel
+          </mat-icon>
+          <!--|date:'d/M/yyyy H:mm'-->
+          <span class="fecha">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
+          <span class="nombre">{{cartera.nombre}}</span>
+          <span class="capital">{{cartera.capitalInvertido.toFixed(2)}} €</span>
+          <span class="rentabilidad">{{cartera.rentabilidad.toFixed(2)}} %</span>
+
+        </li>
       </ul>
     </div>
   </div>
 
+</div>

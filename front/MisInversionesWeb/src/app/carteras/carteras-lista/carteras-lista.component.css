@@ -15,30 +15,38 @@
 
 #listaCarteras mat-icon {
   position: relative;
-  top: 8px;
-  margin-right: 15px;
+  top: 15px;
+  margin-right: 2px;
   font-size: 1.5em;
 }
 
+#listaCarteras .fecha {
+  position: relative;
+  left: 40px;
+  top: 9px;
+  font-weight: 500;
+
+}
+
 #listaCarteras .nombre {
-  position: absolute;
-  left: 325px;
+  position: relative;
+  left: 150px;
   top: 9px;
   font-weight: 500;
 
 }
 
 #listaCarteras .capital {
-  position: absolute;
-  left: 625px;
+  position: relative;
+  left: 300px;
   top: 9px;
   font-weight: 500;
 
 }
 
 #listaCarteras .rentabilidad {
-  position: absolute;
-  left: 825px;
+  position: relative;
+  left: 450px;
   top: 9px;
   font-weight: 500;
 

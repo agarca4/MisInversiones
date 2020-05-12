@@ -7,7 +7,7 @@
   <button class="p-2 ml-4 btn btn-danger" mat-raised-button>Baja Cartera</button>
 </header>
 
-<section class=" container-fluid">
+<section class=" container-fluid ">
   <h2 class="text-secondary text-center">Datos Básicos de la Cartera</h2>
   <h3>
     <div class="row text-info">
@@ -20,24 +20,27 @@
   </h3>
   <h2 class="text-secondary text-center">Fondos de Inversión en Cartera</h2>
   <h4>
-    <div class="row text-info d-flex">
+    <div class=" text-info d-flex justify-content-left">
+      
       <ul>
         <!--<li *ngFor="let cartera of carterasLista" [class.carteraNegativa]="isRentabilidadNegativa(cartera)">-->
        
-          <span class="col-lg">nombre</span>
-          <span class="col-lg">sector</span>
-          <span class="col-lg">riesgo</span>
-          <span class="col-lg">tipo</span>
-          <span class="col-lg">capital invertido €</span>
-          <span class="col-lg">precio</span>
+          <span class="nombre">nombre</span>
+          <span class="sector">sector</span>
+          <span class="riesgo">riesgo</span>
+          <span class="tipo">tipo</span>
+          <span class="capital">capital invertido €</span>
+          <span class="precio">precio</span>
           
         
         <!--</li>-->
       </ul>
+    
     </div>
   </h4>
 </section>
 
-<a class="d-block text-center mt-5 text-secondary" href="#">
+<a class="d-block text-right mt-5 text-secondary" href="#">
   <mat-icon class="align-middle mr-2" style="color: green; transform: scale(1.2);">add_circle</mat-icon>Añadir Fondo
 </a>
+

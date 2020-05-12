@@ -1,0 +1,36 @@
+.nombre {
+    position: relative;
+    font-weight: 500;
+  
+  }
+
+  .sector {
+    position: relative;
+    left: 100px;
+    font-weight: 500;
+  
+  }
+  .riesgo {
+    position: relative;
+    left: 200px;
+    font-weight: 500;
+  
+  }
+  .tipo {
+    position: relative;
+    left: 300px;
+    font-weight: 500;
+  
+  }
+  .capital {
+    position: relative;
+    left: 400px;
+    font-weight: 500;
+  
+  }
+  .precio {
+    position: relative;
+    left: 500px;
+    font-weight: 500;
+  
+  }
