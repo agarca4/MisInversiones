@@ -10,6 +10,7 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
 
 
 
+
 @NgModule({
   declarations: [CarterasListaComponent, CarterasFormComponent, CarterasDetalleComponent, CarterasHomeComponent, CarterasMenuComponent],
   imports: [
@@ -34,7 +35,7 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
           {
             path: ':id',
             component: CarterasDetalleComponent
-          }
+          },
 
         ]
       }

@@ -18,12 +18,22 @@ export class CarterasDetalleComponent implements OnInit {
     rentabilidad: 0.0
   };
 
-  fondos = [
-    {
-    }
-  ];
+  fondo = {
+    nombre: null,
+    sector: null,
+    tipo: null,
+    riesgo: null,
+    precioParticipacion: 0.0,
+    capitalInvertido: 0.0
+  }
 
- 
+  fondos = [];
+
+  tipos = ["RENTA_FIJA", "RENTA_VARIABLE", "MIXTO"];
+  sectores = ["TECNOLOGIA", "CONSUMO_DEFENSIVO", "INDUSTRIA", "CONSUMO_CICLICO", "SALUD", "SERVICIOS_FINANCIEROS"];
+  riesgos = ["ALTO", "MEDIO", "BAJO"];
+
+
 
   constructor(
     private carterasService: CarterasService,
@@ -49,7 +59,7 @@ export class CarterasDetalleComponent implements OnInit {
 
   }
 
-  borrarCartera(){
+  borrarCartera() {
     if (confirm("¿Desea borrar esta cartera?")) {
       this.carterasService.borrarCartera(this.idCartera).subscribe(
         () => this.router.navigate(['/carteras'])
@@ -57,20 +67,15 @@ export class CarterasDetalleComponent implements OnInit {
     }
   }
 
-  crearFondo(){
-    this.carterasService.altaFondo(this.idCartera, {
-
-      nombre: String,
-      sector: String,
-      tipo: String,
-      riesgo: String,
-      capitalInvertido: Number
-
-    }).subscribe(
+  crearFondo() {
+    this.carterasService.crearFondoEnCartera(this.idCartera, this.fondo).subscribe(
       respuesta => this.fondos.push(respuesta)
     )
   }
-
+  borrarFondo(fondo) {
+    this.carterasService.borrarFondoEnCartera(this.idCartera, fondo).subscribe(
+      () => this.fondos.splice(this.fondos.indexOf(fondo), 1))
+  }
 
 
 

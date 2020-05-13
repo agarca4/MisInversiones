@@ -19,5 +19,7 @@ export abstract class CarterasService {
 
     abstract borrarCartera(id: String): Observable<Object>;
 
-    abstract altaFondo(idCartera, fondo): Observable<Object>;
+    abstract crearFondoEnCartera(idCartera, fondo): Observable<Object>;
+
+    abstract borrarFondoEnCartera(idPartido, fondo): Observable<Object>;
 }

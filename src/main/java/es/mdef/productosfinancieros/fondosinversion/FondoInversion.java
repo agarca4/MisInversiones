@@ -44,7 +44,6 @@ public class FondoInversion {
 		this.precioParticipacion = precioParticipacion;
 		this.sector = sector;
 		this.tipo = tipo;
-		setRiesgo();
 	}
 
 	public Double getCapitalInvertido() {
@@ -81,10 +80,7 @@ public class FondoInversion {
 	}
 
 	public String getRiesgo() {
-		return riesgo;
-	}
-
-	void setRiesgo() {
+		
 		switch (this.tipo) {
 		case RENTA_FIJA:
 			this.riesgo = "BAJO";
@@ -99,8 +95,12 @@ public class FondoInversion {
 			this.riesgo = "DESCONOCIDO";
 			break;
 		}
-
+		
+		return riesgo;
 	}
+
+	
+
 
 	@Override
 	public String toString() {

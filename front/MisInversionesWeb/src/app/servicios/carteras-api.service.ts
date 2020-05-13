@@ -13,7 +13,7 @@ const url_fondos = 'http://localhost:8081/api/fondos';
   providedIn: 'root'
 })
 export class CarterasApiService extends CarterasService {
-  
+
 
   constructor(private http: HttpClient) {
     super();
@@ -84,8 +84,17 @@ export class CarterasApiService extends CarterasService {
     );
   }
 
-  altaFondo(idCartera, fondo): Observable<Object> {
+  crearFondoEnCartera(idCartera: any, fondo: any): Observable<Object> {
+
     fondo.cartera = `${url_base}/${idCartera}`;
     return this.http.post(`${url_fondos}`, fondo);
+
   }
+  borrarFondoEnCartera(idPartido: any, fondo: any): Observable<Object> {
+
+    return this.http.delete(fondo['_links'].self.href);
+
+  }
+
+
 }

@@ -11,15 +11,16 @@ import { NoDisponibleComponent } from './no-disponible/no-disponible.component';
 import { RouterModule } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { FormsModule } from '@angular/forms';
-
+import { MatMenuModule } from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
   declarations: [CabeceraComponent, PieComponent, HomeComponent, NoDisponibleComponent],
   imports: [
     CommonModule,
-    MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, RouterModule, MatButtonModule,FormsModule
+    MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, RouterModule, MatButtonModule, FormsModule, MatMenuModule,MatSelectModule
   ],
-  exports: [CabeceraComponent, PieComponent, HomeComponent, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, MatButtonModule,FormsModule]
+  exports: [CabeceraComponent, PieComponent, HomeComponent, MatIconModule, MatTableModule, MatFormFieldModule, MatInputModule, MatButtonModule, FormsModule, MatMenuModule,MatSelectModule]
 })
 export class ComunModule { }
