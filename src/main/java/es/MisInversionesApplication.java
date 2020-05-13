@@ -49,6 +49,18 @@ public class MisInversionesApplication {
 				TipoFondo.RENTA_VARIABLE);
 		FondoInversion fondo2 = new FondoInversion("edeficandi", 52.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
 		FondoInversion fondo3 = new FondoInversion("MIdTem", 18.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
+		FondoInversion fondo4 = new FondoInversion("sp5000", 150.00, SectorFondo.CONSUMO_CICLICO,
+				TipoFondo.RENTA_VARIABLE);
+		FondoInversion fondo5 = new FondoInversion("edeficandi0", 52.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo6 = new FondoInversion("MIdTem0", 18.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
+		FondoInversion fondo7 = new FondoInversion("sp50000", 150.00, SectorFondo.CONSUMO_CICLICO,
+				TipoFondo.RENTA_VARIABLE);
+		FondoInversion fondo8 = new FondoInversion("edeficandi00", 52.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo9 = new FondoInversion("MIdTem000", 18.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
+		FondoInversion fondo10 = new FondoInversion("sp500000", 150.00, SectorFondo.CONSUMO_CICLICO,
+				TipoFondo.RENTA_VARIABLE);
+		FondoInversion fondo11 = new FondoInversion("edeficandi000", 52.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo12 = new FondoInversion("MIdThfghem", 18.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
 
 		Usuario usuario1 = new Usuario("Juan");
 		Usuario usuario2 = new Usuario("Victoria");
@@ -63,6 +75,18 @@ public class MisInversionesApplication {
 		getMiGestorCartera().compraProductoFinanciero(fondo2, 2000.00);
 		getMiGestorCartera().compraProductoFinanciero(fondo3, 2000.00);
 		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo4, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo5, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo6, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo7, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo8, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo9, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo10, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo11, 1500.00);
+		getMiGestorCartera().compraProductoFinanciero(fondo12, 1500.00);
+		
+
+		
 
 		
 		getMiGestorCartera().getCartera().getRentabilidad();

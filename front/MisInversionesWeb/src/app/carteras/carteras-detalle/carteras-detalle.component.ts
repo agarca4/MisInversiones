@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cartera } from 'src/app/modelo/cartera';
 import { CarterasService } from 'src/app/servicios/carteras.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-carteras-detalle',
@@ -20,18 +20,15 @@ export class CarterasDetalleComponent implements OnInit {
 
   fondos = [
     {
-      nombre: null,
-      sector: null,
-      tipo: null,
-      riesgo: null,
-      capitalInvertido: 0.0
-
     }
   ];
 
+ 
+
   constructor(
     private carterasService: CarterasService,
-    private ruta: ActivatedRoute
+    private ruta: ActivatedRoute,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -50,8 +47,32 @@ export class CarterasDetalleComponent implements OnInit {
       }
     )
 
-
-
   }
+
+  borrarCartera(){
+    if (confirm("¿Desea borrar esta cartera?")) {
+      this.carterasService.borrarCartera(this.idCartera).subscribe(
+        () => this.router.navigate(['/carteras'])
+      )
+    }
+  }
+
+  crearFondo(){
+    this.carterasService.altaFondo(this.idCartera, {
+
+      nombre: String,
+      sector: String,
+      tipo: String,
+      riesgo: String,
+      capitalInvertido: Number
+
+    }).subscribe(
+      respuesta => this.fondos.push(respuesta)
+    )
+  }
+
+
+
+
 
 }

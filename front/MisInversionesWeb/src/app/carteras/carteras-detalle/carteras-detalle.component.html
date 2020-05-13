@@ -4,8 +4,8 @@
     <mat-icon class="mr-3 align-middle text-secondary" style="transform: scale(2);">undo</mat-icon>
     <span>Volver a consultar Carteras</span>
   </a>
-  <button class="p-2 ml-2 btn btn-info" mat-raised-button > Editar Cartera</button>
-  <button class="p-2 ml-2 btn btn-danger" mat-raised-button>Baja Cartera</button>
+  <button class="p-2 ml-2 btn btn-info" mat-raised-button [routerLink]="['/carteras/form', idCartera]" > Editar Cartera</button>
+  <button class="p-2 ml-2 btn btn-danger" (click)="borrarCartera()" mat-raised-button>Baja Cartera</button>
 </header>
 
 <section class=" container-fluid ">
@@ -40,6 +40,13 @@
   </h4>
 </section>
 
-<a class="d-block text-right mt-5 text-secondary" href="#">
-  <mat-icon class="align-middle mr-2" style="color: green; transform: scale(1.2);">add_circle</mat-icon>Añadir Fondo
-</a>
+<footer>
+  <a class="text-right mt-5 text-secondary" href="#">
+    <mat-icon class="align-middle mr-2" (click)= "crearFondo()" style="color: green; transform: scale(1.2);">add_circle</mat-icon>Alta Fondo
+  </a>
+  <a class="text-right mt-5 text-secondary" href="#">
+    <mat-icon class="align-middle mr-2" (click)= "crearFondo()" style="color: red; transform: scale(1.2);">remove_circle</mat-icon>Alta Fondo
+  </a>
+
+</footer>
+

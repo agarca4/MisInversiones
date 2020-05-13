@@ -16,4 +16,8 @@ export abstract class CarterasService {
     abstract getFondosPorCartera(id: String);
 
     abstract getIdCartera(cartera);
+
+    abstract borrarCartera(id: String): Observable<Object>;
+
+    abstract altaFondo(idCartera, fondo): Observable<Object>;
 }

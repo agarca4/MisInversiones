@@ -7,14 +7,13 @@ import { map, catchError } from 'rxjs/operators'
 
 
 const url_base = 'http://localhost:8081/api/carteras';
+const url_fondos = 'http://localhost:8081/api/fondos';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CarterasApiService extends CarterasService {
-
-
-
+  
 
   constructor(private http: HttpClient) {
     super();
@@ -76,5 +75,17 @@ export class CarterasApiService extends CarterasService {
   getIdCartera(cartera) {
     let href = cartera['_links'].self.href;
     return href.slice(href.lastIndexOf('/') + 1);
+  }
+
+
+  borrarCartera(id: String): Observable<Object> {
+    return this.http.delete(`${url_base}/${id}`
+
+    );
+  }
+
+  altaFondo(idCartera, fondo): Observable<Object> {
+    fondo.cartera = `${url_base}/${idCartera}`;
+    return this.http.post(`${url_fondos}`, fondo);
   }
 }
