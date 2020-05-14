@@ -67,12 +67,20 @@ public class CarteraInversion {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	public double getCapitalInvertido() {
+	public double calcularCapital() {
 
-		capitalInvertido = 0.0;
 		for (FondoInversion fondoInversion : getFondos()) {
 			capitalInvertido += fondoInversion.getCapitalInvertido();
 		}
+		return capitalInvertido;
+	}
+
+	public double getCapitalInvertido() {
+
+		capitalInvertido = 0.0;
+
+		calcularCapital();
+
 		return capitalInvertido;
 	}
 

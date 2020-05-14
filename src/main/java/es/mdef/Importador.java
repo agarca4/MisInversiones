@@ -40,7 +40,7 @@ public class Importador {
 			buffer.readLine();
 			while ((linea = buffer.readLine()) != null) {
 				String[] columnas = linea.split(",");
-				getInformeMercado().put(columnas[0].toUpperCase(), Double.parseDouble(columnas[1]));
+				getInformeMercado().put(columnas[0], Double.parseDouble(columnas[1]));
 
 			}
 		} catch (Exception e) {
