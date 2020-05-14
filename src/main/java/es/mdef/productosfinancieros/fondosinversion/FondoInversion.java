@@ -12,7 +12,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
-
 import es.mdef.CarteraInversion;
 
 @Entity
@@ -29,7 +28,7 @@ public class FondoInversion {
 	@Enumerated(EnumType.STRING)
 	private TipoFondo tipo;
 	private String riesgo;
-	@Column(name="PRECIO_COMPRA_PARTICIPACIONES")
+	@Column(name = "PRECIO_COMPRA_PARTICIPACIONES")
 	private Double precioParticipacion;
 	private Double capitalInvertido;
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -44,6 +43,7 @@ public class FondoInversion {
 		this.precioParticipacion = precioParticipacion;
 		this.sector = sector;
 		this.tipo = tipo;
+		getRiesgo();
 	}
 
 	public Double getCapitalInvertido() {
@@ -80,7 +80,7 @@ public class FondoInversion {
 	}
 
 	public String getRiesgo() {
-		
+
 		switch (this.tipo) {
 		case RENTA_FIJA:
 			this.riesgo = "BAJO";
@@ -95,12 +95,13 @@ public class FondoInversion {
 			this.riesgo = "DESCONOCIDO";
 			break;
 		}
-		
+		setRiesgo(riesgo);
 		return riesgo;
 	}
 
-	
-
+	public void setRiesgo(String riesgo) {
+		this.riesgo = riesgo;
+	}
 
 	@Override
 	public String toString() {

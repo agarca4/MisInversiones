@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Cartera } from 'src/app/modelo/cartera';
 import { CarterasService } from 'src/app/servicios/carteras.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import {fondos_data_nombres} from './../../Data/fondos.data';
+
 
 @Component({
   selector: 'app-carteras-detalle',
@@ -28,12 +30,12 @@ export class CarterasDetalleComponent implements OnInit {
   }
 
   fondos = [];
-
+  nombres = fondos_data_nombres;
   tipos = ["RENTA_FIJA", "RENTA_VARIABLE", "MIXTO"];
   sectores = ["TECNOLOGIA", "CONSUMO_DEFENSIVO", "INDUSTRIA", "CONSUMO_CICLICO", "SALUD", "SERVICIOS_FINANCIEROS"];
-  riesgos = ["ALTO", "MEDIO", "BAJO"];
 
-
+  
+  
 
   constructor(
     private carterasService: CarterasService,
@@ -44,8 +46,6 @@ export class CarterasDetalleComponent implements OnInit {
   ngOnInit() {
 
     this.idCartera = this.ruta.snapshot.paramMap.get('id');
-
-
 
     this.carterasService.getCarteraPorId(this.idCartera).subscribe(
       respuesta => this.cartera = respuesta
@@ -73,8 +73,11 @@ export class CarterasDetalleComponent implements OnInit {
     )
   }
   borrarFondo(fondo) {
-    this.carterasService.borrarFondoEnCartera(this.idCartera, fondo).subscribe(
-      () => this.fondos.splice(this.fondos.indexOf(fondo), 1))
+    if (confirm("¿Desea dar de baja este fondo de su cartera?")){
+      this.carterasService.borrarFondoEnCartera(this.idCartera, fondo).subscribe(
+        () => this.fondos.splice(this.fondos.indexOf(fondo), 1))
+    }
+   
   }
 
 

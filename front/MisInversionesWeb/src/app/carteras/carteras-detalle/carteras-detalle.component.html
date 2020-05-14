@@ -12,7 +12,7 @@
 <section class=" container-fluid ">
   <h2 class="text-secondary text-center">Datos Básicos de la Cartera</h2>
   <h3>
-    <div class="row text-info">
+    <div class="row text-info de-flex">
       <mat-icon>schedule</mat-icon>
       <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
       <span class="col">Cartera: {{cartera.nombre}}</span>
@@ -22,16 +22,23 @@
   </h3>
   <h2 class="text-secondary text-center">Fondos de Inversión en Cartera</h2>
   <h4>
-    <div id="listaFondos" class=" text-info d-flex justify-content-left">
+    <div id="listaFondos" class=" row justify-content-left">
 
       <ul>
-        <li *ngFor="let fondo of fondos" class="mb-1">
-          <mat-icon [style.color]="fondo.riesgo==='ALTO'? 'red':'green'">trending_up</mat-icon>
-          <span class="nombre">{{fondo.nombre}}</span>
-          <span class="sector">Sector: {{fondo.sector}}</span>
-          <span class="riesgo">Riesgo: {{fondo.riesgo}}</span>
-          <span class="tipo">Tipo: {{fondo.tipo}}</span>
-          <span class="capital">Capital:{{fondo.capitalInvertido}} €</span>
+        <li *ngFor="let fondo of fondos" class="mb-1 text-info">
+
+          <button mat-button class="text-danger">
+          <mat-icon (click)="borrarFondo(fondo)" class="align-middle mr-2" style="color:red; transform: scale(1.2);">
+            remove_circle</mat-icon>
+          <span>Baja fondo</span>
+        </button>
+          <span class="col nombre">{{fondo.nombre.toUpperCase()}}</span>
+          <span class="col sector">Sector: {{fondo.sector}}</span>
+          <span class="col riesgo">Riesgo: {{fondo.riesgo}}</span>
+          <span class="col tipo">Tipo: {{fondo.tipo}}</span>
+          <span class="col capital">Capital:{{fondo.capitalInvertido}} €</span>
+
+
         </li>
       </ul>
     </div>
@@ -43,15 +50,17 @@
   <form #f='ngForm' class="d-flex flex-column mt-1 MiForm" (ngSubmit)='crearFondo()'>
 
     <mat-form-field appearance="fill">
-      <mat-label>Nombre</mat-label>
-      <input matInput #nombre='ngModel' [(ngModel)]='fondo.nombre' name='nombre' class= "nombreFondo" required minlength="4" maxlength="10">
-      <mat-error>Campo requerido con al menos 4 caracteres</mat-error>
+      <mat-label>Fondos disponibles </mat-label>
+      <mat-select [(ngModel)]="fondo.nombre" name="nombre" required>
+        <mat-option *ngFor='let nombre of nombres' value="{{nombre}}">{{nombre}}</mat-option>
+      </mat-select>
+      <mat-error>Seleccione un fondo</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
       <mat-label>Sector </mat-label>
       <mat-select [(ngModel)]="fondo.sector" name="sector" required>
-        <mat-option *ngFor='let sector of sectores' value="{{sector}}">{{fondo.sector}}</mat-option>
+        <mat-option *ngFor='let sector of sectores' value="{{sector}}">{{sector}}</mat-option>
       </mat-select>
       <mat-error>Seleccione un sector</mat-error>
     </mat-form-field>
@@ -59,7 +68,7 @@
     <mat-form-field appearance="fill">
       <mat-label>Tipo </mat-label>
       <mat-select [(ngModel)]="fondo.tipo" name="tipo" required>
-        <mat-option *ngFor='let tipo of tipos' value="{{tipo}}">{{fondo.tipo}}</mat-option>
+        <mat-option *ngFor='let tipo of tipos' value="{{tipo}}">{{tipo}}</mat-option>
       </mat-select>
       <mat-error>Seleccione un tipo</mat-error>
     </mat-form-field>
@@ -68,7 +77,7 @@
       <mat-label>Inversión en el fondo</mat-label>
       <input matInput #capitalIvertido='ngModel' [(ngModel)]='fondo.capitalInvertido' name='capitalInvertido' required
         minlength="1" maxlength="20">
-        <mat-error>Introduzca el capital invertido</mat-error>
+      <mat-error>Introduzca el capital invertido</mat-error>
     </mat-form-field>
 
     <mat-form-field appearance="fill">
@@ -78,14 +87,17 @@
       <mat-error>Introduzca el precio de compra de las participaciones del fondo</mat-error>
     </mat-form-field>
 
-    <div class="mt-1">
+    <div class="mt-1 text-left">
       <button type="submit" mat-button [disabled]='f.invalid'>
         <mat-icon class="align-middle mr-2" style="color: green; transform: scale(1.2);">add_circle</mat-icon>
         <span>Alta fondo</span>
       </button>
 
-    </div>
 
+    </div>
+    <p class="mt-3 text-secondary text-right">
+      * Nota: El riesgo de los fondos es calculado en función del resto de información.
+    </p>
 
   </form>
 </div>
