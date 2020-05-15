@@ -10,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 import es.mdef.CarteraInversion;
@@ -38,12 +40,11 @@ public class FondoInversion {
 	FondoInversion() {
 	}
 
-	public FondoInversion(String nombreProducto, Double precioParticipacion, SectorFondo sector, TipoFondo tipo, String riesgo) {
+	public FondoInversion(String nombreProducto, Double precioParticipacion, SectorFondo sector, TipoFondo tipo) {
 		this.nombre = nombreProducto;
 		this.precioParticipacion = precioParticipacion;
 		this.sector = sector;
 		this.tipo = tipo;
-		this.riesgo = getRiesgo();
 	}
 
 	public Double getCapitalInvertido() {
@@ -78,7 +79,7 @@ public class FondoInversion {
 	public TipoFondo getTipo() {
 		return tipo;
 	}
-
+	
 	public String getRiesgo() {
 
 		switch (this.tipo) {
@@ -96,6 +97,11 @@ public class FondoInversion {
 			break;
 		}
 		return riesgo;
+	}
+	@PrePersist
+	@PreUpdate
+	public void prePersist() {
+		getRiesgo();
 	}
 
 	public void setRiesgo(String riesgo) {
