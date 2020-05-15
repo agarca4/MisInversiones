@@ -38,12 +38,12 @@ public class FondoInversion {
 	FondoInversion() {
 	}
 
-	public FondoInversion(String nombreProducto, Double precioParticipacion, SectorFondo sector, TipoFondo tipo) {
+	public FondoInversion(String nombreProducto, Double precioParticipacion, SectorFondo sector, TipoFondo tipo, String riesgo) {
 		this.nombre = nombreProducto;
 		this.precioParticipacion = precioParticipacion;
 		this.sector = sector;
 		this.tipo = tipo;
-		getRiesgo();
+		this.riesgo = getRiesgo();
 	}
 
 	public Double getCapitalInvertido() {
@@ -95,7 +95,6 @@ public class FondoInversion {
 			this.riesgo = "DESCONOCIDO";
 			break;
 		}
-		setRiesgo(riesgo);
 		return riesgo;
 	}
 

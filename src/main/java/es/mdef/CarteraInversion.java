@@ -67,25 +67,14 @@ public class CarteraInversion {
 		this.fechaCreacionCartera = fechaCreacionCartera;
 	}
 
-	public double calcularCapital() {
+	public double getCapitalInvertido() {
+
+		this.capitalInvertido = 0.0;
 
 		for (FondoInversion fondoInversion : getFondos()) {
 			capitalInvertido += fondoInversion.getCapitalInvertido();
 		}
 		return capitalInvertido;
-	}
-
-	public double getCapitalInvertido() {
-
-		capitalInvertido = 0.0;
-
-		calcularCapital();
-
-		return capitalInvertido;
-	}
-
-	public void setCapitalInvertido(double capitalTotal) {
-		this.capitalInvertido = capitalTotal;
 	}
 
 	public String getNombre() {
@@ -134,10 +123,6 @@ public class CarteraInversion {
 	public String toString() {
 		return getNombre() + ": " + getFondos() + ", capital total: " + getCapitalInvertido() + ", creada el: "
 				+ getFechaCreacionCartera() + ", usuarios: " + getUsuarios() + ", Rentabilidad:" + getRentabilidad();
-	}
-
-	public void setRentabilidad(Double rentabilidad) {
-		this.rentabilidad = rentabilidad;
 	}
 
 }
