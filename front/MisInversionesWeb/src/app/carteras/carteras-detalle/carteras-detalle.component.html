@@ -13,6 +13,7 @@
   <h2 class="text-secondary text-center">Datos Básicos de la Cartera</h2>
   <h3>
     <div class="row text-info de-flex">
+      <favorito class="mr-4"escala=2 coleccion="carteras_alto_rendimiento" [valor]="idCartera"></favorito>
       <mat-icon>schedule</mat-icon>
       <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
       <span class="col">Cartera: {{cartera.nombre}}</span>
@@ -47,7 +48,7 @@
 
 <div class="text-center">
   <h2 class="text-secondary text-center">Rellene los siguientes campos para dar de alta un fondo en su cartera</h2>
-  <form #f='ngForm' class="d-flex flex-column mt-1 MiForm" (ngSubmit)='crearFondo()'>
+  <form #f='ngForm' class="d-flex flex-column mt-1 " (ngSubmit)='crearFondo()'>
 
     <mat-form-field appearance="fill">
       <mat-label>Fondos disponibles </mat-label>

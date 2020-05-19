@@ -17,7 +17,9 @@
     <div id="listaCarteras" class="d-flex justify-content-left">
       <ul>
         <li *ngFor="let cartera of carterasLista" [class.carteraNegativa]="isRentabilidadNegativa(cartera)">
-          
+          <favorito class="mr-3" escala="1.8" coleccion="carteras_alto_rendimiento"
+            [valor]="carterasService.getIdCartera(cartera)" (cambia)="cambiaCarteraFavorito($event)">
+          </favorito>
           <mat-icon>
             card_travel
           </mat-icon>

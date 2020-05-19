@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarterasService } from 'src/app/servicios/carteras.service';
 import { Cartera } from './../../modelo/cartera'
+import { FavoritoEvent } from 'src/app/componentes-reusables/favorito/favorito-event';
 
 @Component({
   selector: 'app-carteras-lista',
@@ -38,6 +39,11 @@ export class CarterasListaComponent implements OnInit {
         respuesta => (this.carterasLista = respuesta)
       )
     }
+  }
+
+  cambiaCarteraFavorito(evento: FavoritoEvent){
+    console.log(`Valor ${evento.valor} ${evento.esFavorito? 'es':'no es'} una cartera de alto rendimiento`)
+
   }
 
 }

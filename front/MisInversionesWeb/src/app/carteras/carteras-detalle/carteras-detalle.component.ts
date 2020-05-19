@@ -31,8 +31,8 @@ export class CarterasDetalleComponent implements OnInit {
 
   fondos = [];
   nombres=fondos_data_nombres;
-  tipos = ["RENTA_FIJA", "RENTA_VARIABLE", "MIXTO"];
-  sectores = ["TECNOLOGIA", "CONSUMO_DEFENSIVO", "INDUSTRIA", "CONSUMO_CICLICO", "SALUD", "SERVICIOS_FINANCIEROS"];
+  tipos = ["RENTA FIJA", "RENTA VARIABLE", "MIXTO"];
+  sectores = ["TECNOLOGIA", "CONSUMO DEFENSIVO", "INDUSTRIA", "CONSUMO CICLICO", "SALUD", "SERVICIOS FINANCIEROS"];
 
 
 

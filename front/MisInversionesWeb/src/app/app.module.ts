@@ -10,6 +10,7 @@ import { CarterasApiService } from './servicios/carteras-api.service';
 import { HttpClientModule } from '@angular/common/http';
 
 import { ManejadorError } from './comun/manejador-error';
+import { ComponentesReusablesModule } from './componentes-reusables/componentes-reusables.module';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ManejadorError } from './comun/manejador-error';
     BrowserModule,
     ComunModule,
     BrowserAnimationsModule,HttpClientModule,
+    ComponentesReusablesModule,
     RouterModule.forRoot([
       {
         path: '',

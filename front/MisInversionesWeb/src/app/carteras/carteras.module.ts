@@ -7,6 +7,7 @@ import { CarterasFormComponent } from './carteras-form/carteras-form.component';
 import { CarterasDetalleComponent } from './carteras-detalle/carteras-detalle.component';
 import { CarterasHomeComponent } from './carteras-home/carteras-home.component';
 import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
+import { ComponentesReusablesModule } from '../componentes-reusables/componentes-reusables.module';
 
 
 
@@ -14,7 +15,7 @@ import { CarterasMenuComponent } from './carteras-menu/carteras-menu.component';
 @NgModule({
   declarations: [CarterasListaComponent, CarterasFormComponent, CarterasDetalleComponent, CarterasHomeComponent, CarterasMenuComponent],
   imports: [
-    CommonModule, ComunModule,
+    CommonModule, ComunModule,ComponentesReusablesModule,
     RouterModule.forChild([
       {
         path: '',
