@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  miPropiedadX:"Estamos en desarrollo"
+  miPropiedadX:"<Estamos en desarrollo>"
 };
 
 /*
