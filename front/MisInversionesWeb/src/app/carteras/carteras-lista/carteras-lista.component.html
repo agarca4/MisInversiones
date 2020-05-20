@@ -16,7 +16,7 @@
       <ul >
         <li class=" mb-4 text-info" *ngFor="let cartera of carterasLista"
           [class.carteraNegativa]="isRentabilidadNegativa(cartera)">
-          <favorito class="mr-5" escala="1.8" coleccion="carteras_alto_rendimiento"
+          <favorito class="mr-4 ml-3" escala="1.8" coleccion="carteras_alto_rendimiento"
             [valor]="carterasService.getIdCartera(cartera)" (cambia)="cambiaCarteraFavorito($event)">
           </favorito>
           <mat-icon escala="2">
@@ -24,10 +24,10 @@
           </mat-icon>
           <!--|date:'d/M/yyyy H:mm'-->
           <a [routerLink]="['/carteras', carterasService.getIdCartera(cartera)]">
-            <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
-            <span class="col">{{cartera.nombre}}</span>
-            <span class="col">{{cartera.capitalInvertido.toFixed(2)}} €</span>
-            <span class="col">{{cartera.rentabilidad.toFixed(2)}} %</span>
+            <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy'}}</span>
+            <span class="col">nombre: {{cartera.nombre}}</span>
+            <span class="col">capital: {{cartera.capitalInvertido.toFixed(1)}}€</span>
+            <span class="col">RF: {{cartera.rentabilidad.toFixed(2)}}%</span>
           </a>
 
         </li>

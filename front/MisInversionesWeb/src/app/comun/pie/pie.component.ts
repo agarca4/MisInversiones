@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from './../../../environments/environment';
+
 
 @Component({
   selector: 'app-pie',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PieComponent implements OnInit {
 
+  propiedadX: string;
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.propiedadX = environment.miPropiedadX;
   }
 
 }
