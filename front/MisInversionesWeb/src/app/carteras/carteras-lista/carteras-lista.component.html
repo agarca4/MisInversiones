@@ -9,30 +9,32 @@
   <div>
     <div *ngIf="carterasLista.length > 0" class="h5 text-secondary">Resultados 1 - {{carterasLista.length}} de
       {{carterasLista.length}} carteras</div>
-
   </div>
-  <div class="flex-fill">
 
-
-    <div id="listaCarteras" class="d-flex justify-content-left">
-      <ul>
-        <li *ngFor="let cartera of carterasLista" [class.carteraNegativa]="isRentabilidadNegativa(cartera)">
-          <favorito class="mr-3" escala="1.8" coleccion="carteras_alto_rendimiento"
+  <div id="listaCarteras" class="container-fluid">
+    <div class="mt-3  row text-info d-flex">
+      <ul >
+        <li class=" mb-4 text-info" *ngFor="let cartera of carterasLista"
+          [class.carteraNegativa]="isRentabilidadNegativa(cartera)">
+          <favorito class="mr-5" escala="1.8" coleccion="carteras_alto_rendimiento"
             [valor]="carterasService.getIdCartera(cartera)" (cambia)="cambiaCarteraFavorito($event)">
           </favorito>
-          <mat-icon>
+          <mat-icon escala="2">
             card_travel
           </mat-icon>
           <!--|date:'d/M/yyyy H:mm'-->
           <a [routerLink]="['/carteras', carterasService.getIdCartera(cartera)]">
-            <span class="fecha">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
-            <span class="nombre ">{{cartera.nombre}}</span>
-            <span class="capital ">{{cartera.capitalInvertido.toFixed(2)}} €</span>
-            <span class="rentabilidad ">{{cartera.rentabilidad.toFixed(2)}} %</span>
+            <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
+            <span class="col">{{cartera.nombre}}</span>
+            <span class="col">{{cartera.capitalInvertido.toFixed(2)}} €</span>
+            <span class="col">{{cartera.rentabilidad.toFixed(2)}} %</span>
           </a>
+
         </li>
+
       </ul>
     </div>
   </div>
+
 
 </div>

@@ -9,10 +9,10 @@
   <button class="p-2 ml-2 btn btn-danger" (click)="borrarCartera()" mat-raised-button>Baja Cartera</button>
 </header>
 
-<section class=" container-fluid ">
+<section class=" container-fluid">
   <h2 class="text-secondary text-center">Datos Básicos de la Cartera</h2>
   <h3>
-    <div class="row text-info de-flex">
+    <div class="row text-info d-flex">
       <favorito class="mr-4"escala=2 coleccion="carteras_alto_rendimiento" [valor]="idCartera"></favorito>
       <mat-icon>schedule</mat-icon>
       <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy H:mm'}}</span>
@@ -23,7 +23,7 @@
   </h3>
   <h2 class="text-secondary text-center">Fondos de Inversión en Cartera</h2>
   <h4>
-    <div id="listaFondos" class=" row justify-content-left">
+    <div class=" row text-info d-flex">
 
       <ul>
         <li *ngFor="let fondo of fondos" class="mb-1 text-info">
@@ -33,12 +33,12 @@
             remove_circle</mat-icon>
           <span>Baja fondo</span>
         </button>
-          <span class="col nombre">{{fondo.nombre.toUpperCase()}}</span>
-          <span class="col sector">Sector: {{fondo.sector}}</span>
-          <span class="col riesgo">Riesgo: {{fondo.riesgo}}</span>
-          <span class="col tipo">Tipo: {{fondo.tipo}}</span>
-          <span class="col capital">Capital:{{fondo.capitalInvertido}} €</span>
-          <span class="col capital">Precio de Compra:{{fondo.precioParticipacion}} €</span>
+          <span class="col">{{fondo.nombre.toUpperCase()}}</span>
+          <span class="col">Sector: {{fondo.sector}}</span>
+          <span class="col">Riesgo: {{fondo.riesgo}}</span>
+          <span class="col">Tipo: {{fondo.tipo}}</span>
+          <span class="col">Capital: {{fondo.capitalInvertido}} €</span>
+          <span class="col">Precio de Compra: {{fondo.precioParticipacion}} €</span>
 
         </li>
       </ul>

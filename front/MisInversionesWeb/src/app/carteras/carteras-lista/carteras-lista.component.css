@@ -4,53 +4,13 @@
 
 
 #listaCarteras {
-  font-size: 1.5em;
-}
-
-#listaCarteras li {
-  list-style: none;
-  position: relative;
-  height: 60px;
-}
-
-#listaCarteras mat-icon {
-  position: relative;
-  top: 15px;
-  margin-right: 2px;
-  font-size: 1.5em;
-}
-
-#listaCarteras .fecha {
-  position: relative;
-  left: 40px;
-  top: 9px;
-  font-weight: 500;
+  font-size: 2em;
 
 }
 
-#listaCarteras .nombre {
-  position: relative;
-  left: 150px;
-  top: 9px;
-  font-weight: 500;
 
-}
 
-#listaCarteras .capital {
-  position: relative;
-  left: 300px;
-  top: 9px;
-  font-weight: 500;
 
-}
-
-#listaCarteras .rentabilidad {
-  position: relative;
-  left: 450px;
-  top: 9px;
-  font-weight: 500;
-
-}
 
 .carteraNegativa>* {
   color: red;
