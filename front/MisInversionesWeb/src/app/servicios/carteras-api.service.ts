@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
 import { map, catchError } from 'rxjs/operators'
 
 
-const url_base = 'http://localhost:8081/api/carteras';
-const url_fondos = 'http://localhost:8081/api/fondos';
+const url_base = 'https://mis-inversiones.herokuapp.com/api/carteras';
+const url_fondos = 'https://mis-inversiones.herokuapp.com/api/fondos';
 
 @Injectable({
   providedIn: 'root'
