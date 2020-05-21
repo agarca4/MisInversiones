@@ -1,4 +1,12 @@
-# MIS INVERSIONES
+# INSTRUCCIONES
+
+- Acceda a https://agarca4.github.io 
+- La APP está desplegada y operativa en esa URL  
+- Se usa BBDD PostgreSQL
+- Para desplegar la api se ha recurrido a HEROKU
+
+
+# MIS INVERSIONES: funcionalidades
 
 - Se necesita una aplicación para poder llevar el control doméstico de la inversiones financieras de distintos productos tipo fondos de inversión, depósitos etc.  
 
