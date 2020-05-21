@@ -25,7 +25,7 @@
           <!--|date:'d/M/yyyy H:mm'-->
           <a [routerLink]="['/carteras', carterasService.getIdCartera(cartera)]">
             <span class="col">{{cartera.fechaCreacionCartera | date: 'd/M/yyyy'}}</span>
-            <span class="col">nombre: {{cartera.nombre}}</span>
+            <span class="col">{{cartera.nombre}}</span>
             <span class="col">capital: {{cartera.capitalInvertido.toFixed(1)}}€</span>
             <span class="col">RF: {{cartera.rentabilidad.toFixed(2)}}%</span>
           </a>
