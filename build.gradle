@@ -51,3 +51,8 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     
 }
+application {
+    // Define the main class for the application.
+    mainClassName = 'es.MisInversionesApplication'
+}
+
