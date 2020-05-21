@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
 
-@CrossOrigin(origins = "https://agarca4.github.io")
+@CrossOrigin(origins = "http://localhost:4200")
 @RepositoryRestResource(path = "fondos", itemResourceRel = "fondo", collectionResourceRel = "fondos")
 public interface FondoInversionDAO extends JpaRepository<FondoInversion, String> {
 

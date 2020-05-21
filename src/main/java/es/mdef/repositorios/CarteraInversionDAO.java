@@ -9,7 +9,7 @@ import org.springframework.data.rest.core.annotation.RestResource;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import es.mdef.CarteraInversion;
 
-@CrossOrigin(origins = "https://agarca4.github.io")
+@CrossOrigin(origins = "http://localhost:4200")
 @RepositoryRestResource(path = "carteras", itemResourceRel = "cartera", collectionResourceRel = "carteras")
 public interface CarteraInversionDAO extends JpaRepository<CarteraInversion, String> {
 
