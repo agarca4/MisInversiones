@@ -2,8 +2,8 @@
 
 - Acceda a https://agarca4.github.io 
 - La APP está desplegada y operativa en esa URL  
-- La api está corriendo en https://mis-inversiones.herokuapp.com/api
 - Se usa BBDD PostgreSQL
+- Para desplegar la api se ha recurrido a HEROKU
 
 
 # MIS INVERSIONES: funcionalidades
