@@ -6,8 +6,8 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 
 import es.mdef.usuarios.Usuario;
 
-@CrossOrigin(origins = "*")
-@RepositoryRestResource(path="usuarios", itemResourceRel = "usuario", collectionResourceRel = "usuarios")
+@CrossOrigin(origins = { "http://localhost:4200", "https://agarca4.github.io" })
+@RepositoryRestResource(path = "usuarios", itemResourceRel = "usuario", collectionResourceRel = "usuarios")
 public interface UsuarioDAO extends JpaRepository<Usuario, String> {
 
 }
