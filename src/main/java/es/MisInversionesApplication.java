@@ -44,6 +44,7 @@ public class MisInversionesApplication {
 	public static void main(String[] args) throws ParseException, IOException {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
+		
 
 //		FondoInversion fondo1 = new FondoInversion("SP500", 150.00, SectorFondo.CONSUMO_CICLICO,
 //				TipoFondo.RENTA_VARIABLE);
