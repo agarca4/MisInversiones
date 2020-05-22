@@ -17,8 +17,7 @@
     "ng serve"
 
 - La app de desplegará en servidor local y entorno de desarrollo
-- Se usa BBDD PostgreSQL
-- Para desplegar la api se ha recurrido a HEROKU
+**Nota: Para desplegar la api se ha recurrido a HEROKU, PostgreSQL como BBDD
 
 
 # MIS INVERSIONES: funcionalidades
