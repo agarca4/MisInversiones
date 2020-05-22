@@ -291,8 +291,9 @@ export class PieComponent implements OnInit {
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;footer class&#x3D;&quot;fixed-bottom&quot;&gt;
   &lt;h2 class&#x3D;&quot;font-weight-bold font-italic text-center text-danger &quot;&gt;{{propiedadX}}&lt;/h2&gt;
-  &lt;div class&#x3D;&quot;rayaHorizontal text-secondary &quot;&gt;
-      &lt;p class&#x3D;&quot;firma text-right&quot;&gt;(C) Antonio M. García Carrillo 2020&lt;/p&gt;     
+  &lt;div class&#x3D;&quot;rayaHorizontal text-secondary text-right  &quot;&gt;
+    &lt;h4 class&#x3D;&quot;firma&quot;&gt;(C) Antonio M. García Carrillo 2020&lt;/h4&gt;
+    &lt;a class&#x3D;&quot; firma text-secondary text-left&quot; href&#x3D;&quot;http://127.0.0.1:8080/&quot;&gt;Documentación&lt;/a&gt;
   &lt;/div&gt;
 &lt;/footer&gt;
 </code></pre>
@@ -337,7 +338,7 @@ export class PieComponent implements OnInit {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><footer class="fixed-bottom">  <h2 class="font-weight-bold font-italic text-center text-danger ">{{propiedadX}}</h2>  <div class="rayaHorizontal text-secondary ">      <p class="firma text-right">(C) Antonio M. García Carrillo 2020</p>       </div></footer></div>'
+        var COMPONENT_TEMPLATE = '<div><footer class="fixed-bottom">  <h2 class="font-weight-bold font-italic text-center text-danger ">{{propiedadX}}</h2>  <div class="rayaHorizontal text-secondary text-right  ">    <h4 class="firma">(C) Antonio M. García Carrillo 2020</h4>    <a class=" firma text-secondary text-left" href="http://127.0.0.1:8080/">Documentación</a>  </div></footer></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CarterasDetalleComponent', 'selector': 'app-carteras-detalle'},{'name': 'CarterasFormComponent', 'selector': 'app-carteras-form'},{'name': 'CarterasHomeComponent', 'selector': 'app-carteras-home'},{'name': 'CarterasListaComponent', 'selector': 'app-carteras-lista'},{'name': 'CarterasMenuComponent', 'selector': 'app-carteras-menu'},{'name': 'FavoritoComponent', 'selector': 'favorito'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NoDisponibleComponent', 'selector': 'app-no-disponible'},{'name': 'PieComponent', 'selector': 'app-pie'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'PieComponent'};
