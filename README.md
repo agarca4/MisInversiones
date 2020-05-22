@@ -8,13 +8,13 @@
 ### PARA DESARROLLADORES
 - Clone el repositorio
 - Acceda al direccorio front/MisInversionesWeb
-- *Ejecute en una terminal*: 
+- Ejecute en una terminal: 
     
-    npm install modules
+    "npm install modules"
 
-- *Ejecute en una terminal*:
+- Ejecute en una terminal:
 
-    ng serve
+    "ng serve"
 
 - La app de desplegará en servidor local y entorno de desarrollo
 - Se usa BBDD PostgreSQL
