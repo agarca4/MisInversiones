@@ -4,6 +4,7 @@
 - La APP está desplegada y operativa en esa URL  
 - Se usa BBDD PostgreSQL
 - Para desplegar la api se ha recurrido a HEROKU
+- Puede consultar la documentación accediendo a https://git.institutomilitar.com/agarca4/mis-inversiones-/wikis/home
 
 
 # MIS INVERSIONES: funcionalidades
