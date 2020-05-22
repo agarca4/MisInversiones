@@ -1,0 +1,740 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>mis-inversiones-web documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	      <link rel="stylesheet" href="../styles/style.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">mis-inversiones-web documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li>CarterasFormComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/carteras/carteras-form/carteras-form.component.ts</code>
+</p>
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-carteras-form</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./carteras-form.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./carteras-form.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cartera">cartera</a>
+                            </li>
+                            <li>
+                                <a href="#titulo">titulo</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cancelar">cancelar</a>
+                            </li>
+                            <li>
+                                <a href="#guardar">guardar</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit">ngOnInit</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(carterasService: <a href="../interfaces/Cartera.html">CarterasService</a>, router: <a href="https://angular.io/api/router/Router" target="_blank">Router</a>, ruta: <a href="https://angular.io/api/router/ActivatedRoute" target="_blank">ActivatedRoute</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/carteras/carteras-form/carteras-form.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>carterasService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../interfaces/Cartera.html" target="_self" >CarterasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>router</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/Router" target="_blank" >Router</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>ruta</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://angular.io/api/router/ActivatedRoute" target="_blank" >ActivatedRoute</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cancelar"></a>
+                    <span class="name">
+                        <b>
+                            cancelar
+                        </b>
+                        <a href="#cancelar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cancelar(f: <a href="https://angular.io/api/forms/NgForm" target="_blank">NgForm</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="75"
+                            class="link-to-prism">src/app/carteras/carteras-form/carteras-form.component.ts:75</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>f</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgForm" target="_blank" >NgForm</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="guardar"></a>
+                    <span class="name">
+                        <b>
+                            guardar
+                        </b>
+                        <a href="#guardar"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>guardar(f: <a href="https://angular.io/api/forms/NgForm" target="_blank">NgForm</a>)</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="57"
+                            class="link-to-prism">src/app/carteras/carteras-form/carteras-form.component.ts:57</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Parameters :</b>
+                        <table class="params">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Type</td>
+                                    <td>Optional</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>f</td>
+                                    <td>
+                                                <code><a href="https://angular.io/api/forms/NgForm" target="_blank" >NgForm</a></code>
+                                    </td>
+
+                                    <td>
+                                        No
+                                    </td>
+
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                    <div class="io-description">
+                        
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <b>
+                            ngOnInit
+                        </b>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="28"
+                            class="link-to-prism">src/app/carteras/carteras-form/carteras-form.component.ts:28</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+        <h3 id="inputs">
+            Properties
+        </h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="cartera"></a>
+                        <span class="name">
+                            <b>
+                            cartera</b>
+                            <a href="#cartera"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="../interfaces/Cartera.html" target="_self" >Cartera</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/carteras/carteras-form/carteras-form.component.ts:17</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <a name="titulo"></a>
+                        <span class="name">
+                            <b>
+                            titulo</b>
+                            <a href="#titulo"><span class="icon ion-ios-link"></span></a>
+                        </span>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                            <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </td>
+                    </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                    <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/carteras/carteras-form/carteras-form.component.ts:18</a></div>
+                            </td>
+                        </tr>
+
+
+            </tbody>
+        </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { CarterasService } from &#x27;src/app/servicios/carteras.service&#x27;;
+import { Router, ActivatedRoute } from &#x27;@angular/router&#x27;;
+import { NgForm } from &#x27;@angular/forms&#x27;;
+import { Cartera } from &#x27;src/app/modelo/cartera&#x27;;
+import { HttpErrorResponse } from &#x27;@angular/common/http&#x27;;
+
+
+@Component({
+  selector: &#x27;app-carteras-form&#x27;,
+  templateUrl: &#x27;./carteras-form.component.html&#x27;,
+  styleUrls: [&#x27;./carteras-form.component.css&#x27;]
+})
+export class CarterasFormComponent implements OnInit {
+
+
+  cartera: Cartera;
+  titulo: string;
+
+
+  constructor(
+    private carterasService: CarterasService,
+    private router: Router,
+    private ruta: ActivatedRoute
+
+  ) { }
+
+  ngOnInit() {
+    this.cartera &#x3D; {
+      nombre: null,
+      fechaCreacionCartera: new Date,
+      capitalInvertido: null,
+      rentabilidad: null
+      
+    }
+
+
+    let id &#x3D; this.ruta.snapshot.paramMap.get(&#x27;id&#x27;);
+    if (id) {
+
+      this.carterasService.getCarteraPorId(id).subscribe(
+        (respuesta: any) &#x3D;&gt; {
+          this.cartera &#x3D; respuesta;
+
+        }
+      )
+
+      this.titulo &#x3D; &#x27;Editar nombre de la Cartera&#x27;;
+    } else {
+
+      this.titulo &#x3D; &#x27;Alta nueva Cartera&#x27;;
+    }
+
+
+
+  }
+  guardar(f: NgForm) {
+    let id &#x3D; this.ruta.snapshot.paramMap.get(&#x27;id&#x27;);
+    if (id) {
+      this.carterasService.modificarCartera(id, this.cartera).subscribe(
+        () &#x3D;&gt; this.router.navigate([&#x27;/carteras&#x27;])
+      )
+    } else {
+      this.carterasService.crearCartera(this.cartera).subscribe(
+        () &#x3D;&gt; this.router.navigate([&#x27;/carteras&#x27;])
+      ),
+        (error: HttpErrorResponse) &#x3D;&gt; {
+          alert(&#x27;Mensaje desde el suscriptor: Se ha producido un error inesperado al crear la cartera: \n\n&#x27; + error.message)
+        }
+
+    }
+
+
+  }
+  cancelar(f: NgForm) {
+    if (f.dirty) {
+      if (confirm(&#x27;Las modificaciones se perderan. ¿Está seguro?&#x27;) &#x3D;&#x3D; false) {
+        return;
+      }
+    }
+    this.router.navigate([&#x27;/carteras&#x27;]);
+  }
+
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;h2&gt;{{titulo}}&lt;/h2&gt;
+&lt;div class&#x3D;&quot;container&quot;&gt;
+  &lt;div class&#x3D;&quot;row&quot;&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;form #f&#x3D;&#x27;ngForm&#x27; class&#x3D;&quot;d-flex flex-column mt-5 MiForm&quot; (ngSubmit)&#x3D;&#x27;guardar(f)&#x27;&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;nombre&lt;/mat-label&gt;
+          &lt;input matInput #nombre&#x3D;&#x27;ngModel&#x27; [(ngModel)]&#x3D;&#x27;cartera.nombre&#x27; name&#x3D;&#x27;nombre&#x27; required minlength&#x3D;&quot;4&quot;
+            maxlength&#x3D;&quot;15&quot;&gt;
+          &lt;mat-error&gt;Campo requerido con al menos 4 caracteres&lt;/mat-error&gt;
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Capital (calculado por el sistema)&lt;/mat-label&gt;
+          &lt;input  disabled matInput #capitalIvertido&#x3D;&#x27;ngModel&#x27; [(ngModel)]&#x3D;&#x27;cartera.capitalInvertido&#x27; name&#x3D;&#x27;capitalInvertido&#x27;
+            required minlength&#x3D;&quot;1&quot; maxlength&#x3D;&quot;20&quot;&gt;
+      
+        &lt;/mat-form-field&gt;
+        &lt;mat-form-field appearance&#x3D;&quot;fill&quot;&gt;
+          &lt;mat-label&gt;Rentabilidad (calculada por el sistema)&lt;/mat-label&gt;
+          &lt;input disabled matInput #rentabilidad&#x3D;&#x27;ngModel&#x27; [(ngModel)]&#x3D;&#x27;cartera.rentabilidad&#x27; name&#x3D;&#x27;rentabilidad&#x27; required
+            minlength&#x3D;&quot;1&quot; maxlength&#x3D;&quot;8&quot;&gt;
+          &lt;mat-error&gt;Campo requerido con al menos 1 caracteres&lt;/mat-error&gt;
+        &lt;/mat-form-field&gt;
+        &lt;div class&#x3D;&quot;mt-5&quot;&gt;
+          &lt;button type&#x3D;&quot;submit&quot; mat-raised-button class&#x3D;&quot;btn-success mr-2&quot; [disabled]&#x3D;&#x27;f.invalid&#x27;&gt;Guardar&lt;/button&gt;
+          &lt;button type&#x3D;&quot;button&quot; mat-button (click)&#x3D;&#x27;cancelar(f)&#x27; class&#x3D;&quot;btn-danger&quot;&gt;Cancelar&lt;/button&gt;
+        &lt;/div&gt;
+
+
+      &lt;/form&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;col&quot;&gt;
+      &lt;figure&gt;&lt;img class&#x3D;&quot;border border-secondary rounded-pill d-flex grafica img-fluid m-auto&quot;
+          src&#x3D;&quot;../../../assets/img/inversion-segura-destacada-669x445.png&quot; alt&#x3D;&quot;grafica&quot;&gt;&lt;/figure&gt;
+      &lt;br&gt;
+      &lt;p class&#x3D;&quot;text-secondary text-right&quot;&gt;
+        * Nota: La fecha será asignada automáticamente.
+      &lt;/p&gt;
+
+
+
+    &lt;/div&gt;
+  &lt;/div&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./carteras-form.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">.grafica{
+    max-width: 100%;
+}
+
+.MiForm{
+    max-width: 300px;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><h2>{{titulo}}</h2><div class="container">  <div class="row">    <div class="col">      <form #f=\'ngForm\' class="d-flex flex-column mt-5 MiForm" (ngSubmit)=\'guardar(f)\'>        <mat-form-field appearance="fill">          <mat-label>nombre</mat-label>          <input matInput #nombre=\'ngModel\' [(ngModel)]=\'cartera.nombre\' name=\'nombre\' required minlength="4"            maxlength="15">          <mat-error>Campo requerido con al menos 4 caracteres</mat-error>        </mat-form-field>        <mat-form-field appearance="fill">          <mat-label>Capital (calculado por el sistema)</mat-label>          <input  disabled matInput #capitalIvertido=\'ngModel\' [(ngModel)]=\'cartera.capitalInvertido\' name=\'capitalInvertido\'            required minlength="1" maxlength="20">              </mat-form-field>        <mat-form-field appearance="fill">          <mat-label>Rentabilidad (calculada por el sistema)</mat-label>          <input disabled matInput #rentabilidad=\'ngModel\' [(ngModel)]=\'cartera.rentabilidad\' name=\'rentabilidad\' required            minlength="1" maxlength="8">          <mat-error>Campo requerido con al menos 1 caracteres</mat-error>        </mat-form-field>        <div class="mt-5">          <button type="submit" mat-raised-button class="btn-success mr-2" [disabled]=\'f.invalid\'>Guardar</button>          <button type="button" mat-button (click)=\'cancelar(f)\' class="btn-danger">Cancelar</button>        </div>      </form>    </div>    <div class="col">      <figure><img class="border border-secondary rounded-pill d-flex grafica img-fluid m-auto"          src="../../../assets/img/inversion-segura-destacada-669x445.png" alt="grafica"></figure>      <br>      <p class="text-secondary text-right">        * Nota: La fecha será asignada automáticamente.      </p>    </div>  </div></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CabeceraComponent', 'selector': 'app-cabecera'},{'name': 'CarterasDetalleComponent', 'selector': 'app-carteras-detalle'},{'name': 'CarterasFormComponent', 'selector': 'app-carteras-form'},{'name': 'CarterasHomeComponent', 'selector': 'app-carteras-home'},{'name': 'CarterasListaComponent', 'selector': 'app-carteras-lista'},{'name': 'CarterasMenuComponent', 'selector': 'app-carteras-menu'},{'name': 'FavoritoComponent', 'selector': 'favorito'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NoDisponibleComponent', 'selector': 'app-no-disponible'},{'name': 'PieComponent', 'selector': 'app-pie'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CarterasFormComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+                   
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> result-matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CarterasFormComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+       <!-- Required to polyfill modern browsers as code is ES5 for IE... -->
+       <script src="../js/libs/custom-elements-es5-adapter.js" charset="utf-8" defer></script>
+       <script src="../js/menu-wc.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
