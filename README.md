@@ -18,7 +18,7 @@
 
 - La app de desplegará en servidor local y entorno de desarrollo
 
-*Nota: Para desplegar la api se ha recurrido a HEROKU, PostgreSQL como BBDD*
+*Nota: Para desplegar la api se ha recurrido a HEROKU y PostgreSQL como BBDD*
 
 
 # MIS INVERSIONES: funcionalidades
