@@ -4,8 +4,8 @@
 - La APP está desplegada y operativa en esa URL  
 - Se usa BBDD PostgreSQL
 - Para desplegar la api se ha recurrido a HEROKU
-- Puede consultar la documentación accediendo a https://git.institutomilitar.com/agarca4/mis-inversiones-/wikis/home
-- Para documentacion más especifica del FRONT, descarge la carpeta https://git.institutomilitar.com/agarca4/mis-inversiones-/tree/master/front/MisInversionesWeb/documentation y haga click en el index.html
+- Puede consultar la documentación accediendo a la [WIKI](https://git.institutomilitar.com/agarca4/mis-inversiones-/wikis/home)
+- Para documentacion más especifica del FRONT, descarge la [carpeta](https://git.institutomilitar.com/agarca4/mis-inversiones-/tree/master/front/MisInversionesWeb/documentation) y haga click en el index.html
 
 
 # MIS INVERSIONES: funcionalidades
