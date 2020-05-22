@@ -7,6 +7,17 @@
 - Puede consultar la documentación accediendo a la [WIKI](https://git.institutomilitar.com/agarca4/mis-inversiones-/wikis/home)
 - Para documentacion más especifica del FRONT, descarge este [directorio](https://git.institutomilitar.com/agarca4/mis-inversiones-/tree/master/front/MisInversionesWeb/documentation) y haga click en el index.html
 
+### PARA DESARROLLADORES
+- Clone el repositorio
+- Acceda al direccorio front/MisInversionesWeb
+- Ejecute en una terminal: 
+    npm install modules
+***
+- Ejecute en una terminal:
+    ng serve
+***
+- La app de desplegará en servidor local y entorno de desarrollo
+
 
 # MIS INVERSIONES: funcionalidades
 
