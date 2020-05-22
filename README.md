@@ -11,9 +11,13 @@
 - Clone el repositorio
 - Acceda al direccorio front/MisInversionesWeb
 - Ejecute en una terminal: 
+    
     npm install modules
+
 - Ejecute en una terminal:
+
     ng serve
+
 - La app de desplegará en servidor local y entorno de desarrollo
 
 
