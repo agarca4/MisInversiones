@@ -9,8 +9,9 @@
 - Acceda al direccorio front/MisInversionesWeb
 - Ejecute en una terminal: 
     
-    "npm install modules"
-    "ng serve"
+    npm install modules
+
+    ng serve
 
 - La app de desplegará en servidor local y entorno de desarrollo
 
