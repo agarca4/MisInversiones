@@ -1,10 +1,11 @@
 # INSTRUCCIONES
 
-- La APP está desplegada y operativa en esta [URL](https://agarca4.github.io)  
+### PRODUCCIÓN
+- Haga click [aquí](https://agarca4.github.io). La APP está desplegada y operativa en esa URL. 
 - Puede consultar la documentación accediendo a la [WIKI](https://git.institutomilitar.com/agarca4/mis-inversiones-/wikis/home)
 - Para documentacion más especifica del FRONT, descarge este [directorio](https://git.institutomilitar.com/agarca4/mis-inversiones-/tree/master/front/MisInversionesWeb/documentation) y haga click en el index.html
 
-### PARA DESARROLLADORES
+### DESARROLLO
 - Clone el repositorio
 - Acceda al direccorio front/MisInversionesWeb
 - Ejecute en una terminal: 
@@ -13,9 +14,10 @@
 
     `ng serve`
 
-- La app de desplegará en servidor local y entorno de desarrollo
+- La APP de desplegará en [servidor local](http://localhost:4200/) y entorno de desarrollo
+- Se recomienda el uso de Google Chrome como navegador
 
-*Nota: Para desplegar la api se ha recurrido a HEROKU y PostgreSQL como BBDD*
+*Nota: Para desplegar la API se ha recurrido a HEROKU y ELEPHANTSQL como BBDD*
 
 
 # MIS INVERSIONES: funcionalidades
