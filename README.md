@@ -17,7 +17,7 @@
 - La APP de desplegará en [servidor local](http://localhost:4200/) y entorno de desarrollo
 - Se recomienda el uso de Google Chrome como navegador
 
-*Nota: Para desplegar la API se ha recurrido a HEROKU y ELEPHANTSQL como BBDD*
+*Nota: Para desplegar la API se ha recurrido a HEROKU y ELEPHANTSQL para la BBDD*
 
 
 # MIS INVERSIONES: funcionalidades
