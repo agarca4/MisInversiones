@@ -11,11 +11,12 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import es.mdef.CarteraInversion;
 
-@Entity
+//uso el Usuario.orm.xml 
+//@Entity
 @Table(name = "USUARIOS")
 public class Usuario {
 
-	@Id
+	//@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(unique = true)
 	private String id;

@@ -2,10 +2,14 @@ package es;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.ImportResource;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import es.mdef.CarteraInversion;
 import es.mdef.GestorCartera;
 import es.mdef.GestorCarteraImpl;
@@ -16,59 +20,56 @@ import es.mdef.repositorios.CarteraInversionDAO;
 import es.mdef.usuarios.Usuario;
 
 @SpringBootApplication
-/*
- * SpringBoot lee automaticamente lo que tenga en application.properties, que es
- * un archivo que crea el en automatico, y puedo meter todas las propiedades ahí
- * si quiero, pero tb puedo hacer otros properties y le digo a SpringBoot que
- * busque en ellos con la anotacion @PropertySource
- * 
- * @PropertySource({ "xxxxxx.properties" })
- */
-/*
- * Con esta anotacion le digo que ademas de la configuracion por defecto de
- * SpringBoot, tenga tb en cuenta esa configuracion por XML que hay en ese
- * archivo. Recordar que al usar SpringBoot ya no hace falta archivos xml de
- * scaneo, puesto que SpringBoot escaneará a partir del paquete donde esté la
- * anotacion que lo arranca
- */
 @ImportResource({ "classpath:config/jpa-config.xml" })
+@Import(ConfiguracionPorJava.class)
 public class MisInversionesApplication {
 
-//	private static GestorCartera<FondoInversion, CarteraInversion> miGestorCartera = new GestorCarteraImpl(
-//			"agresiva");
-//
-//	private static GestorCartera<FondoInversion, CarteraInversion> getMiGestorCartera() {
-//		return miGestorCartera;
-//	}
+	private static final Logger log = LoggerFactory.getLogger(MisInversionesApplication.class);
 
 	public static void main(String[] args) throws ParseException, IOException {
 
 		ConfigurableApplicationContext context = SpringApplication.run(MisInversionesApplication.class, args);
-		
 
-//		FondoInversion fondo1 = new FondoInversion("SP500", 150.00, SectorFondo.CONSUMO_CICLICO,
-//				TipoFondo.RENTA_VARIABLE);
-//		FondoInversion fondo2 = new FondoInversion("Edeficandi", 52.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
-//		FondoInversion fondo3 = new FondoInversion("MidTem", 18.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
-//		
-//		Usuario usuario1 = new Usuario("Juan");
-//		Usuario usuario2 = new Usuario("Victoria");
-//		Usuario usuario3 = new Usuario("Belen");
-//		
-//		getMiGestorCartera().altaUsuario(usuario1);
-//		getMiGestorCartera().altaUsuario(usuario2);
-//		getMiGestorCartera().altaUsuario(usuario3);
-//		getMiGestorCartera().bajaUsuario(usuario1);
-//
-//		getMiGestorCartera().compraProductoFinanciero(fondo1, 1500.00);
-//		getMiGestorCartera().compraProductoFinanciero(fondo2, 2000.00);
-//		getMiGestorCartera().compraProductoFinanciero(fondo3, 2000.00);
-//		getMiGestorCartera().vendeProductoFinanciero(fondo2, 1000.00);
-//
-//	
-//		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
-//		miCartera.deleteAll();
-//		miCartera.save(miGestorCartera.getCartera());
+		GestorCartera<FondoInversion, CarteraInversion> miGestorCartera1 = new GestorCarteraImpl("agresiva");
+
+		/*
+		 * Así podría importar carteras desde un json y haciendo uso , no lo uso porque
+		 * yo lo que hago es importar fondos desde un csv, pero queda preparado y
+		 * funciona, por si tuviera que usarlo algún día
+		 */
+//		ObjectMapper mapper = context.getBean(ObjectMapper.class);
+//		CarteraInversionDAO carteraDAO = context.getBean(CarteraInversionDAO.class);
+//		((GestorCarteraImpl) miGestorCartera1).cargarFondosJson("src/main/resources/carteras.json", mapper, carteraDAO);
+
+		FondoInversion fondo1 = new FondoInversion("SP500", 80.00, SectorFondo.CONSUMO_CICLICO,
+				TipoFondo.RENTA_VARIABLE);
+		FondoInversion fondo2 = new FondoInversion("Edeficandi", 52.00, SectorFondo.INDUSTRIA, TipoFondo.RENTA_FIJA);
+		FondoInversion fondo3 = new FondoInversion("MidTem", 18.00, SectorFondo.CONSUMO_DEFENSIVO, TipoFondo.MIXTO);
+
+		Usuario usuario1 = new Usuario("Juan");
+		Usuario usuario2 = new Usuario("Victoria");
+		Usuario usuario3 = new Usuario("Belen");
+
+		miGestorCartera1.altaUsuario(usuario1);
+		miGestorCartera1.altaUsuario(usuario2);
+		miGestorCartera1.altaUsuario(usuario3);
+		miGestorCartera1.bajaUsuario(usuario1);
+
+		miGestorCartera1.compraProductoFinanciero(fondo1, 1500.00);
+		miGestorCartera1.compraProductoFinanciero(fondo2, 2000.00);
+		miGestorCartera1.compraProductoFinanciero(fondo3, 2000.00);
+		miGestorCartera1.vendeProductoFinanciero(fondo2, 1000.00);
+
+		CarteraInversionDAO miCartera = context.getBean(CarteraInversionDAO.class);
+		miCartera.deleteAll();
+		miCartera.save(miGestorCartera1.getCartera());
+
+		// Customizados
+		List<CarteraInversion> carterasPorCapital = miCartera.getCarterasPorCapitalInvertido(4500.00);
+		carterasPorCapital.stream().map(CarteraInversion::toString).forEach(log::warn);
+
+		List<CarteraInversion> carterasPorRentabilidad = miCartera.getCarterasPorRentabilidadMinima(-10.00);
+		carterasPorRentabilidad.stream().map(CarteraInversion::toString).forEach(log::warn);
 
 		// context.close();
 

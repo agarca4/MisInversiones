@@ -1,12 +1,18 @@
 package es.mdef;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Collection;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
+import es.mdef.repositorios.CarteraInversionDAO;
 import es.mdef.usuarios.Usuario;
 
 //Esta es la clase que controla el negocio, el usuario hará todas las gestiones a través de su GestorCartera
@@ -101,6 +107,24 @@ public class GestorCarteraImpl implements GestorCartera<FondoInversion, CarteraI
 			mapper.writerWithDefaultPrettyPrinter().writeValue(miCartera, getCartera());
 		} catch (IOException e) {
 			e.printStackTrace();
+		}
+	}
+
+	
+	public void cargarFondosJson(String ruta, ObjectMapper mapper, CarteraInversionDAO carteraDAO) {
+		String linea = null;
+		mapper.configure(Feature.ALLOW_UNQUOTED_FIELD_NAMES, true);
+		try (BufferedReader buffer = new BufferedReader(new InputStreamReader(new FileInputStream(ruta), "UTF-8"))) {
+			CarteraInversion cartera;
+			while ((linea = buffer.readLine()) != null) {
+				if (linea.startsWith("{") && linea.endsWith("}")) {
+					cartera = mapper.readValue(linea, CarteraInversion.class);
+					carteraDAO.save(cartera);
+					log.trace("Cargado {}", cartera);
+				}
+			}
+		} catch (Exception e) {
+			log.error("Error leyendo: {}", linea);
 		}
 	}
 
