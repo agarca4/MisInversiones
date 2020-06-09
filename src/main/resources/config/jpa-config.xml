@@ -15,6 +15,11 @@
 		<!-- Decimos donde buscar entidades -->
 		<property name="packagesToScan"
 			value="${es.mdef.entities-package}" />
+		<property name="mappingResources">
+			<list>
+				<value>jpa/Usuario.orm.xml</value>
+			</list>
+		</property>
 		<property name="jpaVendorAdapter">
 			<!-- Implementacion de JPA que vamos a usar -->
 			<bean

@@ -13,16 +13,14 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.persistence.PostPersist;
-import javax.persistence.PostUpdate;
-import javax.persistence.PrePersist;
-import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import es.mdef.productosfinancieros.fondosinversion.FondoInversion;
+import es.mdef.repositorios.CarteraListener;
 import es.mdef.usuarios.Usuario;
 
 @Entity
 @Table(name = "CARTERAS")
+@EntityListeners(CarteraListener.class)
 public class CarteraInversion {
 
 	@Id
@@ -73,11 +71,8 @@ public class CarteraInversion {
 	}
 
 	public double getCapitalInvertido() {
-		this.capitalInvertido = 0.0;
 
-		for (FondoInversion fondoInversion : getFondos()) {
-			capitalInvertido += fondoInversion.getCapitalInvertido();
-		}
+		this.capitalInvertido = calcularCapital();
 
 		return capitalInvertido;
 	}
@@ -86,29 +81,10 @@ public class CarteraInversion {
 		this.capitalInvertido = capitalInvertido;
 	}
 
-	// rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) *
-	// (proporcion inversion en ese producto respecto a la inversion total)
 	public Double getRentabilidad() {
 
-		this.rentabilidad = 0.0;
+		this.rentabilidad = calcularRentabilidad();
 
-		Importador.importar();
-		Map<String, Double> capitalInvertido = new HashMap<>();
-		Map<String, Double> misFondos = new HashMap<>();
-
-		for (FondoInversion producto : getFondos()) {
-			misFondos.put(producto.getNombre(), producto.getPrecioParticipacion());
-			capitalInvertido.put(producto.getNombre(), producto.getCapitalInvertido());
-
-		}
-		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
-			if (misFondos.containsKey(nombreProductoImportado)) {
-				rentabilidad += (((Importador.getInformeMercado().get(nombreProductoImportado)
-						- misFondos.get(nombreProductoImportado)) / misFondos.get(nombreProductoImportado)) * 100)
-						* (capitalInvertido.get(nombreProductoImportado) / getCapitalInvertido());
-			}
-
-		}
 		return rentabilidad;
 
 	}
@@ -133,12 +109,39 @@ public class CarteraInversion {
 		this.usuarios = usuarios;
 	}
 
-	@PrePersist
-	@PreUpdate
-	public void prePersist() {
+	public double calcularCapital() {
+		double capital = 0.0;
 
-		getCapitalInvertido();
-		getRentabilidad();
+		for (FondoInversion fondoInversion : getFondos()) {
+			capital += fondoInversion.getCapitalInvertido();
+		}
+		return capital;
+	}
+
+	// rentabilidad = (((valorActual - valorInicial) / valorInicial) * 100) *
+	// (proporcion inversion en ese producto respecto a la inversion total)
+	public Double calcularRentabilidad() {
+
+		Double rentabilidadCalculada = 0.0;
+
+		Importador.importar();
+		Map<String, Double> capitalInvertido = new HashMap<>();
+		Map<String, Double> misFondos = new HashMap<>();
+
+		for (FondoInversion producto : getFondos()) {
+			misFondos.put(producto.getNombre(), producto.getPrecioParticipacion());
+			capitalInvertido.put(producto.getNombre(), producto.getCapitalInvertido());
+
+		}
+		for (String nombreProductoImportado : Importador.getInformeMercado().keySet()) {
+			if (misFondos.containsKey(nombreProductoImportado)) {
+				rentabilidadCalculada += (((Importador.getInformeMercado().get(nombreProductoImportado)
+						- misFondos.get(nombreProductoImportado)) / misFondos.get(nombreProductoImportado)) * 100)
+						* (capitalInvertido.get(nombreProductoImportado) / getCapitalInvertido());
+			}
+
+		}
+		return rentabilidadCalculada;
 
 	}
 
