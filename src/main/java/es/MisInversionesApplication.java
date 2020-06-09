@@ -33,9 +33,9 @@ public class MisInversionesApplication {
 		GestorCartera<FondoInversion, CarteraInversion> miGestorCartera1 = new GestorCarteraImpl("agresiva");
 
 		/*
-		 * Así podría importar carteras desde un json y haciendo uso , no lo uso porque
-		 * yo lo que hago es importar fondos desde un csv, pero queda preparado y
-		 * funciona, por si tuviera que usarlo algún día
+		 * Así puedo importar carteras desde un json, en principio mi api lo que hace es
+		 * importar fondos desde un csv, pero esto queda preparado y funciona bien, por
+		 * si hiciera falta algún día
 		 */
 //		ObjectMapper mapper = context.getBean(ObjectMapper.class);
 //		CarteraInversionDAO carteraDAO = context.getBean(CarteraInversionDAO.class);
@@ -64,7 +64,7 @@ public class MisInversionesApplication {
 		miCartera.deleteAll();
 		miCartera.save(miGestorCartera1.getCartera());
 
-		// Customizados
+		// Pruebo los metodos personalizados expuestos. Funcionan bien y desde Postman tambien
 		List<CarteraInversion> carterasPorCapital = miCartera.getCarterasPorCapitalInvertido(4500.00);
 		carterasPorCapital.stream().map(CarteraInversion::toString).forEach(log::warn);
 
